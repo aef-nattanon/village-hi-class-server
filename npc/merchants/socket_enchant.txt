@@ -33,35 +33,38 @@
 -	script	Seiyablem#dummy::SocketEnchant	-1,{
 	if (checkweight(1201,1) == 0)
 	{
-		mes "- Wait a minute !! -";
-		mes "- Currently you're carrying -";
-		mes "- too many items with you. -";
-		mes "- Please try again -";
-		mes "- after you lose some weight. -";
+		mes "- à´ÕëÂÇ¡èÍ¹ !! -";
+		mes "- ¢³Ğ¹Õé¤Ø³¡ÓÅÑ§¶×Í -";
+		mes "- ÁÕ¢Í§¡Ñº¤Ø³ÁÒ¡à¡Ô¹ä» -";
+		mes "- ¡ÃØ³ÒÅÍ§ãËÁèÍÕ¡¤ÃÑé§ -";
+		mes "- ËÅÑ§¨Ò¡¤Ø³Å´¹éÓË¹Ñ¡Å§ -";
 		close;
 	}
-	mes "[Seiyablem]";
-	mes "I'm an engineer that specializes in adding Slots to normal Weapons and Armor.";
-	mes "My service fee, the required materials and the chance of success all depend on the specific item I'm working on.";
+	mes "[NPC à¨ÒĞÃÙ]";
+	mes "©Ñ¹à»ç¹ÇÔÈÇ¡Ã·ÕèàªÕèÂÇªÒ­";
+	mes "ã¹¡ÒÃà¨ÒĞÃÙãËé¡ÑºÍÒÇØ¸áÅĞªØ´à¡ÃÒĞ»¡µÔ";
+	mes "¤èÒºÃÔ¡ÒÃ¢Í§©Ñ¹ ÇÑÊ´Ø·Õè¨Óà»ç¹";
+	mes "áÅĞâÍ¡ÒÊã¹¡ÒÃ»ÃĞÊº¤ÇÒÁÊÓàÃç¨·Ñé§ËÁ´";
+	mes "¢Öé¹ÍÂÙè¡ÑºÃÒÂ¡ÒÃà©¾ÒĞ·Õè©Ñ¹¡ÓÅÑ§·ÓÍÂÙè";
 	next;
-	mes "[Seiyablem]";
-	mes "Adding Slots may seem simple, but it's far more complicated than it looks.";
-	mes "If you're interested in my service, let me know.";
+	mes "[NPC à¨ÒĞÃÙ]";
+	mes "¡ÒÃà¾ÔèÁÊÅçÍµÍÒ¨´ÙàËÁ×Í¹§èÒÂ áµè¡ç«Ñº«éÍ¹¡ÇèÒ·Õè¤Ô´ÁÒ¡";
+	mes "ËÒ¡¤Ø³Ê¹ã¨ã¹ºÃÔ¡ÒÃ¢Í§©Ñ¹ á¨é§ãËéàÃÒ·ÃÒº";
 	next;
-	switch(select("Add Slot to Weapon:Add Slot to Armor:Slot Attempt Info:Cancel"))
+	switch(select("à¨ÒĞÃÙä»·ÕèÍÒÇØ¸:à¨ÒĞÃÙä»·Õèà¡ÃÒĞ:¢éÍÁÙÅ¡ÒÃÅÍ§ªèÍ§:Â¡àÅÔ¡"))
 	{
 		case 1:
-			mes "[Seiyablem]";
-			mes "You want to add a Slot to a weapon?";
-			mes "I categorize weapons by their difficulty in adding a Slot, C Class being easiest and S Class the most difficult.";
-			mes "Which class would you like to try?";
+			mes "[NPC à¨ÒĞÃÙ]";
+			mes "¤Ø³µéÍ§¡ÒÃà¾ÔèÁªèÍ§ãËé¡ÑºÍÒÇØ¸ËÃ×ÍäÁè?";
+			mes "©Ñ¹¨Ñ´ËÁÇ´ËÁÙèÍÒÇØ¸µÒÁ¤ÇÒÁÂÒ¡ã¹¡ÒÃà¾ÔèÁªèÍ§ ¤ÅÒÊ C ¹Ñé¹§èÒÂ·ÕèÊØ´ áÅĞ¤ÅÒÊ S ¹Ñé¹ÂÒ¡·ÕèÊØ´";
+			mes "¤ÅÒÊäË¹·Õè¤Ø³ÍÂÒ¡ÅÍ§?";
 			next;
-			switch(select("C Class:B Class:A Class:S Class"))
+			switch(select("¤ÅÒÊ C:¤ÅÒÊ B:¤ÅÒÊ A:¤ÅÒÊ S"))
 			{
 				case 1:
-					mes "[Seiyablem]";
-					mes "C Class, eh?";
-					mes "Now, I can only upgrade certain equipment in that class, so please choose one of the following items, so we can try to add a Slot to it.";
+					mes "[NPC à¨ÒĞÃÙ]";
+					mes "¤ÅÒÊ C ãªèäËÁ?";
+					mes "µÍ¹¹Õé©Ñ¹ÊÒÁÒÃ¶ÍÑ¾à¡Ã´ÍØ»¡Ã³ìºÒ§ÍÂèÒ§ã¹¤ÅÒÊ¹Ñé¹ä´éà·èÒ¹Ñé¹ ´Ñ§¹Ñé¹â»Ã´àÅ×Í¡Ë¹Öè§ã¹ÃÒÂ¡ÒÃµèÍä»¹Õé à¾×èÍ·ÕèàÃÒ¨Ğä´éÅÍ§à¾ÔèÁªèÍ§à¢éÒä»";
 					next;
 					switch(select("Trident:Rope:Violin"))
 					{
@@ -70,10 +73,10 @@
 						case 3: callfunc "Func_Socket",1901,1902,40,66,200,1010,10;
 					}
 				case 2:
-					mes "[Seiyablem]";
-					mes "B Class?";
-					mes "Alright, this is the average equipment category.";
-					mes "Please choose the weapon to which you'd like me to try to add a Slot.";
+					mes "[NPC à¨ÒĞÃÙ]";
+					mes "¤ÅÒÊºÕ?";
+					mes "àÍÒÅèĞ ¹Õè¤×ÍËÁÇ´ËÁÙèÍØ»¡Ã³ìâ´Âà©ÅÕèÂ";
+					mes "â»Ã´àÅ×Í¡ÍÒÇØ¸·Õè¤Ø³µéÍ§¡ÒÃãËé©Ñ¹ÅÍ§à¾ÔèÁªèÍ§";
 					next;
 					switch(select("Chain:Gladius:Gakkung Bow:Pike:Haedonggum:Lute:Wire:Waghnakh:Arbalest Bow"))
 					{
@@ -88,10 +91,10 @@
 						case 9: callfunc "Func_Socket",1713,1715,40,61,300, 984, 2,999,5;
 					}
 				case 3:
-					mes "[Seiyablem]";
-					mes "Ooh, A Class.";
-					mes "This is some high risk territory!";
-					mes "Alright, which weapon would you like me to try adding a Slot?";
+					mes "[NPC à¨ÒĞÃÙ]";
+					mes "âÍé ¤ÅÒÊàÍ";
+					mes "¹Õè¤×Í´Ô¹á´¹·ÕèÁÕ¤ÇÒÁàÊÕèÂ§ÊÙ§!";
+					mes "àÍÒÅèĞ ÍÒÇØ¸äË¹·Õè¤Ø³ÍÂÒ¡ãËé©Ñ¹ÅÍ§à¾ÔèÁªèÍ§?";
 					next;
 					switch(select("Hunter Bow:Survivor's Rod(INT):Zweihander:Flamberge:Infiltrator:Ballista:Stunner:Berserk:Claymore"))
 					{
@@ -106,11 +109,11 @@
 						case 9: callfunc "Func_Socket",1163,1172,40,61,500,984,2,999,10; // NPC says "5 Oridecon" (Aegis) but takes only 2
 					}
 				case 4:
-					mes "[Seiyablem]";
-					mes "Whoa, whoa, whoa...";
-					mes "S class? Alright...";
-					mes "It'd be a near miracle if I can actually pull this off.";
-					mes "Okay... Which weapon shall we try adding a Slot to?";
+					mes "[NPC à¨ÒĞÃÙ]";
+					mes "ÇĞ ÇĞ ÇĞ ÇĞ...";
+					mes "àÍÊ¤ÅÒÊàËÃÍ? ãªéä´é...";
+					mes "¤§¨Ğà»ç¹àÃ×èÍ§ÁËÑÈ¨ÃÃÂìÁÒ¡ËÒ¡©Ñ¹ÊÒÁÒÃ¶´Ö§ÊÔè§¹ÕéÍÍ¡ÁÒä´é¨ÃÔ§";
+					mes "âÍà¤... àÃÒ¨ĞÅÍ§à¾ÔèÁ Slot ÍÒÇØ¸äË¹´ÙÅèĞ?";
 					next;
 					switch(select("Gungnir:Poison Knife:Ice Pick:Sucsamad:Ginnungagap:Cutlas:Crescent Scythe:Survivor's Rod(DEX)"))
 					{
@@ -125,20 +128,20 @@
 					}
 			}
 		case 2:
-			mes "[Seiyablem]";
-			mes "Armor, you said?";
-			mes "Sure, no problem.";
-			mes "Armor is divided into 4 different classes, depending on the work difficulty.";
-			mes "C Class is the easiest one, and S Class he hardest one.";
-			mes "Which class would you like to try?";
+			mes "[NPC à¨ÒĞÃÙ]";
+			mes "à¡ÃÒĞ¤Ø³¾Ù´?";
+			mes "á¹è¹Í¹äÁèÁÕ»Ñ­ËÒ.";
+			mes "ªØ´à¡ÃÒĞáºè§ÍÍ¡à»ç¹ 4 ¤ÅÒÊ·Õèáµ¡µèÒ§¡Ñ¹ ¢Öé¹ÍÂÙè¡Ñº¤ÇÒÁÂÒ¡ã¹¡ÒÃ·Ó§Ò¹";
+			mes "¤ÅÒÊ C ¹Ñé¹§èÒÂ·ÕèÊØ´ áÅĞ¤ÅÒÊ S ¹Ñé¹à»ç¹¤ÅÒÊ·ÕèÂÒ¡·ÕèÊØ´";
+			mes "¤ÅÒÊäË¹·Õè¤Ø³ÍÂÒ¡ÅÍ§?";
 			next;
 			switch(select("C Class:B Class:A Class:S Class"))
 			{
 				case 1:
-					mes "[Seiyablem]";
-					mes "C Class Armor, eh?";
-					mes "Sounds reasonable.";
-					mes "Which armor would you like to try adding a Slot?";
+					mes "[NPC à¨ÒĞÃÙ]";
+					mes "à¡ÃÒĞ¤ÅÒÊ C ãªèäËÁ?";
+					mes "¿Ñ§´ÙÊÁàËµØÊÁ¼Å";
+					mes "à¡ÃÒĞã´·Õè¤Ø³µéÍ§¡ÒÃÅÍ§à¾ÔèÁªèÍ§?";
 					next;
 					switch(select("Mantle:Coat:Circlet:Biretta"))
 					{
@@ -148,9 +151,9 @@
 						case 4: callfunc "Func_Socket",2216,2217,40,66,200,999,3;
 					}
 				case 2:
-					mes "[Seiyablem]";
-					mes "You have chosen average B Class.";
-					mes "So, what kind of armor do you have?";
+					mes "[NPC à¨ÒĞÃÙ]";
+					mes "¤Ø³ä´éàÅ×Í¡¤ÅÒÊ B â´Âà©ÅÕèÂ";
+					mes "áÅéÇ¤Ø³ÁÕà¡ÃÒĞáººäË¹ÅèĞ?";
 					next;
 					switch(select("Mirror Shield:Chain Mail:Saint Robe:Silk Robe:Boots:Shoes:Muffler:Guard:Buckler:Shield:Bongun Hat"))
 					{
@@ -167,10 +170,10 @@
 						case 11: callfunc "Func_Socket",5046,5168,40,61,250,999,5;
 					}
 				case 3:
-					mes "[Seiyablem]";
-					mes "Ooh, A Class.";
-					mes "This is some high risk territory!";
-					mes "Alright, which armor would you like me to try adding a Slot?";
+					mes "[NPC à¨ÒĞÃÙ]";
+					mes "âÍé ¤ÅÒÊàÍ";
+					mes "¹Õè¤×Í´Ô¹á´¹·ÕèÁÕ¤ÇÒÁàÊÕèÂ§ÊÙ§!";
+					mes "àÍÒÅèĞ ¤Ø³ÍÂÒ¡ãËé©Ñ¹ÅÍ§à¾ÔèÁªØ´à¡ÃÒĞäË¹";
 					next;
 					switch(select("Gemmed Sallet:Bucket Hat:Memory Book:Tights:Legion Plate Armor:Full Plate:Thief Clothes:Greaves:Coif:Manteau:Helm:Ninja Suit:Orc Helm:Ancient Cape:Monk Hat:Golden Gear:Brooch:Munak Hat"))
 					{
@@ -194,10 +197,10 @@
 						case 18: callfunc "Func_Socket",2264,5167,40,61,300,985,1;
 					}
 				case 4:
-					mes "[Seiyablem]";
-					mes "Um... S Class?";
-					mes "You sure about this?";
-					mes "Alright... Let me know the Armor to which you'd like to add a Slot, and I'll tell what I need to try it.";
+					mes "[NPC à¨ÒĞÃÙ]";
+					mes "àÍèÍ... ¤ÅÒÊ S?";
+					mes "¤Ø³á¹èã¨à¡ÕèÂÇ¡ÑºàÃ×èÍ§¹Õé?";
+					mes "àÍÒÅèĞ... ºÍ¡ãËé©Ñ¹ÃÙé¶Ö§ªØ´à¡ÃÒĞ·Õè¤Ø³µéÍ§¡ÒÃà¾ÔèÁªèÍ§ áÅéÇ©Ñ¹¨ĞºÍ¡ÇèÒ©Ñ¹µéÍ§ÅÍ§·ÓÍĞäÃ";
 					next;
 					switch(select("Majestic Goat:Spiky Band:Bone Helm:Corsair:Crown:Tiara:Sphinx Hat:Robe of Cast:Earring:Ring:Bow Thimble"))
 					{
@@ -215,33 +218,33 @@
 					}
 			}
 		case 3:
-			mes "[Seiyablem]";
-			mes "Well, I haven't really refined the art of Slot Addition.";
-			mes "It's so complicated that I'd be lying if I told you that I knew every factor that affected the process.";
-			mes "Still, I do notice a few trends...";
+			mes "[NPC à¨ÒĞÃÙ]";
+			mes "àÍÒÅèĞ ©Ñ¹ÂÑ§äÁèä´é¢Ñ´à¡ÅÒÈÔÅ»Ğ¢Í§ Slot Addition àÅÂ";
+			mes " ÁÑ¹«Ñº«éÍ¹ÁÒ¡¨¹©Ñ¹µéÍ§â¡Ë¡¶éÒ©Ñ¹ºÍ¡¤Ø³ÇèÒ©Ñ¹ÃÙé·Ø¡»Ñ¨¨ÑÂ·ÕèÊè§¼ÅµèÍ¡ÃĞºÇ¹¡ÒÃ¹Õé";
+			mes "¶Ö§¡ÃĞ¹Ñé¹ ©Ñ¹ÊÑ§à¡µàËç¹á¹Çâ¹éÁºÒ§ÍÂèÒ§...";
 			next;
-			mes "[Seiyablem]";
-			mes "In some towns, Slot addition attempts are more successful for equipment with fewer upgrades.";
-			mes "In other towns, the opposite is true.";
-			mes "isn't that really peculiar?";
+			mes "[NPC à¨ÒĞÃÙ]";
+			mes " ã¹ºÒ§àÁ×Í§ ¡ÒÃà¾ÔèÁªèÍ§¨Ğ»ÃĞÊº¤ÇÒÁÊÓàÃç¨ÁÒ¡¡ÇèÒÊÓËÃÑºÍØ»¡Ã³ì·ÕèÁÕ¡ÒÃÍÑ¾à¡Ã´¹éÍÂ¡ÇèÒ";
+			mes "ã¹àÁ×Í§Í×è¹ ÊÔè§·ÕèµÃ§¡Ñ¹¢éÒÁ¤×Í¤ÇÒÁ¨ÃÔ§";
+			mes "¹Ñè¹äÁèá»Å¡¨ÃÔ§æàËÃÍ?";
 			next;
-			mes "[Seiyablem]";
-			mes "Oh, there's also something really important that you should know.";
-			mes "If you ask me to add a Slot to something, make sure that you don't have multiples of it in your inventory.";
+			mes "[NPC à¨ÒĞÃÙ]";
+			mes "âÍé ÁÕºÒ§ÊÔè§·ÕèÊÓ¤Ñ­¨ÃÔ§æ ·Õè¤Ø³¤ÇÃÃÙé";
+			mes "¶éÒ¤Ø³¢ÍãËé©Ñ¹à¾ÔèÁªèÍ§ãËé¡ÑººÒ§ÊÔè§ºÒ§ÍÂèÒ§ µÃÇ¨ÊÍºãËéá¹èã¨ÇèÒ¤Ø³äÁèÁÕªèÍ§¹Ñé¹ËÅÒÂªèÍ§ã¹¤ÅÑ§¢Í§¤Ø³";
 			next;
-			mes "[Seiyablem]";
-			mes "Here's an example: if you have a +7 Manteau and a normal Manteau in your inventory, then I will randomly pick one of them for my Slot Addition attempt.";
-			mes "Just remember to be careful.";
+			mes "[NPC à¨ÒĞÃÙ]";
+			mes "¹Õè¤×ÍµÑÇÍÂèÒ§: ¶éÒ¤Ø³ÁÕ +7 Manteau áÅĞ Manteau »¡µÔã¹¡ÃĞà»ëÒ¢Í§¤Ø³ ©Ñ¹¨ĞÊØèÁàÅ×Í¡Ë¹Öè§ã¹¹Ñé¹ÊÓËÃÑº¡ÒÃà¾ÔèÁªèÍ§";
+			mes "à¾ÕÂ§¨ÓäÇéÇèÒãËéÃĞÇÑ§";
 			next;
-			mes "[Seiyablem]";
-			mes "Again, ^FF0000only carry one of the equipment to which you want me to add a Slot^000000.";
-			mes "All other equipment with the same name should be placed in your Kafra Storage, got it?";
+			mes "[NPC à¨ÒĞÃÙ]";
+			mes "ÍÕ¡¤ÃÑé§ ^FF0000¾¡ÍØ»¡Ã³ìÍÂèÒ§ã´ÍÂèÒ§Ë¹Öè§·Õè¤Ø³µéÍ§¡ÒÃãËé©Ñ¹à¾ÔèÁªèÍ§^000000";
+			mes "ÍØ»¡Ã³ìÍ×è¹æ ·Ñé§ËÁ´·ÕèÁÕª×èÍà´ÕÂÇ¡Ñ¹ ¤ÇÃ¶Ù¡ÇÒ§äÇéã¹ Kafra Storage ¢Í§¤Ø³ à¢éÒã¨äËÁ?";
 			close;
 		case 4:
-			mes "[Seiyablem]";
-			mes "Take it easy, adventurer.";
-			mes "If you ever want to try adding a Slot to some of your equipment, come back and let me know.";
-			mes "Seeya~";
+			mes "[NPC à¨ÒĞÃÙ]";
+			mes "ã¨àÂç¹æ ¹Ğ ¹Ñ¡¼¨­ÀÑÂ";
+			mes "¶éÒ¤Ø³µéÍ§¡ÒÃ·Õè¨ĞÅÍ§à¾ÔèÁªèÍ§ãËé¡ÑºÍØ»¡Ã³ì¢Í§¤Ø³ ¡ÃØ³Ò¡ÅÑºÁÒáÅĞá¨é§ãËéàÃÒ·ÃÒº";
+			mes "«ÕÂĞ~";
 			close;
 	}
 }
@@ -253,47 +256,47 @@ function	script	Func_Socket	{
 	setarray .@req_amount[0], getarg(6), getarg(8,0);
 
 	disable_items;
-	mes "[Seiyablem]";
-	mes "You want to add a Slot to a "+ getitemname(.@item_id) +"?";
-	mes "Alright, please bring me ^FF0000"+ .@req_amount[0] +" "+ getitemname(.@item_req[0]) + (.@req_amount[0] > 1 && .@item_req[0] != 999 ? "s":"") +"^000000, "+ (.@item_req[1] != 0 && .@req_amount[1] != 0 ? ("^FF0000"+ .@req_amount[1] +" "+ getitemname(.@item_req[1]) + (.@req_amount[1] > 1 && .@item_req[1] != 999 ? "s":"") + "^000000 ") : "") + "and my ^FF0000" + (.@zeny_req >= 1000 ? (.@zeny_req /1000 +",000") : .@zeny_req) +",000 zeny^000000 service fee.";
-	mes "Ah, and don't forget to bring that "+ getitemname(.@item_id) +"!";
+	mes "[NPC à¨ÒĞÃÙ]";
+	mes "¤Ø³µéÍ§¡ÒÃà¾ÔèÁÊÅçÍµãËé¡Ñº"+ getitemname(.@item_id) +"?";
+	mes "àÍÒÅèĞ â»Ã´¾Ò©Ñ¹ÁÒ´éÇÂ ^FF0000"+ .@req_amount[0] +" "+ getitemname(.@item_req[0]) + (.@req_amount[0] > 1 && .@item_req[0] != 999 ? "s":"") +"^000000, "+ (.@item_req[1] != 0 && .@req_amount[1] != 0 ? ("^FF0000"+ .@req_amount[1] +" "+ getitemname(.@item_req[1]) + (.@req_amount[1] > 1 && .@item_req[1] != 999 ? "s":"") + "^000000 ") : "") + "and my ^FF0000" + (.@zeny_req >= 1000 ? (.@zeny_req /1000 +",000") : .@zeny_req) +",000 zeny^000000 ¤èÒºÃÔ¡ÒÃ.";
+	mes "ÍéÍ áÅéÇÍÂèÒÅ×ÁàÍÒÍÑ¹¹Ñé¹ÁÒ´éÇÂÅèĞ "+ getitemname(.@item_id) +"!";
 	next;
-	mes "[Seiyablem]";
+	mes "[NPC à¨ÒĞÃÙ]";
 	if (getiteminfo(.@item_id, ITEMINFO_LOCATIONS) & EQP_HAND_R) // weapon
 	{
-		mes "I can try to add a slot now if you have the required items and zeny.";
-		mes "However, you should know that there's a chance that I might fail.";
-		mes "Therefore, I need to give you a fair warning...";
+		mes "©Ñ¹ÊÒÁÒÃ¶ÅÍ§à¾ÔèÁªèÍ§ä´éµÍ¹¹Õé¶éÒ¤Ø³ÁÕäÍà·Á·ÕèµéÍ§¡ÒÃáÅĞ zeny";
+		mes "ÍÂèÒ§äÃ¡çµÒÁ ¤Ø³¤ÇÃÃÙéÇèÒÁÕâÍ¡ÒÊ·Õè©Ñ¹¨ĞÅéÁàËÅÇ";
+		mes "à¾ÃÒĞ©Ğ¹Ñé¹ ©Ñ¹¨Óà»ç¹µéÍ§àµ×Í¹¤Ø³ÍÂèÒ§ÂØµÔ¸ÃÃÁ...";
 		next;
-		mes "[Seiyablem]";
-		mes "If this attempt to add a Slot to your Weapon fails, then the ^FF0000Weapon^000000, ^FF0000and any Cards compounded to it will be destroyed^000000.";
+		mes "[NPC à¨ÒĞÃÙ]";
+		mes "ËÒ¡¤ÇÒÁ¾ÂÒÂÒÁã¹¡ÒÃà¾ÔèÁªèÍ§ãËé¡ÑºÍÒÇØ¸¢Í§¤Ø³ÅéÁàËÅÇ ´Ñ§¹Ñé¹ ^FF0000Weapon^000000, ^FF0000áÅĞ¡ÒÃì´ã´æ ·Õè»ÃĞ¡Íºà¢éÒ´éÇÂ¡Ñ¹¨Ğ¶Ù¡·ÓÅÒÂ^000000";
 	}
 	else // armor
 	{
-		mes "If you have all the required materials, my zeny service fee and the Armor, then we can go ahead with the Slot Addition attempt.";
-		mes "But before that, I must warn you of the risk.";
+		mes "¶éÒ¤Ø³ÁÕÇÑµ¶Ø´Ôº·Õè¨Óà»ç¹·Ñé§ËÁ´ ¤èÒºÃÔ¡ÒÃ zeny ¢Í§©Ñ¹ áÅĞªØ´à¡ÃÒĞ àÃÒ¡çÊÒÁÒÃ¶´Óà¹Ô¹¡ÒÃà¾ÔèÁ Slot µèÍä»ä´é";
+  	mes "áµè¡èÍ¹Ë¹éÒ¹Ñé¹ ©Ñ¹µéÍ§àµ×Í¹¤Ø³¶Ö§¤ÇÒÁàÊÕèÂ§";
 		next;
-		mes "[Seiyablem]";
-		mes "If this attempt to add a Slot to your Armor fails, then the ^FF0000Armor^000000, ^FF0000it's upgrades^000000 ^FF0000and any Cards compounded to it will be destroyed^000000.";
+		mes "[NPC à¨ÒĞÃÙ]";
+		mes "ËÒ¡¤ÇÒÁ¾ÂÒÂÒÁã¹¡ÒÃà¾ÔèÁªèÍ§ãËé¡ÑºªØ´à¡ÃÒĞ¢Í§¤Ø³ÅéÁàËÅÇ ´Ñ§¹Ñé¹ ^FF0000Armor^000000, ^FF0000 ¨Ğà»ç¹¡ÒÃÍÑ¾à¡Ã´^000000 ^FF0000 áÅĞ¡ÒÃì´ã´æ ·Õè»ÃĞ¡Íºà¢éÒ´éÇÂ¡Ñ¹¨Ğ¶Ù¡·ÓÅÒÂ^000000";
 	}
-	mes "Do you still want to try to add a Slot?";
+	mes "¤Ø³ÂÑ§µéÍ§¡ÒÃÅÍ§à¾ÔèÁªèÍ§ËÃ×ÍäÁè?";
 	next;
-	switch(select("Attempt Slot Addition:Cancel"))
+	switch(select("¾ÂÒÂÒÁà¾ÔèÁªèÍ§: Â¡àÅÔ¡"))
 	{
 		case 1:
 			if ((Zeny >= .@zeny_req*1000) && countitem(.@item_req[0]) >= .@req_amount[0] && countitem(getarg(7,512)) >= .@req_amount[1] && countitem(.@item_id) > 0)// if there's no getarg(7) and getarg(8) provided, check itemcount against 0 (we still need a valid item ID though)
 			{
-				mes "[Seiyablem]";
-				mes "Alright then, let the work begin!";
-				mes "You'd better pray for a successful result.";
+				mes "[NPC à¨ÒĞÃÙ]";
+				mes "àÍÒÅèĞ àÃÔèÁ§Ò¹ä´éàÅÂ!";
+  			mes " ¤Ø³¤ÇÃÍ¸ÔÉ°Ò¹¢ÍãËé»ÃĞÊº¼ÅÊÓàÃç¨¨Ğ´Õ¡ÇèÒ";
 				next;
 				set .@a, rand(1,100);
 				if ((.@a > getarg(2)) && (.@a < getarg(3)))
 				{
 					specialeffect getarg(3) == 51 ? EF_LORD : EF_SANCTUARY; // only S Class items have Lord of Vermillion effect
-					mes "[Seiyablem]";
-					mes "Great, it seems to be successful.";
-					mes "It looks pretty well done. Congratulations!";
+					mes "[NPC à¨ÒĞÃÙ]";
+					mes "àÂÕèÂÁÁÒ¡ ´ÙàËÁ×Í¹ÇèÒ¨Ğ»ÃĞÊº¤ÇÒÁÊÓàÃç¨";
+  				mes " ÁÑ¹´Ù·Óä´é´Õ·Õà´ÕÂÇ ÂÔ¹´Õ´éÇÂ!";
 					delitem .@item_id,1;
 					delitem .@item_req[0],.@req_amount[0];
 					if (.@item_req[1] != 0 && .@req_amount[1] != 0)
@@ -301,41 +304,41 @@ function	script	Func_Socket	{
 					Zeny = Zeny - .@zeny_req *1000;
 					getitem getarg(1),1;
 					next;
-					mes "[Seiyablem]";
-					mes "See you again, buddy!";
+					mes "[NPC à¨ÒĞÃÙ]";
+					mes "áÅéÇ¾º¡Ñ¹ãËÁè¹Ğà¾×èÍ¹!";
 					close;
 				}
 				else
 				{
 					specialeffect EF_SUI_EXPLOSION;
-					mes "[Seiyablem]";
-					mes "Wah! ...I am so sorry, it failed.";
-					mes "However, I am completely innocent.";
-					mes "This is your luck, and it is destined by god, okay?";
-					mes "Don't be so disappointed, and try next time.";
+					mes "[NPC à¨ÒĞÃÙ]";
+					mes "ÇéÒÇ! ...©Ñ¹¢Íâ·É ÁÑ¹ÅéÁàËÅÇ";
+					mes "ÍÂèÒ§äÃ¡çµÒÁ ©Ñ¹ºÃÔÊØ·¸Ôì¨ÃÔ§æ";
+					mes "¹Õè¤×Íâª¤¢Í§¤Ø³ áÅĞÁÑ¹¶Ù¡ÅÔ¢Ôµâ´Â¾ÃĞà¨éÒ âÍà¤äËÁ?";
+					mes "ÍÂèÒ¼Ô´ËÇÑ§àÅÂ áÅĞ¾ÂÒÂÒÁ¤ÃÑé§Ë¹éÒ";
 					delitem .@item_id,1;
 					delitem .@item_req[0],.@req_amount[0];
 					if (.@item_req[1] != 0 && .@req_amount[1] != 0)
 						delitem .@item_req[1],.@req_amount[1];
 					Zeny = Zeny - .@zeny_req *1000;
 					next;
-					mes "[Seiyablem]";
-					mes "I wish you good luck next time!";
+					mes "[NPC à¨ÒĞÃÙ]";
+					mes " ©Ñ¹¢ÍãËé¤Ø³âª¤´Õã¹¤ÃÑé§µèÍä»!";
 					close;
 				}
 			}
 			else
 			{
-				mes "[Seiyablem]";
-				mes "I'd like to go ahead with this Slot Addition attempt, but you're missing a few things.";
-				mes "You sure that you have the equipment, required materials and the zeny?";
+				mes "[NPC à¨ÒĞÃÙ]";
+				mes " ©Ñ¹ÍÂÒ¡¨Ğ´Óà¹Ô¹¡ÒÃµèÍ´éÇÂ¡ÒÃà¾ÔèÁ Slot ¹Õé áµè¤Ø³ÂÑ§¢Ò´ºÒ§ÊÔè§ä»";
+  			mes "¤Ø³á¹èã¨ÇèÒ¤Ø³ÁÕÍØ»¡Ã³ì, ÇÑÊ´Ø·Õè¨Óà»ç¹ áÅĞ zeny?";
 				close;
 			}
 		case 2:
-			mes "[Seiyablem]";
-			mes "Need some time to think about it, huh?";
-			mes "Alright, I can understand.";
-			mes "Just remember that life's no fun if you're always playing it safe~";
+			mes "[NPC à¨ÒĞÃÙ]";
+			mes "µéÍ§¡ÒÃàÇÅÒ¤Ô´à¡ÕèÂÇ¡ÑºÁÑ¹Ë¹èÍÂÁÑéÂ?";
+			mes "àÍÒÅèĞ ©Ñ¹à¢éÒã¨áÅéÇ";
+			mes "á¤è¨ÓäÇéÇèÒªÕÇÔµÁÑ¹äÁèÊ¹Ø¡àÅÂ ¶éÒ¤Ø³ãªéªÕÇÔµÍÂèÒ§»ÅÍ´ÀÑÂÍÂÙèàÊÁÍ~";
 			close;
 	}
 }
@@ -343,7 +346,7 @@ function	script	Func_Socket	{
 payon,140,151,5	duplicate(SocketEnchant)	Seiyablem#pay	84
 lhz_in02,281,35,5	duplicate(SocketEnchant)	Seiyablem#lhz	84
 prt_in,33,70,5	duplicate(SocketEnchant)	Seiyablem#prt	84
-morocc,51,41,4	duplicate(SocketEnchant)	Seiyablem#moc	84
+morocc,163,90,4	duplicate(SocketEnchant)	NPC à¨ÒĞÃÙ#moc	617
 
 -	script	Young Man#dummy::SocketMan	-1,{
 	mes "[Young Man]";
