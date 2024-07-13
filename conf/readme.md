@@ -28,7 +28,7 @@ We want to change the server name to "Odin".
 
 #### /conf/import/char_conf.txt
 
-	server_name: Odin
+	server_name: Village Hi-Class
 
 
 ### Map Server
