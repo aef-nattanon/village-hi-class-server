@@ -17,18 +17,18 @@
 //= 3.0 Migrate/Integrate to Global Functions. [mazvi]
 //============================================================
 
-prontera,128,200,6	script	Platinum Skill NPC	94,{
-	mes "[Platinum Skill NPC]";
-	mes "I can give you the special skills available to your job.";
-	mes "Would you like these skills now?";
+morocc,160,90,6	script	NPC ทักษะเสริม	621,{
+	mes "[NPC ทักษะเสริม]";
+	mes "ฉันสามารถมอบทักษะเสริมให้กับงานของคุณได้";
+	mes "คุณต้องการทักษะเหล่านี้ตอนนี้หรือไม่?";
 	next;
-	if (select("Yes Please:No") == 2) {
-		mes "[Platinum Skill NPC]";
-		mes "Have a nice day... >.>";
+	if (select("ใช่:ไม่รับ") == 2) {
+		mes "[NPC ทักษะเสริม]";
+		mes "ขอให้มีวันดีๆ... >.>";
 		close;
 	}
 	callfunc "F_GetPlatinumSkills";
-	mes "[Platinum Skill NPC]";
-	mes "There you go!";
+	mes "[NPC ทักษะเสริม]";
+	mes "รับทักษะเสริมมาเเล้ว";
 	close;
 }
