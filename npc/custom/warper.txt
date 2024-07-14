@@ -23,7 +23,7 @@ function Go; function Disp; function Pick; function Restrict;
 //	Main Menu:
 // --------------------------------------------------
 
-menu	"วาร์ปสุดท้าย ^777777["+lastwarp$+"]^000000",-,
+menu	"�����ش���� ^777777["+lastwarp$+"]^000000",-,
     	" Towns",Towns,
     	" Fields",Fields,
     	" Dungeons",Dungeons,
@@ -33,7 +33,7 @@ menu	"วาร์ปสุดท้าย ^777777["+lastwarp$+"]^000000",-,
     	" Special Areas",Special;
 
 	if (lastwarp$ == "")
-		message strcharinfo(0),"คุณยังไม่ได้วาร์ปไปไหน";
+		message strcharinfo(0),"�س�ѧ�����������˹";
 	else
 		warp lastwarp$,lastwarpx,lastwarpy;
 	end;
