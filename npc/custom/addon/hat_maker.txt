@@ -12,8 +12,8 @@
 //= Fixed a couple of errors
 //============================================================
 
-morocc,157,88,5	script	ผู้สร้างหมวก	90,{
-  mes "[ผู้สร้างหมวก]";  
+morocc,157,88,5	script	นักสร้างหมวก	90,{
+  mes "[นักสร้างหมวก]";  
 	mes " ฉันสามารถช่วยคุณทำหมวกได้เกือบทุกชนิด";
 	mes "ถ้าคุณนำสิ่งของที่ถูกต้องมาให้ฉัน";
 	goto H_top;
@@ -2847,10 +2847,10 @@ M_zealot:
 	
 M_insufficient:
 	next;
-	mes "[Hat Maker]";
-	mes "You don't have the required materiels.";
-	mes "Please come back another time...";
-	menu "Return to Main Menu",H_top,"Leave",H_cancel;
+	mes "[นักสร้างหมวก]";
+  mes "คุณไม่มีอุปกรณ์ที่จำเป็น";
+	mes "โปรดกลับมาใหม่อีกครั้ง...";
+	menu "กลับสู่เมนูหลัก",H_top,"Leave",H_cancel;
 	close;
 	
 H_cancel:
