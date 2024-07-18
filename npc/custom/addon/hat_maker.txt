@@ -2850,7 +2850,7 @@ M_insufficient:
 	mes "[นักสร้างหมวก]";
   mes "คุณไม่มีอุปกรณ์ที่จำเป็น";
 	mes "โปรดกลับมาใหม่อีกครั้ง...";
-	menu "กลับสู่เมนูหลัก",H_top,"Leave",H_cancel;
+	menu "กลับสู่เมนูหลัก",H_top,"ออก",H_cancel;
 	close;
 	
 H_cancel:
