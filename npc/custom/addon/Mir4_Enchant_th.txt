@@ -1,0 +1,494 @@
+//==========================================================|
+//    _    _                     _     _                    |
+//   | |  | |                   | |   (_)                   |
+//   | |__| |_   _ _ __ ___  ___| |__  _ _ __ ___   __ _    |
+//   |  __  | | | | '__/ _ \/ __| '_ \| | '_ ` _ \ / _` |   |
+//   | |  | | |_| | | | (_) \__ \ | | | | | | | | | (_| |   |
+//   |_|  |_|\__, |_|  \___/|___/_| |_|_|_| |_| |_|\__,_|   |
+//            __/ |Scripter                                 |
+//           |___/                                          |
+//==========================================================|
+/* ------------------ SCRIPT INFO ------------------------- =
+Name: Mir4 Enchant                                          =
+Ver : 1.0                                                   =
+---------------------------------------------------------- */
+//====================== FUNCTIONS =========================|
+morocc,163,88,5	script	Mir4 Enchant	4_M_ROKI,{
+
+	mes "[Mir4 Enchant]";
+	mes "ฉันจะช่วยคุณได้อย่างไร?";
+	next;
+	switch(select("Enchant:ข้อมูล:ข้อมูลเกี่ยวกับ Enchant"))
+	{
+		case 1:
+			mes "[Mir4 Enchant]";
+			
+			for(set .@r,0; .@r<getarraysize(.req); set .@r,.@r+2)
+			{
+				if(.req[.@r] > 1)
+					if(countitem(.req[.@r]) < .req[(.@r+1)])
+					{ mes "[>] ^FF0000"+.req[(.@r+1)]+"x "+getitemname(.req[.@r])+"^000000"; set .@err,1; }
+				if(.req[.@r] == -1)
+					if(Zeny < .req[(.@r+1)])
+					{ mes "[>] ^FF0000"+callfunc("F_InsertComma",.req[(.@r+1)])+" zenys^000000"; set .@err,1; }
+			}
+			
+			if(.@err){ mes "ตรวจสอบให้แน่ใจว่าคุณมีสิ่งของทั้งหมด!"; break; }			
+			
+			mes "เลือกอุปกรณ์ที่คุณต้องการ enchant!";
+			next;
+			
+			for(set .@i,0; .@i<10; set .@i,.@i+1)
+				if(getequipisequiped(.indices[.@i]))
+				{
+					set .@menu$,.@menu$+F_getpositionname(.indices[.@i])+"-["+getequipname(.indices[.@i])+"]:";
+					setarray .@idx$[getarraysize(.@idx$)],.indices[.@i];
+				}
+
+			if (!getarraysize(.@idx$))
+			{
+				clear;
+				mes "[Mir4 Enchant]";
+				mes "ติดตั้งไอเทมก่อนแล้วค่อยคุยกันใหม่";
+				break;
+			}
+			
+			set .@part,atoi(.@idx$[(select(.@menu$)-1)]);
+			set .@id_equipped,getequipid(.@part);
+			set .@total_enchant,(4-getitemslots(.@id_equipped));
+			set .@ref,getequiprefinerycnt(.@part);
+			
+			for(set .@i,0; .@i<4; set .@i,.@i+1)
+				setd ".@card"+.@i+"",getequipcardid(.@part,.@i);
+			
+			for(set .@i,0; .@i<5; set .@i,.@i+1)
+			{
+				if(getequiprandomoption(.@part,.@i,ROA_ID))
+				{
+					setarray .@RoaID[getarraysize(.@RoaID)],getequiprandomoption(.@part,.@i,ROA_ID);
+					setarray .@RoaValue[getarraysize(.@RoaValue)],getequiprandomoption(.@part,.@i,ROA_VALUE);
+					setarray .@RoaParam[getarraysize(.@RoaParam)],getequiprandomoption(.@part,.@i,ROA_PARAM);
+				}
+			}
+			
+			mes "[Mir4 Enchant]";
+			
+			if(!.@total_enchant)
+			{
+				mes "ไอเทมนี้ไม่สามารถ enchanted ได้";
+				break;				
+			}
+			
+			if(inarray(.item_block[0],.@id_equipped) > -1)
+			{
+				mes "ไอเท็มนี้ถูกจำกัดและไม่สามารถ enchanted!";
+				break;
+			}
+			
+			do
+			{
+				if(!.@opt)
+				{
+					clear;
+					mes "[Mir4 Enchant]";
+					mes "เอาล่ะ ดำเนินการต่อด้วยการ enchant(s)!";
+					next;
+					set .@mn,select("Reveal Enchant:Cancel");
+				}
+				
+				if(.@mn == 1)
+				{
+					for(set .@r,0; .@r<getarraysize(.req); set .@r,.@r+2)
+					{
+						if(.req[.@r] > 1)
+							if(countitem(.req[.@r]) < .req[(.@r+1)])
+							{
+								if(!.@err){ clear; mes "[Mir4 Enchant]"; }
+								mes "[>] ^FF0000"+.req[(.@r+1)]+"x "+getitemname(.req[.@r])+"^000000";
+								set .@err,1;
+							}
+						if(.req[.@r] == -1)
+							if(Zeny < .req[(.@r+1)])
+							{
+								if(!.@err){ clear; mes "[Mir4 Enchant]"; }
+								mes "[>] ^FF0000"+callfunc("F_InsertComma",.req[(.@r+1)])+" zenys^000000";
+								set .@err,1;
+							}
+					}
+					
+					if(.@err){ mes "คุณไม่มีทรัพยากรที่จำเป็น!"; break; }					
+					
+					for(set .@r,0; .@r<getarraysize(.req); set .@r,.@r+2)
+					{
+						if(.req[.@r] > 1)
+							delitem .req[.@r],.req[(.@r+1)];
+						if(.req[.@r] == -1)
+							set Zeny,Zeny-.req[(.@r+1)];
+					}
+					soundeffect "mir4_randencht.wav",0;
+					
+					for(set .@x,0; .@x<20; set .@x,.@x+1)
+					{
+						clear;
+						mes "[Mir4 Enchant]";
+						mes "~";						
+						
+						for(set .@i,0; .@i<.@total_enchant; set .@i,.@i+1)
+						{
+							set .@rate,rand(1,1000);
+							setd ".@encht_title"+.@i+"$",.Title$[rand(getarraysize(.Title$))];
+							set .@rIdx,rand(getarraysize(.Cat$));
+							setd ".@Cat"+.@i+"$",.Cat$[.@rIdx];
+							setd ".@Cor"+.@i+"$",.Cor$[.@rIdx];
+							
+							if(.Repeat && .@i)
+							{
+								for(set .@p,(.@i-1); .@p>-1; set .@p,.@p-1)
+									if(getd(".@encht_title"+.@p+"$") == getd(".@encht_title"+.@i+"$"))
+									{
+										copyarray .@rTitle$[0],.Title$[0],getarraysize(.Title$);
+										set .@rpl,inarray(.Title$[0],getd(".@encht_title"+.@i+"$"));
+										deletearray .@rTitle$[.@rpl],1;
+										setd ".@encht_title"+.@i+"$",.@rTitle$[rand(getarraysize(.@rTitle$))];
+									}
+							}						
+						
+							if(.@x == 19)
+							{
+								set .@CatRef$,getd(".@encht_title"+.@i+"$");
+								set .@r1,atoi(getd("."+.@CatRef$+"_rate$[0]"));
+								set .@r2,atoi(getd("."+.@CatRef$+"_rate$[1]"));
+								set .@r3,atoi(getd("."+.@CatRef$+"_rate$[2]"));
+								
+								if(.@rate <= .@r1 && .@r1)		//Check S
+									set .@rCat,0;
+								else if(.@rate <= .@r2 && .@r2)	//Check A
+									set .@rCat,1;
+								else if(.@rate <= .@r3 && .@r3)	//Check B
+									set .@rCat,2;
+								else							//Set C
+									set .@rCat,3;								
+								
+								
+								setd ".@Cat"+.@i+"$",.Cat$[.@rCat];
+								setd ".@Cor"+.@i+"$",.Cor$[.@rCat];
+								set .@arrRef$,""+.@CatRef$+"_"+getd(".@Cat"+.@i+"$")+"";
+								
+								copyarray .@itens$[0],getd("."+.@arrRef$+"$[0]"),getarraysize(getd("."+.@arrRef$+"$"));
+								
+								set .@size,getarraysize(.@itens$);	
+								
+								if(.@size == 1) setd ".@item"+.@i+"",atoi(.@itens$[0]);
+								else setd ".@item"+.@i+"",atoi(.@itens$[rand(.@size)]);
+								
+								deletearray .@itens$[0],getarraysize(.@itens$);
+							}
+						}
+						
+							mes "^"+.@Cor0$+"["+.@Cat0$+"] Enchantment 1: ("+(.@item0?"<ITEM>"+getitemname(.@item0)+"<INFO>"+.@item0+"</INFO></ITEM>":.@encht_title0$)+")^000000";
+						if(.@total_enchant >= 2)
+							mes "^"+.@Cor1$+"["+.@Cat1$+"] Enchantment 2: ("+(.@item1?"<ITEM>"+getitemname(.@item1)+"<INFO>"+.@item1+"</INFO></ITEM>":.@encht_title1$)+")^000000";
+						if(.@total_enchant >= 3)
+							mes "^"+.@Cor2$+"["+.@Cat2$+"] Enchantment 3: ("+(.@item2?"<ITEM>"+getitemname(.@item2)+"<INFO>"+.@item2+"</INFO></ITEM>":.@encht_title2$)+")^000000";
+						if(.@total_enchant == 4)
+							mes "^"+.@Cor3$+"["+.@Cat3$+"] Enchantment 4: ("+(.@item3?"<ITEM>"+getitemname(.@item3)+"<INFO>"+.@item3+"</INFO></ITEM>":.@encht_title3$)+")^000000";
+						sleep2 75;
+					}
+					set .@opt,select("ทำ Enchantment ใหม่:Enchant");
+					
+					if(.@opt == 2)
+					{
+						clear;
+						set .@mn,2;
+						mes "[Mir4 Enchant]";
+						
+						if(getequipid(.@part) != .@id_equipped)
+						{ mes "มีบางอย่างผิดพลาด~!"; break; }
+						
+						unequip .@part;
+						
+						if(!countitem3(.@id_equipped,1,.@ref,0,.@card0,.@card1,.@card2,.@card3,.@RoaID,.@RoaValue,.@RoaParam))
+						{ mes "มีบางอย่างผิดพลาด~!"; break; }
+						
+						soundeffect "mir4_encht.wav",0;
+						mes "สมบูรณ์แบบ!!";
+						mes "ไอเท็มของคุณถูก enchanted. เเล้ว";
+						
+						delitem3 .@id_equipped,1,1,.@ref,0,.@card0,.@card1,.@card2,.@card3,.@RoaID,.@RoaValue,.@RoaParam;
+						
+						for(set .@c,0; .@c<.@total_enchant; set .@c,.@c+1)
+							setd ".@card"+(3-.@c)+"",getd(".@item"+.@c+"");
+						
+						getitem3 .@id_equipped,1,1,.@ref,0,.@card0,.@card1,.@card2,.@card3,.@RoaID,.@RoaValue,.@RoaParam;
+						equip .@id_equipped;
+						break;
+					}
+					else
+					{
+						set .@item0,0;
+						set .@item1,0;
+						set .@item2,0;
+						set .@item3,0;
+					}
+				}
+				
+			} while(.@mn==1);
+			break;
+			
+		case 2:
+			mes "[Mir4 Enchant]";
+			mes "ฉันสามารถเสริมความแข็งแกร่งให้กับอุปกรณ์ของคุณได้โดยใช้ enchantment...";
+			next;
+			mes "[Mir4 Enchant]";
+			mes "เพื่อให้เป็นไปได้ อุปกรณ์ของคุณไม่สามารถมีช่องใส่การ์ด 4 ช่องและไม่สามารถจำกัดได้";
+			next;
+			mes "[Mir4 Enchant]";
+			mes "นอกจากอุปกรณ์แล้ว ฉันยังต้องการ:";
+			
+			for(set .@r,0; .@r<getarraysize(.req); set .@r,.@r+2)
+			{
+				if(.req[.@r] > 1)
+					mes "[>] ^10a4e8"+.req[(.@r+1)]+"x "+getitemname(.req[.@r])+"^000000";
+				if(.req[.@r] == -1)
+					{ mes "[>] ^10a4e8"+callfunc("F_InsertComma",.req[(.@r+1)])+" zenys^000000"; }
+			}
+			
+			next;
+			mes "[Mir4 Enchant]";
+			mes "การร่ายมนตร์จะปรากฏขึ้นทันทีที่คุณเลือก \"Reveal Enchantment\", จากนั้นคุณสามารถใช้การร่ายมนตร์กับไอเท็มหรือสร้างการเปิดเผยอื่นได้";
+			next;
+			mes "[Mir4 Enchant]";
+			mes "หากไอเท็มมีมนต์เสน่ห์อยู่แล้ว เมื่อคุณใช้สิ่งที่เปิดเผย มันจะมาแทนที่มนต์เสน่ห์ที่ใช้กับอุปกรณ์แล้ว";
+			break;
+		
+		case 3:
+			mes "[Mir4 Enchant]";
+			mes "ในเมนูคุณสามารถตรวจสอบได้ว่าเครื่องรางใดบ้างที่สามารถเปิดเผยได้และมีโอกาส!";
+			next;
+			set .@optE,(select(implode(.Title$,":"))-1);
+			set .@title$,.Title$[.@optE];
+			
+			copyarray .@rate$[0],getd("."+.@title$+"_rate$[0]"),getarraysize(getd("."+.@title$+"_rate$[0]"));
+			copyarray .@s$[0],getd("."+.@title$+"_S$[0]"),getarraysize(getd("."+.@title$+"_S$[0]"));
+			copyarray .@a$[0],getd("."+.@title$+"_A$[0]"),getarraysize(getd("."+.@title$+"_A$[0]"));
+			copyarray .@b$[0],getd("."+.@title$+"_B$[0]"),getarraysize(getd("."+.@title$+"_B$[0]"));
+			copyarray .@c$[0],getd("."+.@title$+"_C$[0]"),getarraysize(getd("."+.@title$+"_C$[0]"));
+			
+			for(set .@i,0; .@i<4; set .@i,.@i+1)
+			{
+				clear;
+				mes "[Mir4 Enchant]";
+				
+				switch(.@i)
+				{
+					case 0:
+						if(!atoi(.@c$[0]))
+						{
+							mes "Enchantment C:";
+							mes "^bbbac2<No Enchantments!>^000000";
+							break;
+						}
+						set .@BaseC,(1000-(atoi(.@rate$[0])+atoi(.@rate$[1])+atoi(.@rate$[2])));
+						set .@calc1,((.@BaseC*100)/1000);
+						set .@calc2,((.@BaseC*100)%1000);
+						mes "^3a18f5~> "+.@title$+"^000000";
+						mes "^"+.Cor$[3]+"Enchantment [C]^000000";
+						mes "^f74a9eChance: "+.@calc1+""+(.@calc2?"."+substr(""+.@calc2,0,1):"")+"%^000000";
+						mes "=====================";
+						
+						for(set .@x,0; .@x<getarraysize(.@c$); set .@x,.@x+1)
+							mes "<ITEM>"+getitemname(atoi(.@c$[.@x]))+"<INFO>"+.@c$[.@x]+"</INFO></ITEM>";
+						break;
+					
+					case 1:
+						if(!atoi(.@b$[0]))
+						{
+							mes "Enchantment B:";
+							mes "^bbbac2<No Enchantments!>^000000";
+							break;
+						}
+						set .@BaseB,atoi(.@rate$[2]);
+						set .@calc1,((.@BaseB*100)/1000);
+						set .@calc2,((.@BaseB*100)%1000);
+						mes "^3a18f5~> "+.@title$+"^000000";
+						mes "^"+.Cor$[2]+"Enchantment [B]^000000";
+						mes "^f74a9eChance: "+.@calc1+""+(.@calc2?"."+substr(""+.@calc2,0,1):"")+"%^000000";
+						mes "=====================";
+						
+						for(set .@x,0; .@x<getarraysize(.@b$); set .@x,.@x+1)
+							mes "<ITEM>"+getitemname(atoi(.@b$[.@x]))+"<INFO>"+.@b$[.@x]+"</INFO></ITEM>";
+						break;
+					
+					case 2:
+						if(!atoi(.@a$[0]))
+						{
+							mes "Enchantment A:";
+							mes "^bbbac2<No Enchantments!>^000000";
+							break;
+						}
+						set .@BaseA,atoi(.@rate$[1]);
+						set .@calc1,((.@BaseA*100)/1000);
+						set .@calc2,((.@BaseA*100)%1000);
+						mes "^3a18f5~> "+.@title$+"^000000";
+						mes "^"+.Cor$[1]+"Enchantment [A]^000000";
+						mes "^f74a9eChance: "+.@calc1+""+(.@calc2?"."+substr(""+.@calc2,0,1):"")+"%^000000";
+						mes "=====================";
+						
+						for(set .@x,0; .@x<getarraysize(.@a$); set .@x,.@x+1)
+							mes "<ITEM>"+getitemname(atoi(.@a$[.@x]))+"<INFO>"+.@a$[.@x]+"</INFO></ITEM>";
+						break;
+					
+					case 3:
+						if(!atoi(.@s$[0]))
+						{
+							mes "Enchantment S:";
+							mes "^bbbac2<No Enchantments!>^000000";
+							break;
+						}
+						set .@BaseS,atoi(.@rate$[0]);
+						set .@calc1,((.@BaseS*100)/1000);
+						set .@calc2,((.@BaseS*100)%1000);
+						mes "^3a18f5~> "+.@title$+"^000000";
+						mes "^"+.Cor$[0]+"Enchantment [S]^000000";
+						mes "^f74a9eChance: "+.@calc1+""+(.@calc2?"."+substr(""+.@calc2,0,1):"")+"%^000000";
+						mes "=====================";
+						
+						for(set .@x,0; .@x<getarraysize(.@s$); set .@x,.@x+1)
+							mes "<ITEM>"+getitemname(atoi(.@s$[.@x]))+"<INFO>"+.@s$[.@x]+"</INFO></ITEM>";
+						break;
+				}
+				if((.@i+1) == 4) break;
+				else next;
+			}
+			break;
+	}
+	close;
+
+
+OnInit:
+
+	//========= Config =========
+	//==
+	//==
+	//Equip Slot that can be enchanted (just remove if you don't want a type in list)
+	//==
+	setarray .indices[0], EQI_HEAD_TOP, EQI_ARMOR, EQI_HAND_L, EQI_HAND_R, EQI_GARMENT, EQI_SHOES, EQI_ACC_L, EQI_ACC_R, EQI_HEAD_MID, EQI_HEAD_LOW;
+	
+	//Restricted Items (item_id,item_id,...) (cannot be enchanted)
+	//==
+	setarray .item_block[0],0;
+	
+	//Enchantment Repeat (0= Allows you to repeat Enchantments in another slot, 1= does not allow you to repeat)
+	//==
+	set .Repeat,1;
+	
+	//Colors & Category (do not change the order!)
+	//==
+	setarray .Cor$[0],"f7bd1e","9025f5","3387f5","45f588";
+	setarray .Cat$[0],"S","A","B","C";
+	
+	//Material Required to enchant (to define value in zeny use -1,value).
+	//==
+	setarray .req[0],
+		720,5,			//5x Aquamarine
+		607,1,			//1x Ygg
+		-1,100000;		//100k zenys
+
+	//========= Enchants Set =========
+	//==
+	//==
+	
+	//Title / Info (To create a new set of Enchantments, you need to add the title, and the var must have the same name when defining the related configs!)
+	//==
+	setarray .Title$[0],"Str","Agi","Vit","Int","Dex","Luk","MatkRate","Evasion","Fatal","HpRate","Mixed";
+
+	//======= (rate: 1= 0,1, 10= 1%, 100= 10%, 1000= 100%)
+	
+	//Set config to Str
+	//==
+	setarray .Str_rate$[0],51,150,300;				//Rate for Rarity Str: S= 5.10%, A= 15%, B= 30%, C= 49,90% (the total sum of the chances must be equal to 1000, the chance of C will be the difference to 1000)
+	setarray .Str_S$[0],4709;						//EnchantID para raridade S
+	setarray .Str_A$[0],4708,4707,4706,4705;		//EnchantID para raridade A
+	setarray .Str_B$[0],4704,4703,4702,4701;		//EnchantID para raridade B
+	setarray .Str_C$[0],4700;						//EnchantID para raridade C
+	
+	//Set config to Agi
+	//==
+	setarray .Agi_rate$[0],50,150,300;				//Rate for Rarity Agi: S= 5%, A= 15%, B= 30%, C= 50% (the total sum of the chances must be equal to 1000, the chance of C will be the difference to 1000)
+	setarray .Agi_S$[0],4739;						//EnchantID para raridade S
+	setarray .Agi_A$[0],4738,4737,4736,4735;		//EnchantID para raridade A
+	setarray .Agi_B$[0],4734,4733,4732,4731;		//EnchantID para raridade B
+	setarray .Agi_C$[0],4730;						//EnchantID para raridade C
+	
+	//Set config to Vit
+	//==
+	setarray .Vit_rate$[0],50,150,300;				//Rate for Rarity Vit: S= 5%, A= 15%, B= 30%, C= 50% (the total sum of the chances must be equal to 1000, the chance of C will be the difference to 1000)
+	setarray .Vit_S$[0],4749;						//EnchantID para raridade S
+	setarray .Vit_A$[0],4748,4747,4746,4745;		//EnchantID para raridade A
+	setarray .Vit_B$[0],4741,4742,4743,4744;		//EnchantID para raridade B
+	setarray .Vit_C$[0],4740;						//EnchantID para raridade C
+	
+	//Set config to Int
+	//==
+	setarray .Int_rate$[0],50,150,300;				//Rate for Rarity Int: S= 5%, A= 15%, B= 30%, C= 50% (the total sum of the chances must be equal to 1000, the chance of C will be the difference to 1000)
+	setarray .Int_S$[0],4719;						//EnchantID para raridade S
+	setarray .Int_A$[0],4718,4717,4716,4715;		//EnchantID para raridade A
+	setarray .Int_B$[0],4714,4713,4712,4711;		//EnchantID para raridade B
+	setarray .Int_C$[0],4710;						//EnchantID para raridade C
+	
+	//Set config to Dex
+	//==
+	setarray .Dex_rate$[0],50,150,300;				//Rate for Rarity Dex: S= 5%, A= 15%, B= 30%, C= 50% (the total sum of the chances must be equal to 1000, the chance of C will be the difference to 1000)
+	setarray .Dex_S$[0],4729;						//EnchantID para raridade S
+	setarray .Dex_A$[0],4728,4727,4726,4725;		//EnchantID para raridade A
+	setarray .Dex_B$[0],4724,4723,4722,4721;		//EnchantID para raridade B
+	setarray .Dex_C$[0],4720;						//EnchantID para raridade C
+	
+	//Set config to Luk
+	//==
+	setarray .Luk_rate$[0],50,150,300;				//Rate for Rarity Luk: S= 5%, A= 15%, B= 30%, C= 50% (the total sum of the chances must be equal to 1000, the chance of C will be the difference to 1000)
+	setarray .Luk_S$[0],4759;						//EnchantID para raridade S
+	setarray .Luk_A$[0],4758,4757,4756,4755;		//EnchantID para raridade A
+	setarray .Luk_B$[0],4751,4752,4753,4754;		//EnchantID para raridade B
+	setarray .Luk_C$[0],4750;						//EnchantID para raridade C
+	
+	//Set config to MatkRate
+	//==
+	setarray .MatkRate_rate$[0],0,150,300;			//Rate for Rarity MatkRate: S= 0%, A= 15%, B= 30%, C= 55% (the total sum of the chances must be equal to 1000, the chance of C will be the difference to 1000)
+	setarray .MatkRate_S$[0],0;						//EnchantID para raridade S
+	setarray .MatkRate_A$[0],4806;					//EnchantID para raridade A
+	setarray .MatkRate_B$[0],4761;					//EnchantID para raridade B
+	setarray .MatkRate_C$[0],4760;					//EnchantID para raridade C
+	
+	//Set config to Evasion
+	//==
+	setarray .Evasion_rate$[0],70,110,350;			//Rate for Rarity Evasion: S= 7%, A= 11%, B= 35%, C= 47% (the total sum of the chances must be equal to 1000, the chance of C will be the difference to 1000)
+	setarray .Evasion_S$[0],4763;					//EnchantID para raridade S
+	setarray .Evasion_A$[0],4762,29238;				//EnchantID para raridade A
+	setarray .Evasion_B$[0],4860;					//EnchantID para raridade B
+	setarray .Evasion_C$[0],4859;					//EnchantID para raridade C
+	
+	//Set config to Fatal
+	//==
+	setarray .Fatal_rate$[0],20,110,350;			//Rate for Rarity Fatal: S= 2%, A= 11%, B= 35%, C= 52% (the total sum of the chances must be equal to 1000, the chance of C will be the difference to 1000)
+	setarray .Fatal_S$[0],4866;						//EnchantID para raridade S
+	setarray .Fatal_A$[0],4865;						//EnchantID para raridade A
+	setarray .Fatal_B$[0],4864;						//EnchantID para raridade B
+	setarray .Fatal_C$[0],4863;						//EnchantID para raridade C
+	
+	//Set config to HpRate
+	//==
+	setarray .HpRate_rate$[0],120,110,350;			//Rate for Rarity HpRate: S= 12%, A= 11%, B= 35%, C= 42% (the total sum of the chances must be equal to 1000, the chance of C will be the difference to 1000)
+	setarray .HpRate_S$[0],4900;					//EnchantID para raridade S
+	setarray .HpRate_A$[0],4868;					//EnchantID para raridade A
+	setarray .HpRate_B$[0],4867;					//EnchantID para raridade B
+	setarray .HpRate_C$[0],4861,4862;				//EnchantID para raridade C
+	
+	//Set config to Mixed
+	//==
+	setarray .Mixed_rate$[0],0,200,0;			//Rate for Rarity Mixed: S= 0%, A= 20%, B= 0%, C= 80% (the total sum of the chances must be equal to 1000, the chance of C will be the difference to 1000)
+	setarray .Mixed_S$[0],0;															//EnchantID para raridade S
+	setarray .Mixed_A$[0],4958,4959,4960,4961,4962,4963,4964,4965,4966,4967,4968,4969;	//EnchantID para raridade A
+	setarray .Mixed_B$[0],0;															//EnchantID para raridade B
+	setarray .Mixed_C$[0],4786,4791,4795,4802,4811;										//EnchantID para raridade C
+}
