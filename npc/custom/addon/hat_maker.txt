@@ -1,0 +1,2858 @@
+//===== eAthena Script =======================================
+//= Headgear Maker NPC
+//===== By: ==================================================
+//= Glavor (for TrifectaRO)
+//= Yuki (HatsukoiRO)
+//===== Current Version: =====================================
+//= 2.2
+//===== Compatible With: =====================================
+//= TXT & SQL, Any version (I hope)
+//===== Description: =========================================
+//= Makes geadgears when brought the required items.
+//= Fixed a couple of errors
+//============================================================
+
+morocc,157,88,5	script	ผู้สร้างหมวก	90,{
+  mes "[ผู้สร้างหมวก]";  
+	mes " ฉันสามารถช่วยคุณทำหมวกได้เกือบทุกชนิด";
+	mes "ถ้าคุณนำสิ่งของที่ถูกต้องมาให้ฉัน";
+	goto H_top;
+
+H_top:
+	menu "A-E",H_ae,"F-J",H_fj,"K-O",H_ko,"P-T",H_pt,"U-Z",H_uz,"Cancel",H_cancel;
+
+//_____________Hat List_______________//
+
+H_ae:
+menu "Alarm Mask",I_alarm,
+	"Alice Doll",I_alice,
+//	"Angeling Hat",I_angeling,
+	"Angeling Pin",I_angelp,
+	"Angel Wing Ears",I_angel,
+	"Anonymity Request",I_anon,
+	"Antlers",I_antler,
+	"Autumn Leaves",I_autumn,
+	"Ayam",I_ayam,
+	"Baby Pacifier",I_bpac,
+	"Bandit Beard",I_bandit,
+	"Baseball Cap",I_base,
+	"Beanie",I_beanie,
+	"Bell Ribbon",I_bellr,
+	"Binoculars",I_bino,
+	"Bird Nest",I_bird,
+	"Black Bunny Band",I_rabbit,
+	"Black Cat Ears",I_bcat,
+	"Black Ribbon",I_bribbon,
+	"Blank Eyes",I_blank,
+	"Blue Fish",I_bfish,
+	"Blue Hairband",I_bhair,
+	"Blush",I_blush,
+	"Boys Cap",I_boy,
+	"Bride's Mask",I_bride,
+	"Bulb Hat",I_bulb,
+	"Bunny Band",I_bunbun,
+	"Bunny Top Hat",I_bunny,
+	"Cake Hat",I_cake,
+	"Candle",I_candle,
+	"Captain Hat",I_captain,
+	"Cat Helm",I_cath,
+	"Chef Hat",I_chef,
+	"Cookie Hat",I_cookie,
+	"Cappola",I_cappola,
+	"Cowboy Hat",I_cow,
+	"Crescent Hairpin",I_cpin,
+	"Cross Hat",I_cross,
+	"Crown of Ancient Queen",I_aqueen,
+	"Crown of Mistress",I_mistress,
+	"Crunch Toast",I_toast,
+	"Cyclop's Eye",I_cyclop,
+	"Decorative Geogropher",I_dgeo,
+	"Decorative Gold Bell",I_dgoldb,
+	"Decorative Mushroom",I_dmush,
+	"Deviling Hat",I_devil,
+	"Deviruchi Hat",I_devir,
+	"Doctor Band",I_doctor,
+	"Dokebi's Wig",I_dokebi,
+	"Drooping Bunny",I_droopb,
+	"Drooping Cat",I_droopc,
+	"Drooping Lif",I_droopl,
+	"Drooping Ninetails",I_droopn,
+	"Ear Muffs",I_ear,
+	"Ear Muffs Hat",I_earh,
+	"Elephant Hat",I_ele,
+	"Emeror's Laurel Crown",I_elaurel,
+	"Evil Wing Ears",I_evil,
+	"Executioner Hood",I_exec,
+	"กลับสู่เมนู",H_top;
+	
+H_fj:
+menu	"Fashionable Glasses",I_fashion,
+	"Feather Beret",I_fberet,
+	"Fish Head Hat",I_fishh,
+	"Flower Crown",I_flowerc,
+	"Flower Hairpin",I_hflower,
+	"Flower Lily",I_flowerl,
+//	"Flying Angel",I_fangel,
+	"Fruit of Love",I_fruit,
+	"Gambler Hat",I_gambler,
+	"Giant Bandaid",I_gband,
+	"Golden Tiara",I_gtiara,
+	"Green Ribbon",I_gribbon,
+	"Gried For Greed",I_grief,
+	"Hahoe Mask",I_hahoe,
+//	"Hat of the Sun God",I_sungod,
+	"Headset",I_head,
+	"Heart Hairpin",I_heart,
+	"Helm of Angel",I_helma,
+	"Helm of Orc Hero",I_orch,
+	"Hot-Blooded Headband",I_hotb,
+	"Indian Headband",I_indian,
+	"Judge Hat",I_judge,
+	"กลับสู่เมนู",H_top;
+	
+H_ko:
+menu	"Kabuki Mask",I_kabuki,
+	"Kafra Band",I_kafra,
+	"Kawaii Ribbon",I_kawaii,
+	"Kitsune Mask",I_kitsune,
+	"Laurel Crown",I_laurel,
+	"Lazy Smokie",I_lsmokie,
+	"Lion Mask",I_lion,
+	"Lion Masquerade",I_lionm,
+	"Hibiscus",I_hibiscus,
+	"Mage Hat",I_mage,
+	"Magic Eyes",I_meyes,
+	"Magician Hat",I_magic,
+	"Maiden Twin Ribbon",I_maiden,
+	"Mine Hat",I_mine,
+	"Model Training Hat",I_model,
+	"Mr. Smile",I_smile,
+	"Mystic Rose",I_mystic,
+	"Neko Mimi",I_mimi,
+	"Nest Hat",I_nest,
+	"Opera Phantom Mask",I_operap,
+	"Opera Mask",I_opera,
+	"Orange Ribbon",I_oribbon,
+	"Oxygen Mask",I_oxy,
+	"กลับสู่เมนู",H_top;
+	
+H_pt:
+menu	"Pagdayaw",I_pagdayaw,
+	"Parcel Hat",I_parcel,
+	"Party Hat",I_party,
+	"Peco Peco Hairband",I_peco,
+	"Phoenix Crown",I_phoenix,
+	"Pink Ribbon",I_pribbon,
+	"Poring Tower",I_tower,
+	"Poporing Hat",I_poporing,
+	"Pretend Murdered",I_pretend,
+	"Pumpkin Hat",I_pumpkin,
+	"Puppy Hat",I_puppy,
+	"Raccoon Hat",I_raccoon,
+	"Rainbow Eggshell",I_rainbow,
+	"Red Bonnet",I_bonnet,
+	"Red Glasses",I_rglasses,
+	"Red Ribbon",I_ribbon,
+	"Renown Detective's Cap",I_detective,
+	"Ribbon Hat",I_ribbonh,
+	"Rideword Hat",I_rideword,
+	"Sakkat",I_sakkat,
+	"Sales Banner",I_sales,
+	"Sambrero",I_sambrero,
+	"Sea Otter Hat",I_otter,
+	"Sheep Hat",I_sheep,
+	"Smiling Mask",I_smiling,
+	"Smokie Leaf",I_sleaf,
+	"Solar Panels",I_solar,
+	"Soul Ring",I_soul,
+	"Spore Hat",I_spore,
+	"Stop Post",I_stop,
+	"Straw Hat",I_straw,
+	"Striped Hairband",I_striped,
+	"Summer Hat",I_summer,
+	"Sunday Hat",I_sunday,
+	"Sunflower Hairpin",I_sunflower,
+	"Teddy Bear Hat",I_teddy,
+	"Tulip Hairpin",I_tulip,
+	"กลับสู่เมนู",H_top;
+	
+H_uz:
+menu	
+	"Valkyrie Helm",I_valk,
+	"Valkyrie Feather Band",I_valkf,
+	"Vane Hairpin",I_vane,
+	"Victory Wings",I_victory,
+	"Wandering Minstrel Hat",I_wander,
+	"Water Lily Crown",I_wlily,
+	"Welding Mask",I_weld,
+	"Whisper Mask",I_whisp,
+	"White Petal",I_wpetal,
+	"White Ribbon",I_wribbon,
+	"Winter Hat",I_winter,
+	"Wonder Nutshell",I_wonder,
+	"X Hairpin",I_xhair,
+	"Yellow Bandana",I_bandana,
+	"Yellow Ribbon",I_yribbon,
+	"Yellow Ribbon Hairband",I_yband,
+	"Zealotus Mask",I_zealot,
+	"กลับสู่เมนู",H_top;
+
+//_____________Item requirements_______________//
+
+//________model___________//
+//I_:
+//	next;
+//	mes "";
+//	menu "สร้างหมวก",M_,"กลับสู่เมนู",H_top;
+		
+I_alarm:
+	next;
+	mes "1x Mr. Scream";
+	mes "3000x Clock Hands";
+	menu "สร้างหมวก",M_alarm,"กลับสู่เมนู",H_top;
+
+I_alice:
+	next;
+	mes "5x Marionett Dolls";
+	mes "500x Alice Aprons";
+	mes "500x Soft Aprons";
+	menu "สร้างหมวก",M_alice,"กลับสู่เมนู",H_top;
+
+I_angel:
+	next;
+	mes "1x Elven Ears";
+	mes "1x Angel Wing";
+	mes "20,000z";
+	menu "สร้างหมวก",M_angel,"กลับสู่เมนู",H_top;
+	
+//I_angeling:
+//	next;
+//	mes "5x Poring Hat";
+//	mes "1x Angel Wing Ears";
+//	mes "1x Emperium";
+//	mes "5x Steel";
+//	menu "สร้างหมวก",M_angeling,"กลับสู่เมนู",H_top;
+	
+I_angelp:
+	next;
+	mes "1x Angeling Hat";
+	mes "1x Stellar Hairpin";
+	menu "สร้างหมวก",M_angelp,"กลับสู่เมนู",H_top;
+
+I_anon:
+	next;
+	mes "100x Slick Paper";
+	mes "99x Sticky Mucus";
+	mes "1x Black Dyestuff";
+	mes "100,000z";
+	menu "สร้างหมวก",M_anon,"กลับสู่เมนู",H_top;
+
+I_antler:
+	next;
+	mes "20x Evil Horn";
+	menu "สร้างหมวก",M_antler,"กลับสู่เมนู",H_top;
+
+I_aqueen:
+	next;
+	mes "1x Queen's Hair Orniment";
+	mes "1x Emperium";
+	mes "3x Gold";
+	menu "สร้างหมวก",M_aqueen,"กลับสู่เมนู",H_top;
+
+I_autumn:
+	next;
+	mes "200x Huge Leaf";
+	mes "40x Burning Heart";
+	menu "สร้างหมวก",M_autumn,"กลับสู่เมนู",H_top;
+	
+I_ayam:
+	next;
+	mes "7x Red Bijou";
+	mes "7x Yellow Bijou";
+	mes "7x Blue Bijou";
+	mes "7x Green Bijou";
+	mes "300x Shining Scale";
+	mes "1x Scarlet Dyestuff";
+	mes "5x Cracked Diamonds";
+	mes "50x Soft Silk";
+	menu "สร้างหมวก",M_ayam,"กลับสู่เมนู",H_top;
+
+I_bandana:
+	next;
+	mes "1x Yellow Ribbon Hairband";
+	mes "200x Yellow Herb";
+	menu "สร้างหมวก",M_bandana,"กลับสู่เมนู",H_top;
+
+I_bandit:
+	next;
+	mes "100x Black Hair";
+	mes "1x Black Dyestuff";
+	mes "1x Grandpa Beard";
+	menu "สร้างหมวก",M_bandit,"กลับสู่เมนู",H_top;
+
+I_base:
+	next;
+	mes "1x Cap[1]";
+	mes "1x Cobaltblue Dystuff";
+	mes "100x Moth Dust";
+	menu "สร้างหมวก",M_base,"กลับสู่เมนู",H_top;
+
+I_bcat:
+	next;
+	mes "1x Kitty Band";
+	mes "1x Black Dyestuff";
+	mes "200x Fluff";
+	mes "10,000z";
+	menu "สร้างหมวก",M_bcat,"กลับสู่เมนู",H_top;
+
+I_beanie:
+	next;
+	mes "1x Cap[1]";
+	mes "500x Yarn";
+	menu "สร้างหมวก",M_beanie,"กลับสู่เมนู",H_top;
+
+I_bellr:
+	next;
+	mes "8x Gold";
+	mes "2x Golden Bell";
+	mes "1x Red Ribbon";
+	menu "สร้างหมวก",M_bellr,"กลับสู่เมนู",H_top;
+
+I_bfish:
+	next;
+	mes "1x Rotten Fish";
+	mes "300x Stinky Scale";
+	mes "50x Raw Fish";
+	mes "1x Fish Tail";
+	menu "สร้างหมวก",M_bfish,"กลับสู่เมนู",H_top;
+
+I_bhair:
+	next;
+	mes "1x Bandana";
+	mes "1x Cobaltblue Dyestuff";
+	mes "300x Anolian Skin";
+	menu "สร้างหมวก",M_bhair,"กลับสู่เมนู",H_top;
+
+I_bino:
+	next;
+	mes "1x Geek Glasses";
+	mes "100x Steel";
+	mes "50,000z";
+	menu "สร้างหมวก",M_bino,"กลับสู่เมนู",H_top;
+
+I_bird:
+	next;
+	mes "100x Dead Branch";
+	mes "100x Feather of birds";
+	menu "สร้างหมวก",M_bird,"กลับสู่เมนู",H_top;
+
+I_blank:
+	next;
+	mes "2x Cat's Eye";
+	mes "1x Angled Glasses";
+	mes "2x Monocle";
+	mes "150x Lemons";
+	menu "สร้างหมวก",M_blank,"กลับสู่เมนู",H_top;
+
+I_blush:
+	next;
+	mes "100x Alice Apron";
+	menu "สร้างหมวก",M_blush,"กลับสู่เมนู",H_top;
+
+I_bonnet:
+	next;
+	mes "1x Green Lace";
+	mes "1x Silk Ribbon";
+	mes "1X Sunday Hat";
+	mes "1x Scarlet Dyestuff";
+	mes "50,000z";
+	menu "สร้างหมวก",M_bonnet,"กลับสู่เมนู",H_top;
+
+I_boy:
+	next;
+	mes "10x Tiger's Footskin";
+	menu "สร้างหมวก",M_boy,"กลับสู่เมนู",H_top;
+
+I_bpac:
+	next;
+	mes "2x Royal Jelly";
+	mes "1x Nursing Bottle";
+	mes "1x Nose Ring";
+	mes "1x Pacifier";
+	menu "สร้างหมวก",M_bpac,"กลับสู่เมนู",H_top;
+
+I_bribbon:
+	next;
+	mes "1x Ribbon";
+	mes "1x Black Dyestuff";
+	menu "สร้างหมวก",M_bribbon,"กลับสู่เมนู",H_top;
+
+I_bride:
+	next;
+	mes "1x 4 Leaf Clover";
+	mes "500x Trunk";
+	mes "10x Elastic Band";
+	mes "20x Skirt of Virgin";
+	mes "500x Transparent Celestial Robe";
+	mes "2x Ancient Lips";
+	mes "100x Squid Ink";
+	menu "สร้างหมวก",M_bride,"กลับสู่เมนู",H_top;
+
+I_bulb:
+	next;
+	mes "1x Circlet[1]";
+	mes "20x Glass Bead";
+	menu "สร้างหมวก",M_bulb,"กลับสู่เมนู",H_top;
+	
+I_bunbun:
+	next;
+	mes "100x Feather";
+	mes "1x Four Leaf Clover";
+	mes "1x Pearl";
+	mes "1x Kitty Band";
+	menu "สร้างหมวก",M_bunbun,"กลับสู่เมนู",H_top;
+I_bunny:
+	next;
+	mes "30 Carrot Juice";
+	mes "1x Silk Ribbon";
+	mes "6x Trap";
+	mes "10x Yarn";
+	mes "6x Trap";
+	mes "1 Green Live";
+	mes "1 Magician Hat";
+	mes "1 Bunny Band";
+	menu "สร้างหมวก",M_bunny,"กลับสู่เมนู",H_top;
+
+I_cake:
+	next;
+	mes "10x Candy";
+	mes "5x Candy Cane";
+	mes "20x Piece of Cake";
+	mes "10x Steel";
+	mes "15x Well-Baked Cookie";
+	menu "สร้างหมวก",M_cake,"กลับสู่เมนู",H_top;
+
+I_candle:
+	next;
+	mes "1x Bomb Wick";
+	mes "50x Matchstick";
+	mes "100x Royal Jelly";
+	menu "สร้างหมวก",M_candle,"กลับสู่เมนู",H_top;
+
+I_cappola:
+	next;
+	mes "1x Boys Cap";
+	mes "1x Violet Dyestuff";
+	mes "20x Rusty Screw";
+	menu "สร้างหมวก",M_cappola,"กลับสู่เมนู",H_top;
+
+I_captain:
+	next;
+	mes "5x Bucket Hat[1]";
+	mes "50x Mystic Frozen";
+	mes "1x Black Dyestuff";
+	mes "50x Aquamarine";
+	menu "สร้างหมวก",M_captain,"กลับสู่เมนู",H_top;
+
+I_cath:
+	next;
+	mes "1x Lemon Dyestuff";
+	mes "300x Golden Hair";
+	mes "100x Nine Tails";
+	mes "5x Puppy Love";
+	menu "สร้างหมวก",M_cath,"กลับสู่เมนู",H_top;
+
+I_chef:
+	next;
+	mes "450x Dragon Scale";
+	mes "330x Feather";
+	mes "120x Piece of Cake";
+	mes "1x White Dyestuff";
+	menu "สร้างหมวก",M_chef,"กลับสู่เมนู",H_top;
+
+I_chelm:
+	next;
+	mes "1x Bone Helm";
+	mes "1x Helm[1]";
+	mes "1x Fin Helm";
+	mes "100x Helm of Dullahan";
+	mes "100x Dragon Skin";
+	mes "100x Dragon Scale";
+	mes "1x Darkgreen Dyestuff";
+	menu "สร้างหมวก",M_chelm,"กลับสู่เมนู",H_top;
+
+I_cookie:
+	next;
+	mes "1x Cookie Card";
+	mes "100x Well Baked Cookie";
+	mes "100x Candy Cane";
+	mes "50x Candy";
+	menu "สร้างหมวก",M_cookie,"กลับสู่เมนู",H_top;
+
+I_cow:
+	next;
+	mes "1x Western Grace";
+	mes "108x Claw of Desert Wolf";
+	mes "108x Soft Blade of Grass";
+	mes "4x Burning Hearts";
+	menu "สร้างหมวก",M_cow,"กลับสู่เมนู",H_top;
+
+I_cpin:
+	next;
+	mes "1x Heart Hairpin";
+	mes "10x Steel";
+	menu "สร้างหมวก",M_cpin,"กลับสู่เมนู",H_top;
+
+I_cross:
+	next;
+	mes "1x Rosary";
+	mes "500x Destroyed Armor";
+	menu "สร้างหมวก",M_cross,"กลับสู่เมนู",H_top;
+
+I_cyclop:
+	next;
+	mes "1x Blinker";
+	mes "1x Gold";
+	mes "1x Scarlet Dyestuff";
+	mes "5x Steel";
+	menu "สร้างหมวก",M_cyclop,"กลับสู่เมนู",H_top;
+
+I_dark:
+	next;
+	mes "100x Darkness Rune";
+	mes "200x Will of the Darkness";
+	mes "10x Blades of Darkness";
+	menu "สร้างหมวก",M_dark,"กลับสู่เมนู",H_top;
+
+I_detective:
+	next;
+	mes "1887x Tassel";
+	mes "1x Bucket Hat";
+	mes "10x Magnifier";
+	mes "5000z";
+	menu "สร้างหมวก",M_detective,"กลับสู่เมนู",H_top;
+
+I_devil:
+	next;
+	mes "1x Angeling Hat";
+	mes "1x Evil Wing Ears";
+	mes "1x Evil Wing";
+	mes "5x Blade of Darkness";
+	mes "1x Black Dyestuff";
+	menu "สร้างหมวก",M_devil,"กลับสู่เมนู",H_top;
+
+I_devir:
+	next;
+	mes "600x Little Evil Wing";
+	mes "40x Talon of Griffon";
+	menu "สร้างหมวก",M_devir,"กลับสู่เมนู",H_top;
+
+I_dgeo:
+	next;
+	mes "300x Maneater Blossom";
+	mes "100x Sharp Leaf";
+	mes "250x Stem";
+	menu "สร้างหมวก",M_dgeo,"กลับสู่เมนู",H_top;
+
+I_dgoldb:
+	next;
+	mes "1x Golden Bell";
+	mes "1x Emperium";
+	mes "3x Gold";
+	mes "20,000z";
+	menu "สร้างหมวก",M_dgoldb,"กลับสู่เมนู",H_top;
+
+I_dmush:
+	next;
+	mes "300x Mushroom Spore";
+	menu "สร้างหมวก",M_dmush,"กลับสู่เมนู",H_top;
+
+I_doctor:
+	next;
+	mes "1x Red Bandana";
+	mes "50x Iron";
+	mes "1x Cracked Diamond";
+	mes "3,500z";
+	menu "สร้างหมวก",M_doctor,"กลับสู่เมนู",H_top;
+	
+I_dokebi:
+	next;
+	mes "100x Fluff";
+	mes "1x Scarlet Dyestuff";
+	mes "1x Lemon Dyestuff";
+	mes "1x Cobaltblue Dyestuff";
+	menu "สร้างหมวก",M_dokebi,"กลับสู่เมนู",H_top;
+
+I_droopb:
+	next;
+	mes "1x Drooping Cat";
+	mes "1x Bunny Band";
+	mes "500x Feather";
+	mes "200x Fluff";
+	mes "1x Carrot Whip";
+	mes "50x Rainbow Carrot";	
+	menu "สร้างหมวก",M_droopb,"กลับสู่เมนู",H_top;
+
+I_droopc:
+	next;
+	mes "1x Circlet[1]";
+	mes "1x Black Dyestuff";
+	mes "300x Black Cat Doll";
+	mes "1x Claw of Desert Wolf";
+	menu "สร้างหมวก",M_droopc,"กลับสู่เมนู",H_top;
+
+I_droopl:
+	next;
+	mes "300x Blue Hair";
+	mes "30x Green Bijou";
+	mes "10x Marionette Doll";
+	mes "1x Darkgreen Dyestuff";
+	menu "สร้างหมวก",M_droopl,"กลับสู่เมนู",H_top;
+
+I_droopn:
+	next;
+	mes "1x Drooping Cat";
+	mes "250x Ninetails";
+	mes "100x Tiger Panty";
+	menu "สร้างหมวก",M_droopn,"กลับสู่เมนู",H_top;
+
+I_ear:
+	next;
+	mes "1x Cursed Ruby";
+	mes "1x Headset";
+	mes "200x Feather";
+	menu "สร้างหมวก",M_ear,"กลับสู่เมนู",H_top;
+
+I_earh:
+	next;
+	mes "1x Scarlet Dyestuff";
+	mes "1x Lemon Dyestuff";
+	mes "100x Fluff";
+	mes "150x Feather";
+	mes "25x Sea Otter Fur";
+	menu "สร้างหมวก",M_earh,"กลับสู่เมนู",H_top;
+
+I_elaurel:
+	next;
+	mes "1x Laurel Crown";
+	mes "100x Yggdrasil Leaf";
+	mes "25x 4 Leaf Clover";
+	mes "113x Soft Blade of Grass";
+	menu "สร้างหมวก",M_elaurel,"กลับสู่เมนู",H_top;
+
+I_ele:
+	next;
+	mes "1x Cobaltblue Dyestuff";
+	mes "100x Ice Heart";
+	mes "500x Feather";
+	mes "200x Acorn";
+	menu "สร้างหมวก",M_ele,"กลับสู่เมนู",H_top;
+
+I_evil:
+	next;
+	mes "1x Evil Wing";
+	mes "1x Elven Ears";
+	mes "20,000z";
+	menu "สร้างหมวก",M_evil,"กลับสู่เมนู",H_top;
+
+I_exec:
+	next;
+	mes "2x Executioner's Mitten";
+	mes "1x Somber Novice Hood";
+	mes "1x Black Dyestuff";
+	menu "สร้างหมวก",M_exec,"กลับสู่เมนู",H_top;
+
+//I_fangel:
+//	next;
+//	mes "10x Angel Wing";
+//	mes "50x Soft Feather";
+//	mes "200x Giant Butterfly Wing";
+//	mes "200x Yarn";
+//	menu "สร้างหมวก",M_fangel,"กลับสู่เมนู",H_top;
+
+I_fashion:
+	next;
+	mes "1x Jack Be Dandy";
+	mes "1x Scarlet Dyestuff";
+	menu "สร้างหมวก",M_fashion,"กลับสู่เมนู",H_top;
+
+I_fberet:
+	next;
+	mes "1x Beret";
+	mes "100x Soft Feather";
+	mes "1x White Dyestuff";
+	menu "สร้างหมวก",M_fberet,"กลับสู่เมนู",H_top;
+
+I_fishh:
+	next;
+	mes "2x Blue Fish";
+	menu "สร้างหมวก",M_fishh,"กลับสู่เมนู",H_top;
+
+I_flowerc:
+	next;
+	mes "100x Flower";
+	mes "5x Illusion Flower";
+	mes "5x Singing Flower";
+	mes "1x Wild Flower";
+	menu "สร้างหมวก",M_flowerc,"กลับสู่เมนู",H_top;
+	
+I_flowerl:
+	next;
+	mes "2x Lotus (Hibiscus)";
+	mes "1x White Dyestuff";
+	mes "5x Illusion Flower";
+	mes "1x Flower Hairpin";
+	menu "สร้างหมวก",M_flowerl,"กลับสู่เมนู",H_top;
+
+I_fruit:
+	next;
+	mes "1x X-Hairpin";
+	mes "100x Strawberry";
+	menu "สร้างหมวก",M_fruit,"กลับสู่เมนู",H_top;
+
+I_gambler:
+	next;
+	mes "1x Bunny Band";
+	mes "1x Hat[1]";
+	mes "25x Suspicious Hats";
+	mes "200x Star Dust";
+	menu "สร้างหมวก",M_gambler,"กลับสู่เมนู",H_top;
+
+I_gband:
+	next;
+	mes "1x Alcohol";
+	mes "500x Rotten Bandages";
+	menu "สร้างหมวก",M_gband,"กลับสู่เมนู",H_top;
+
+I_gribbon:
+	next;
+	mes "1x Ribbon";
+	mes "1x Darkgreen Dyestuff";
+	menu "สร้างหมวก",M_gribbon,"กลับสู่เมนู",H_top;
+
+I_grief:
+	next;
+	mes "1x Circlet[1]";
+	mes "1x Gold";
+	mes "20x Steel";
+	mes "80x Feather";
+	mes "800x Sticky Mucus";
+	menu "สร้างหมวก",M_grief,"กลับสู่เมนู",H_top;
+
+I_gtiara:
+	next;
+	mes "1x Tiara";
+	mes "3x Gold";
+	mes "4x Gold Ring";
+	mes "2x Gold Lux";
+	menu "สร้างหมวก",M_gtiara,"กลับสู่เมนู",H_top;
+
+I_hahoe:
+	next;
+	mes "1x 4 Leaf Clover";
+	mes "500x Trunk";
+	mes "10x Elastic Band";
+	mes "20x Memory Bookmark";
+	mes "1x Cigarette";
+	mes "100x Cactus Needles";
+	mes "100x Manes";
+	menu "สร้างหมวก",M_hahoe,"กลับสู่เมนู",H_top;
+
+I_head:
+	next;
+	mes "40x Steel";
+	mes "1x Oridicon";
+	mes "1x Alcohol";
+	mes "1x Coal";
+	menu "สร้างหมวก",M_head,"กลับสู่เมนู",H_top;
+	
+I_heart:
+	next;
+	mes "1200x Coral Reaf";
+	menu "สร้างหมวก",M_heart,"กลับสู่เมนู",H_top;
+
+I_helma:
+	next;
+	mes "1x Helm[1]";
+	mes "1x Angel Wing";
+	mes "5x Fang of Garm";
+	menu "สร้างหมวก",M_helma,"กลับสู่เมนู",H_top;
+
+I_hflower:
+	next;
+	mes "1x Romantic Flower";
+	mes "10x Steel";
+	mes "20,000z";
+	menu "สร้างหมวก",M_hflower,"กลับสู่เมนู",H_top;
+
+I_hibiscus:
+	next;
+	mes "1x Small Ribbon";
+	mes "5x Illusion Flower";
+	mes "1x Valhalla Flower";
+	mes "1x Scarlet Dyestuff";
+	menu "สร้างหมวก",M_hibiscus,"กลับสู่เมนู",H_top;
+
+I_hotb:
+	next;
+	mes "300x Red Muffler";
+	mes "300x Burning Heart";
+	mes "1x Bandana";
+	mes "1x White Dyestuff";
+	menu "สร้างหมวก",M_hotb,"กลับสู่เมนู",H_top;
+
+I_indian:
+	next;
+	mes "1x Indian Filet";
+	mes "1x Striped Headband";
+	mes "1x Peco Peco Feather";
+	mes "10,000z";
+	menu "สร้างหมวก",M_indian,"กลับสู่เมนู",H_top;
+
+I_judge:
+	next;
+	mes "7x Blue Bijou";
+	mes "7x Yellow Bijou";
+	mes "7x Red Bijou";
+	mes "7x Green Bijou";
+	mes "300x Shining Scale";
+	mes "1x Black Dyestuff";
+	mes "5x Cracked Diamond";
+	mes "1x Hat[1]";
+	menu "สร้างหมวก",M_judge,"กลับสู่เมนู",H_top;
+
+I_kabuki:
+	next;
+	mes "1x Goblin Leader Mask";
+	mes "300x Black Hair";
+	mes "1x Scarlet Dyestuff";
+	mes "1x White Dyestuff";
+	menu "สร้างหมวก",M_kabuki,"กลับสู่เมนู",H_top;
+
+I_kafra:
+	next;
+	mes "1x Flower Band";
+	mes "1x Hair Band";
+	mes "20x Soft Feather";
+	menu "สร้างหมวก",M_kafra,"กลับสู่เมนู",H_top;
+
+I_kawaii:
+	next;
+	mes "1x Small Ribbon";
+	mes "1x Big Ribbon";
+	mes "1x Black Ribbon";
+	mes "50x Soft Silk";
+	menu "สร้างหมวก",M_kawaii,"กลับสู่เมนู",H_top;
+
+I_kitsune:
+	next;
+	mes "999x Ninetails";
+	menu "สร้างหมวก",M_kitsune,"กลับสู่เมนู",H_top;
+
+I_laurel:
+	next;
+	mes "1x Flower Hairpin";
+	mes "100x Flower";
+	mes "150x Soft Grass";
+	mes "100x Fig Leaf";
+	mes "50x Hinalle Leaflet";
+	mes "50x Aloe Leaflet";
+	menu "สร้างหมวก",M_laurel,"กลับสู่เมนู",H_top;
+
+I_lion:
+	next;
+	mes "100x Horrendous Hair";
+	mes "150x Rotten Meat";
+	mes "30x Meat";
+	menu "สร้างหมวก",M_lion,"กลับสู่เมนู",H_top;
+	
+I_lionm:
+	next;
+	mes "1x 4 Leaf Clover";
+	mes "500x Trunk";
+	mes "10x Elastic Band";
+	mes "500x Horrendous Hair";
+	mes "2x Ancient Teeth";
+	mes "1x Orange Dyestuff";
+	menu "สร้างหมวก",M_lionm,"กลับสู่เมนู",H_top;
+
+I_lsmokie:
+	next;
+	mes "1000x Acorn";
+	mes "100x Sea Otter Fur";
+	mes "10x Raccon Leaf";
+	mes "1x Claw of Desert Wolf";
+	menu "สร้างหมวก",M_lsmokie,"กลับสู่เมนู",H_top;
+
+I_mage:
+	next;
+	mes "1x Wizard Hat";
+	mes "400x Dragon Scale";
+	mes "50x Mould Powder";
+	mes "1x Elder Willow Card";
+	menu "สร้างหมวก",M_mage,"กลับสู่เมนู",H_top;
+
+I_magic:
+	next;
+	mes "1x Wizard Hat";
+	mes "450x Ancient Lips";
+	mes "1200x Solid shell";
+	menu "สร้างหมวก",M_magic,"กลับสู่เมนู",H_top;
+
+I_maiden:
+	next;
+	mes "1x Small Ribbon";
+	mes "1x Decorative Golden Bell";
+	mes "2x Mystic Rose";
+	mes "1x Cobaltblue Dyestuff";
+	mes "1x Scarlet Dyestuff";
+	menu "สร้างหมวก",M_maiden,"กลับสู่เมนู",H_top;
+
+I_meyes:
+	next;
+	mes "1x Ulle's Cap";
+	mes "1x Mage Hat";
+	mes "50x Eye of Hellion";
+	mes "1x Violet Dyestuff";
+	menu "สร้างหมวก",M_meyes,"กลับสู่เมนู",H_top;
+
+I_mine:
+	next;
+	mes "1x Safety Hat";
+	mes "1x Candle";
+	mes "1x Crystal Mirror";
+	mes "25x Steel";
+	menu "สร้างหมวก",M_mine,"กลับสู่เมนู",H_top;
+
+I_mimi:
+	next;
+	mes "300x Tiger Panty";
+	mes "300x Leopard Skin";
+	mes "5x Tiger Skin";
+	menu "สร้างหมวก",M_mimi,"กลับสู่เมนู",H_top;
+
+I_mistress:
+	next;
+	mes "1x Coronet";
+	mes "1x Emperium";
+	mes "3x Gold";
+	mes "40,000z";
+	menu "สร้างหมวก",M_mistress,"กลับสู่เมนู",H_top;
+
+I_model:
+	next;
+	mes "1x Apple of Archer";
+	mes "1x Book[3]";
+	menu "สร้างหมวก",M_model,"กลับสู่เมนู",H_top;
+
+I_mystic:
+	next;
+	mes "10x 2carat Diamond";
+	mes "2x Witherless Rose";
+	mes "1x White Dyestuff";
+	mes "50,000z";
+	menu "สร้างหมวก",M_mystic,"กลับสู่เมนู",H_top;
+
+I_nest:
+	next;
+	mes "100x Dead Branch";
+	mes "100x Feather of Bird";
+	mes "100x Harpy Feather";
+	menu "สร้างหมวก",M_nest,"กลับสู่เมนู",H_top;
+
+I_nhead:
+	next;
+	mes "1x Headset";
+	mes "1x Cobaltblue Dyestuff";
+	mes "200x Crystal Blue";
+	menu "สร้างหมวก",M_nhead,"กลับสู่เมนู",H_top;
+
+I_orch:
+	next;
+	mes "100x Heroic Emblem";
+	mes "1x Orc Helm";
+	mes "1x Orcish Sword";
+	mes "1000x Orcish Voucher";
+	menu "สร้างหมวก",M_orch,"กลับสู่เมนู",H_top;
+
+I_opera:
+	next;
+	mes "20x Iron";
+	mes "1x Singing Plant";
+	menu "สร้างหมวก",M_opera,"กลับสู่เมนู",H_top;
+
+I_operap:
+	next;
+	mes "1x Opera Mask";
+	mes "50x Horrendous Hair";
+	menu "สร้างหมวก",M_operap,"กลับสู่เมนู",H_top;
+
+I_oribbon:
+	next;
+	mes "1x Ribbon";
+	mes "1x Orange Dyestuff";
+	menu "สร้างหมวก",M_oribbon,"กลับสู่เมนู",H_top;
+
+I_otter:
+	next;
+	mes "1x Raccon Hat";
+	mes "1x Smokie Leaf";
+	menu "สร้างหมวก",M_otter,"กลับสู่เมนู",H_top;
+
+I_oxy:
+	next;
+	mes "5x Ora Ora";
+	menu "สร้างหมวก",M_oxy,"กลับสู่เมนู",H_top;
+
+I_pagdayaw:
+	next;
+	mes "20x Blue Tinted Feather";
+	mes "20x Red Tinted Feather";
+	mes "50x Feather";
+	mes "15x Feather of Birds";
+	mes "10x Harpy Feather";
+	mes "10x Soft Feather";
+	mes "10x Elastic Band";
+	mes "1x Bunny Band";
+	menu "สร้างหมวก",M_pagdayaw,"กลับสู่เมนู",H_top;
+
+I_parcel:
+	next;
+	mes "150x Fabric";
+	mes "100x Resin";
+	mes "1x Cobaltblue Dyestuff";
+	menu "สร้างหมวก",M_parcel,"กลับสู่เมนู",H_top;
+
+I_party:
+	next;
+	mes "1x Santa Hat";
+	mes "100x Oil Paper";
+	mes "100x Slick Paper";
+	menu "สร้างหมวก",M_party,"กลับสู่เมนู",H_top;
+
+I_peco:
+	next;
+	mes "2x Angel Wing";
+	mes "200x Peco Peco Feather";
+	mes "2x Hair Band";
+	mes "10x Valhalla's Flower";
+	menu "สร้างหมวก",M_peco,"กลับสู่เมนู",H_top;
+
+I_pribbon:
+	next;
+	mes "1x Ribbon";
+	mes "1x Scarlet Dyestuff";
+	mes "1x White Dyestuff";
+	menu "สร้างหมวก",M_pribbon,"กลับสู่เมนู",H_top;
+
+I_phoenix:
+	next;
+	mes "1x Angel Wing";
+	mes "1x Ruby";
+	mes "20x Tassel";
+	mes "50x Steel";
+	mes "1x Cobaltblue Dyestuff";
+	menu "สร้างหมวก",M_phoenix,"กลับสู่เมนู",H_top;
+	
+I_poporing:
+	next;
+	mes "1x Poring Hat";
+	mes "1x Darkgreen Dyestuff";
+	mes "100x Stick Mucus";
+	menu "สร้างหมวก",M_poporing,"กลับสู่เมนู",H_top;
+	
+I_pretend:
+	next;
+	mes "4x Skirt of Virgin";
+	menu "สร้างหมวก",M_pretend,"กลับสู่เมนู",H_top;
+	
+I_pumpkin:
+	next;
+	mes "1x Poring Hat";
+	mes "100x Jack o' Pumpkin";
+	mes "80x Pumpkin";
+	menu "สร้างหมวก",M_pumpkin,"กลับสู่เมนู",H_top;
+
+I_puppy:
+	next;
+	mes "10x Puppy Love";
+	mes "1x Puppy Headband";
+	mes "100x Golden Hair";
+	mes "1x Hair Band";
+	menu "สร้างหมวก",M_puppy,"กลับสู่เมนู",H_top;
+
+I_rabbit:
+	next;
+	mes "1x Bunny Band";
+	mes "1x Black Dyestuff";
+	mes "30x Soft Feather";
+	menu "สร้างหมวก",M_rabbit,"กลับสู่เมนู",H_top;
+
+I_raccoon:
+	next;
+	mes "20x Dragon Scale";
+	mes "1x Kitty Band";
+	mes "300x Sea Otter Fur";
+	mes "300x Tough Scalelike Stem";
+	menu "สร้างหมวก",M_raccoon,"กลับสู่เมนู",H_top;
+	
+I_rainbow:
+	next;
+	mes "50x Claw of Desert Wolf";
+	mes "1x Cobaltblue Dyestuff";
+	mes "1x Egg Shell";
+	menu "สร้างหมวก",M_rainbow,"กลับสู่เมนู",H_top;
+
+I_rglasses:
+	next;
+	mes "1x Angled Glasses";
+	mes "1x Fashionable Glasses";
+	menu "สร้างหมวก",M_rglasses,"กลับสู่เมนู",H_top;
+
+I_ribbon:
+	next;
+	mes "1x Ribbon";
+	mes "1x Scarlet Dyestuff";
+	menu "สร้างหมวก",M_ribbon,"กลับสู่เมนู",H_top;
+
+	
+I_ribbonh:
+	next;
+	mes "1x Magician Hat";
+	mes "1x Red Tailed Ribbon";
+	mes "40x Soft Feather";
+	mes "1x Hibiscus";
+	mes "1x White Dyestuff";
+	mes "1x Scarlet Dyestuff";
+	menu "สร้างหมวก",M_ribbonh,"กลับสู่เมนู",H_top;
+	
+I_rideword:
+	next;
+	mes "1x Book[3]";
+	mes "7x Book of Billows";
+	mes "7x Book of Gust of Wind";
+	mes "7x Book of Mother Earth";
+	mes "7x Book of the Apocalypse";
+	mes "7x Book of the Blazing Sun";
+	mes "30x Memory Bookmark";
+	menu "สร้างหมวก",M_rideword,"กลับสู่เมนู",H_top;
+
+	
+I_sakkat:
+	next;
+	mes "120x trunk";
+	mes "10,000z";
+	menu "สร้างหมวก",M_sakkat,"กลับสู่เมนู",H_top;
+	
+I_sales:
+	next;
+	mes "1x Stop Post";
+	mes "4x Fire Dragon Scale";
+	mes "3x Blank Scroll";
+	mes "10x Level 3 Fire Bolt";
+	menu "สร้างหมวก",M_sales,"กลับสู่เมนู",H_top;
+
+I_sambrero:
+	next;
+	mes "1x Straw Hat";
+	mes "50x Cactus Needle";
+	mes "1x Guitar";
+	menu "สร้างหมวก",M_sambrero,"กลับสู่เมนู",H_top;
+
+I_sheep:
+	next;
+	mes "1x Majestic Goat[1]";
+	mes "6x Antelope Horn";
+	mes "80x Antelope Skin";
+	menu "สร้างหมวก",M_sheep,"กลับสู่เมนู",H_top;
+
+I_silver:
+	next;
+	mes "1x Tiara";
+	mes "5x Emperium";
+	mes "25x Silver Ring";
+	menu "สร้างหมวก",M_silver,"กลับสู่เมนู",H_top;
+
+I_sleaf:
+	next;
+	mes "600x Racoon Leaf";
+	mes "1x Claw of Desert Wolf";
+	menu "สร้างหมวก",M_sleaf,"กลับสู่เมนู",H_top;
+
+I_smile:
+	next;
+	mes "10x Clover";
+	mes "10x Jellopy";
+	mes "10x Fluff";
+	menu "สร้างหมวก",M_smile,"กลับสู่เมนู",H_top;
+
+I_smiling:
+	next;
+	mes "1x Mr. Smile";
+	mes "1x Tongue";
+	mes "5x Steel";
+	menu "สร้างหมวก",M_smiling,"กลับสู่เมนู",H_top;
+
+I_solar:
+	next;
+	mes "2x Electric Fist[3]";
+	mes "1x Arial";
+	mes "1x Morrigane's Pendant";
+	mes "1x Deviace Card";
+	menu "สร้างหมวก",M_solar,"กลับสู่เมนู",H_top;
+
+I_soul:
+	next;
+	mes "1x Angel Wing Ear";
+	mes "1x Halo";
+	mes "10x Wing of Dragonfly";
+	mes "5x Gold";
+	menu "สร้างหมวก",M_soul,"กลับสู่เมนู",H_top;
+	
+I_spore:
+	next;
+	mes "300x Burnt Tree";
+	mes "850x Poison Spore";
+	mes "1x Tongue";
+	menu "สร้างหมวก",M_spore,"กลับสู่เมนู",H_top;
+	
+I_stop:
+	next;
+	mes "50x Trunk";
+	mes "1x Black Dyestuff";
+	mes "911,000z";
+	menu "สร้างหมวก",M_stop,"กลับสู่เมนู",H_top;
+
+I_straw:
+	next;
+	mes "1x Sakkat";
+	mes "300x Tough Vines";
+	mes "300x Pieces of Bamboo";
+	menu "สร้างหมวก",M_straw,"กลับสู่เมนู",H_top;
+
+I_striped:
+	next;
+	mes "1500x Worn Out Prison Uniform";
+	menu "สร้างหมวก",M_striped,"กลับสู่เมนู",H_top;
+	
+I_summer:
+	next;
+	mes "1x Straw Hat";
+	mes "1x Big Ribbon[1]";
+	mes "1x Cobaltblue Dyestuff";
+	menu "สร้างหมวก",M_summer,"กลับสู่เมนู",H_top;
+
+I_sunday:
+	next;
+	mes "250x Fabric";
+	mes "1x Hat[1]";
+	mes "1x Cap[1]";
+	mes "600x Soft Feather";
+	menu "สร้างหมวก",M_sunday,"กลับสู่เมนู",H_top;
+
+I_sunflower:
+	next;
+	mes "1x Sunflower[1]";
+	mes "1x Stellar Hairpin";
+	menu "สร้างหมวก",M_sunflower,"กลับสู่เมนู",H_top;
+
+//I_sungod:
+//	next;
+//	mes "1x Emblem of the Sun God";
+//	mes "10x Gold";
+//	mes "40x Steel";
+//	mes "50x Coal";
+//	mes "2x Oridecon";
+//	menu "สร้างหมวก",M_sungod,"กลับสู่เมนู",H_top;
+
+I_teddy:
+	next;
+	mes "1x Panda Hat";
+	mes "100x Needle Packet";
+	mes "100x Spool";
+	mes "300x Black Bear Skin";
+	menu "สร้างหมวก",M_teddy,"กลับสู่เมนู",H_top;
+
+I_toast:
+	next;
+	mes "50x Milk";
+	mes "50x Old Frying Pan";
+	mes "50x Cheese";
+	mes "50x Piece of Black Cloth";
+	menu "สร้างหมวก",M_toast,"กลับสู่เมนู",H_top;
+
+I_tower:
+	next;
+	mes "1x Angeling Pin";
+	mes "10x Poring Doll";
+	mes "1x Angeling Hat";
+	mes "1x Angel Wing Ears";
+	menu "สร้างหมวก",M_tower,"กลับสู่เมนู",H_top;
+
+I_tulip:
+	next;
+	mes "1x Mr. Smile";
+	mes "1x Scarlet Dyestuff";
+	menu "สร้างหมวก",M_tulip,"กลับสู่เมนู",H_top;
+
+I_xhair:
+	next;
+	mes "1x Stellar Hairpin";
+	mes "400x Ectoplasm";
+	menu "สร้างหมวก",M_xhair,"กลับสู่เมนู",H_top;
+
+I_valk:
+	next;
+	mes "1x Sage Worm Card";
+	mes "1x Argiope Card";
+	mes "1x Dryad Card";
+	mes "1x Wood Golem Card";
+	mes "1x Bongun Card";
+	mes "1x Pirate Skeleton Card";
+	mes "1x Marduc Card";
+	mes "1x Hode Card";
+	mes "1x Elder Card";
+	mes "1x Nightmare Terror Card";
+	mes "1000x Darkness Rune";
+	mes "1000x Bloody Rune";
+	mes "and have 10,000,000z";
+	menu "สร้างหมวก",M_valk,"กลับสู่เมนู",H_top;
+	
+
+I_valkf:
+	next;
+	mes "1x Valhalla Flower";
+	mes "1x Hair Band";
+	mes "50x Soft Feather";
+	menu "สร้างหมวก",M_valkf,"กลับสู่เมนู",H_top;
+
+I_vane:
+	next;
+	mes "120x Vane";
+	mes "1x Stellar ";
+	menu "สร้างหมวก",M_vane,"กลับสู่เมนู",H_top;
+	
+I_victory:
+	next;
+	mes "20x Valhalla's Flower";
+	menu "สร้างหมวก",M_victory,"กลับสู่เมนู",H_top;
+	
+I_wander:
+	next;
+	mes "1x Mage Hat";
+	mes "50x Soft Silk";
+	mes "1x Wing of Dragonfly";
+	menu "สร้างหมวก",M_wander,"กลับสู่เมนู",H_top;
+	
+I_wlily:
+	next;
+	mes "1x Flower Lily";
+	mes "1x Scarlet Dyestuff";
+	mes "1x White Dyestuff";
+	mes "1x Crown[1]";
+	menu "สร้างหมวก",M_wlily,"กลับสู่เมนู",H_top;
+	
+I_weld:
+	next;
+	mes "50x Steel";
+	mes "2,000z";
+	menu "สร้างหมวก",M_weld,"กลับสู่เมนู",H_top;
+	
+I_whisp:
+	next;
+	mes "5x Loki's Whispers";
+	mes "50x Suspicious Hat";
+	menu "สร้างหมวก",M_whisp,"กลับสู่เมนู",H_top;
+	
+I_wpetal:
+	next;
+	mes "1x Romantic Flower";
+	mes "1x White Dyestuff";
+	menu "สร้างหมวก",M_wpetal,"กลับสู่เมนู",H_top;
+	
+I_wribbon:
+	next;
+	mes "1x Ribbon";
+	mes "1x White Dyestuff";
+	menu "สร้างหมวก",M_wribbon,"กลับสู่เมนู",H_top;
+	
+I_winter:
+	next;
+	mes "1x Black Dyestuff";
+	mes "999x Tiger Pantie";
+	mes "1x Frozen Rose";
+	mes "50,000z";
+	menu "สร้างหมวก",M_winter,"กลับสู่เมนู",H_top;
+	
+I_wonder:
+	next;
+	mes "1x Nutshell";
+	mes "500x Wing of Dragonfly";
+	menu "สร้างหมวก",M_wonder,"กลับสู่เมนู",H_top;
+	
+I_yribbon:
+	next;
+	mes "1x Ribbon";
+	mes "1x Lemon Dyestuff";
+	menu "สร้างหมวก",M_yribbon,"กลับสู่เมนู",H_top;
+	
+I_yband:
+	next;
+	mes "1x Hair Band";
+	mes "1x Yellow Ribbon";
+	mes "1x Cute Ribbon";
+	menu "สร้างหมวก",M_yband,"กลับสู่เมนู",H_top;
+	
+I_zealot:
+	next;
+	mes "369x Dark Crystal Fragments";
+	mes "1x Cat's Eye";
+	mes "1x Forbidden Red Candle";
+	mes "30x Worn-out Magic Scroll";
+	menu "สร้างหมวก",M_zealot,"กลับสู่เมนู",H_top;
+
+//_____________deletion and creation of items_______________//
+
+//____________model______________//
+//M_:
+//	if(countitem()< || countitem()< || Zeny < )
+//	goto M_insufficient; 
+//	delitem ,;
+//	delitem ,;
+//	set zeny,zeny-;
+//	getitem ,;
+//	close;
+
+M_alarm:
+	if(countitem(2288)<1 || countitem(1095)<3000)
+	goto M_insufficient; 
+	delitem 2288,1;
+	delitem 1095,3000;
+	getitem 5086,1;
+	close;
+
+M_alice:
+	if(countitem(5141)<5 || countitem(7047)<100 || countitem(661)<5)
+	goto M_insufficient; 
+	delitem 5141,5;
+	delitem 7047,500;
+	delitem 661,500;
+	getitem 5137,1;
+	close;
+
+M_angel:
+	if(countitem(2286)<1 || countitem(2254)<1 || Zeny < 20000)
+	goto M_insufficient; 
+	delitem 2286,1;
+	delitem 2254,1;
+	set zeny,zeny-20000;
+	getitem 5074,1;
+	close;
+
+//M_angeling:
+//	if(countitem(5035)<1 || countitem(5074)<1 || countitem(714)<1  || countitem(999)<5)
+//	goto M_insufficient; 
+//	delitem 5035,5;
+//	delitem 5074,1;
+//	delitem 714,1;
+//	delitem 999,5;
+//	getitem 5132,1;
+//	close;
+
+M_angelp:
+	if(countitem(5132)<1 || countitem(10011)<1)
+	goto M_insufficient; 
+	delitem 5132,1;
+	delitem 10011,1;
+	getitem 5153,1;
+	close;
+
+M_anon:
+	if(countitem(7111)<100 || countitem(938)<99 || countitem(983)<1 || Zeny <100000)
+	goto M_insufficient; 
+	delitem 7111,100;
+	delitem 938,99;
+	delitem 983,1;
+	set zeny,zeny-100000;
+	getitem 5175,1;
+	close;
+
+M_antler:
+	if(countitem(923)<20)
+	goto M_insufficient; 
+	delitem 923,20;
+	getitem 2284,1;
+	close;
+
+M_aqueen:
+	if(countitem(10006)<1 || countitem(714)<1 || countitem(969)<3)
+	goto M_insufficient; 
+	delitem 10006,1;
+	delitem 714,1;
+	delitem 969,3;
+	getitem 5080,1;
+	close;
+
+M_autumn:
+	if(countitem(7198)<1 || countitem(7097)<40)
+	goto M_insufficient; 
+	delitem 7198,200;
+	delitem 7097,40;
+	getitem 5270,1;
+	close;
+
+M_ayam:
+	if(countitem(7445)<7 || countitem(7446)<7 || countitem(7447)<7 || countitem(7448)<7 || countitem(954)<300 || countitem(975)<1 || countitem(733)<5 || countitem(7166)<50)
+	goto M_insufficient; 
+	delitem 7445,7;
+	delitem 7446,7;
+	delitem 7447,7;
+	delitem 7448,7;
+	delitem 945,300;
+	delitem 975,1;
+	delitem 733,5;
+	delitem 7166,50;
+	getitem 5174,1;
+	close;
+
+M_bandana:
+	if(countitem(5278)<1 || countitem(508)<200)
+	goto M_insufficient; 
+	delitem 5278,1;
+	delitem 508,200;
+	getitem 5277,1;
+	close;
+
+M_bandit:
+	if(countitem(1020)<100 || countitem(983)<1 || countitem(2241)<1)
+	goto M_insufficient;
+	delitem 1020,100;
+	delitem 983,1;
+	delitem 2241,1;
+	getitem 2237,1;
+	close;
+
+M_base:
+	if(countitem(2227)<1 || countitem(978)<1 || countitem(1057)<100)
+	goto M_insufficient; 
+	delitem 2227,1;
+	delitem 978,1;
+	delitem 1057,100;
+	getitem 5147,1;
+	close;
+
+M_bcat:
+	if(countitem(2213)<1 || countitem(983)<1 || countitem(914)<200 || Zeny <10000)
+	goto M_insufficient; 
+	delitem 2213,1;
+	delitem 983,1;
+	delitem 914,200;
+	set zeny,zeny-10000;
+	getitem 5057,1;
+	close;
+
+M_beanie:
+	if(countitem(2226)<1 || countitem(7038)<500)
+	goto M_insufficient; 
+	delitem 2226,1;
+	delitem 7038,500;
+	getitem 5076,1;
+	close;
+
+M_bellr:
+	if(countitem(969)<8 || countitem(10016)<2 || countitem(5083)<1)
+	goto M_insufficient; 
+	delitem 969,8;
+	delitem 10016,2;
+	delitem 5083,1;
+	getitem 5382,1;
+	close;
+
+M_bfish:
+	if(countitem(624)<1 || countitem(959)<300 || countitem(544)<50 || countitem(1023)<1)
+	goto M_insufficient; 
+	delitem 624,1;
+	delitem 959,300;
+	delitem 544,50;
+	delitem 1023,1;
+	getitem 5065,1;
+	close;
+
+M_bhair:
+	if(countitem(2211)<1 || countitem(978)<1 || countitem(7003)<300)
+	goto M_insufficient; 
+	delitem 2211,1;
+	delitem 978,1;
+	delitem 7003,300;
+	getitem 5052,1;
+	close;
+
+M_bino:
+	if(countitem(2243)<1 || countitem(999)<100 || Zeny < 50000)
+	goto M_insufficient; 
+	delitem 2243,1;
+	delitem 999,100;
+	set zeny,zeny-50000;
+	getitem 2296,1;
+	close;
+
+M_bird:
+	if(countitem(604)<100 || countitem(916)<100)
+	goto M_insufficient; 
+	delitem 604,100;
+	delitem 916,100;
+	getitem 5129,1;
+	close;
+
+M_blank:
+	if(countitem(7263)<2 || countitem(2276)<1 || countitem(2239)<2 || countitem(568)<150)
+	goto M_insufficient; 
+	delitem 7263,2;
+	delitem 2276,1;
+	delitem 2239,1;
+	delitem 568,150;
+	getitem 5102,1;
+	close;
+
+M_blush:
+	if(countitem(7047)<100)
+	goto M_insufficient; 
+	delitem 7047,100;
+	getitem 5040,1;
+	close;
+
+M_bonnet:
+	if(countitem(10015)<1 || countitem(10007)<1 || countitem(5032)<1 || countitem(975)<1 || Zeny <50000)
+	goto M_insufficient; 
+	delitem 10015,1;
+	delitem 10007,1;
+	delitem 5023,1;
+	delitem 975,1;
+	set zeny,zeny-50000;
+	getitem 5109,1;
+	close;
+
+M_boy:
+	if(countitem(1030)<10)
+	goto M_insufficient; 
+	delitem 1030,10;
+	getitem 5016,1;
+	close;
+
+M_bpac:
+	if(countitem(526)<2 || countitem(7270)<1 || countitem(941)<1 || countitem(10004)<1)
+	goto M_insufficient; 
+	delitem 526,2;
+	delitem 7270,1;
+	delitem 941,1;
+	delitem 10004,1;
+	getitem 5110,1;
+	close;
+
+M_bribbon:
+	if(countitem(2208)<1 || countitem(983)<1)
+	goto M_insufficient; 
+	delitem 2208,1;
+	delitem 983,1;
+	getitem 5191,1;
+	close;
+
+M_bride:
+	if(countitem(706)<1 || countitem(1019)<500 || countitem(7200)<10 || countitem(1049)<20 || countitem(7165)<500 || countitem(1054)<2 || countitem(1024)<100)
+	goto M_insufficient; 
+	delitem 706,1;
+	delitem 1019,500;
+	delitem 7200,10;
+	delitem 1049,20;
+	delitem 7165,500;
+	delitem 1054,2;
+	delitem 1024,100;
+	getitem 5169,1;
+	close;
+
+M_bulb:
+	if(countitem(2233)<1 || countitem(746)<20)
+	goto M_insufficient; 
+	delitem 2233,1;
+	delitem 746,20;
+	getitem 5034,1;
+	close;
+	
+M_bunbun:
+	if(countitem(949)<100 || countitem(706)<1 || countitem(722)<1 || countitem(2213)<1)
+	goto M_insufficient; 
+	delitem 949,100;
+	delitem 706,1;
+	delitem 722,1;
+	delitem 2213,1;
+	getitem 2214,1;
+	close;
+
+M_bunny:
+	if(countitem(534)<30 || countitem(10007)<1 || countitem(1065)<6 || countitem(7038)<10 || countitem(5045)<1 || countitem(993)<1 || countitem(2214)<1)
+	goto M_insufficient; 
+	delitem 534,30;
+	delitem 10007,1;
+	delitem 1065,6;
+	delitem 7038,10;
+	delitem 5045,1;
+	delitem 993,1;
+	delitem 2214,1;
+	getitem 5378,1;
+	close;
+
+
+M_cake:
+	if(countitem(529)<10 || countitem(530)<5 || countitem(539)<20 || countitem(999)<10 || countitem(538)<15)
+	goto M_insufficient; 
+	delitem 529,10;
+	delitem 530,5;
+	delitem 539,20;
+	delitem 999,10;
+	delitem 538,15;
+	getitem 5024,1;
+	close;
+
+M_candle:
+	if(countitem(2279)<1 || countitem(7035)<50 || countitem(526)<100)
+	goto M_insufficient; 
+	delitem 2279,1;
+	delitem 7035,50;
+	delitem 526,100;
+	getitem 5028,1;
+	close;
+
+M_cappola:
+	if(countitem(5016)<1 || countitem(981)<1 || countitem(7317)<20)
+	goto M_insufficient; 
+	delitem 5016,1;
+	delitem 981,1;
+	delitem 7317,20;
+	getitem 5200,1;
+	close;
+
+M_captain:
+	if(countitem(5120)<5 || countitem(995)<50 || countitem(983)<1 || countitem(720)<50)
+	goto M_insufficient; 
+	delitem 5120,5;
+	delitem 995,50;
+	delitem 983,1;
+	delitem 720,50;
+	getitem 5184,1;
+	close;
+
+M_cath:
+	if(countitem(976)<1 || countitem(1060)<300 || countitem(1022)<100 || countitem(5008)<5)
+	goto M_insufficient; 
+	delitem 976,1;
+	delitem 1060,300;
+	delitem 1022,100;
+	delitem 5008,5;
+	getitem 5214,1;
+	close;
+
+M_chef:
+	if(countitem(1036)<450 || countitem(949)<330 || countitem(539)<120 || countitem(982)<1)
+	goto M_insufficient; 
+	delitem 1036,450;
+	delitem 949,330;
+	delitem 539,120;
+	delitem 982,1;
+	getitem 5026,1;
+	close;
+
+M_chelm:
+	if(countitem(5017)<1 || countitem(2229)<1 || countitem(5014)<1 || countitem(7209)<100 || countitem(7123)<100 || countitem(1036)<100 || countitem(979)<1)
+	goto M_insufficient; 
+	delitem 5017,1;
+	delitem 2229,1;
+	delitem 5014,1;
+	delitem 7209,100;
+	delitem 7123,100;
+	delitem 1036,100;
+	delitem 979,1;
+	getitem 5142,1;
+	close;
+
+M_cookie:
+	if(countitem(4293)<1 || countitem(538)<100 || countitem(530)<100 || countitem(529)<50)
+	goto M_insufficient; 
+	delitem 4293,1;
+	delitem 538,100;
+	delitem 530,100;
+	delitem 529,50;
+	getitem 5260,1;
+	close;
+
+M_cow:
+	if(countitem(2248)<1 || countitem(7030)<108 || countitem(7194)<108 || countitem(7097)<4)
+	goto M_insufficient; 
+	delitem 2248,1;
+	delitem 7030,108;
+	delitem 7194,108;
+	delitem 7097,4;
+	getitem 5075,1;
+	close;
+
+M_cpin:
+	if(countitem(5041)<1 || countitem(999)<10)
+	goto M_insufficient; 
+	delitem 5041,1;
+	delitem 999,10;
+	getitem 5048,1;
+	close;
+
+M_cross:
+	if(countitem(2608)<1 || countitem(7069)<500)
+	goto M_insufficient; 
+	delitem 2608,1;
+	delitem 7069,500;
+	getitem 5036,1;
+	close;
+
+M_cyclop:
+	if(countitem(2295)<1 || countitem(969)<1 || countitem(975)<1 || countitem(999)<5)
+	goto M_insufficient; 
+	delitem 2295,1;
+	delitem 969,1;
+	delitem 975,1;
+	delitem 999,5;
+	getitem 5135,1;
+	close;
+
+M_dark:
+	if(countitem(7511)<100 || countitem(7340)<200 || countitem(7023)<10)
+	goto M_insufficient; 
+	delitem 7511,100;
+	delitem 7340,200;
+	delitem 7023,10;
+	getitem 5181,1;
+	close;
+
+M_detective:
+	if(countitem(7301)<1887 || countitem(5114)<1 || countitem(611)<10 || Zeny <5000)
+	goto M_insufficient; 
+	delitem 7301,1887;
+	delitem 5114,1;
+	delitem 611,10;
+	set zeny,zeny-5000;
+	getitem 5108,1;
+	close;
+
+M_devil:
+	if(countitem(5132)<1 || countitem(5068)<1 || countitem(2255)<1 || countitem(7023)<5 || countitem(983)<1)
+	goto M_insufficient; 
+	delitem 5132,1;
+	delitem 5068,1;
+	delitem 2255,1;
+	delitem 7023,5;
+	delitem 983,1;
+	getitem 5254,1;
+	close;
+
+M_devir:
+	if(countitem(1039)<600 || countitem(7048)<40)
+	goto M_insufficient; 
+	delitem 1039,600;
+	delitem 7048,40;
+	getitem 5038,1;
+	close;
+
+M_dgeo:
+	if(countitem(1032)<100 || countitem(7100)<100 || countitem(905)<250)
+	goto M_insufficient; 
+	delitem 1032,100;
+	delitem 7100,100;
+	delitem 905,250;
+	getitem 5186,1;
+	close;
+
+M_dgoldb:
+	if(countitem(10016)<1 || countitem(714)<1 || countitem(969)<3 || Zeny <20000)
+	goto M_insufficient; 
+	delitem 10016,1;
+	delitem 714,1;
+	delitem 969,3;
+	set zeny,zeny-20000;
+	getitem 5091,1;
+	close;
+
+M_dmush:
+	if(countitem(921)<300)
+	goto M_insufficient; 
+	delitem 921,300;
+	getitem 5082,1;
+	close;
+
+M_doctor:
+	if(countitem(2275)<1 || countitem(998)<50 || countitem(733)<1 || Zeny < 3500)
+	goto M_insufficient; 
+	delitem 2275,1;
+	delitem 998,50;
+	delitem 733,1;
+	set zeny,zeny-3500;
+	getitem 2273,1;
+	close;
+
+M_dokebi:
+	if(countitem(914)<100 || countitem(975)<1 || countitem(976)<1 || countitem(978)<1)
+	goto M_insufficient; 
+	delitem 914,100;
+	delitem 975,1;
+	delitem 976,1;
+	delitem 978,1;
+	getitem 5258,1;
+	close;
+
+M_droopb:
+	if(countitem(5058)<1 || countitem(2214)<1 || countitem(949)<500 || countitem(914)<200 || countitem(622)<50 || countitem(1974)<1)
+	goto M_insufficient; 
+	delitem 5058,1;
+	delitem 2214,1;
+	delitem 949,500;
+	delitem 914,200;
+	delitem 622,50;
+	delitem 1974,1;	
+	getitem 5198,1;
+	close;
+
+M_droopc:
+	if(countitem(2233)<1 || countitem(983)<1 || countitem(7206)<300 || countitem(7030)<1)
+	goto M_insufficient; 
+	delitem 2233,1;
+	delitem 983,1;
+	delitem 7206,300;
+	delitem 7030,1;
+	getitem 5058,1;
+	close;
+
+M_droopl:
+	if(countitem(1034)<300 || countitem(7445)<30 || countitem(5141)<10 || countitem(979)<1)
+	goto M_insufficient; 
+	delitem 1034,300;
+	delitem 7445,30;
+	delitem 5141,10;
+	delitem 979,1;
+	getitem 5253,1;
+	close;
+
+M_droopn:
+	if(countitem(5058)<1 || countitem(1022)<250 || countitem(7267)<100)
+	goto M_insufficient; 
+	delitem 5058,1;
+	delitem 1022,250;
+	delitem 7267,100;
+	getitem 5252,1;
+	close;
+
+M_ear:
+	if(countitem(724)<1 || countitem(5001)<1 || countitem(949)<200)
+	goto M_insufficient; 
+	delitem 724,1;
+	delitem 5001,1;
+	delitem 949,200;
+	getitem 2283,1;
+	close;
+
+M_earh:
+	if(countitem(975)<1 || countitem(976)<1 || countitem(914)<100 || countitem(949)<150 || countitem(7065)<25)
+	goto M_insufficient; 
+	delitem 975,1;
+	delitem 976,1;
+	delitem 914,100;
+	delitem 949,150;
+	delitem 7065,25;
+	getitem 5243,1;
+	close;
+
+M_ele:
+	if(countitem(978)<1 || countitem(7561)<100 || countitem(949)<500 || countitem(1026)<200)
+	goto M_insufficient; 
+	delitem 978,1;
+	delitem 7561,100;
+	delitem 949,500;
+	delitem 1026,200;
+	getitem 5259,1;
+	close;
+	
+M_elaurel:
+	if(countitem(5185)<1 || countitem(610)<100 || countitem(706)<25 || countitem(7194)<113)
+	goto M_insufficient; 
+	delitem 5185,1;
+	delitem 610,100;
+	delitem 706,25;
+	delitem 7194,113;
+	getitem 5205,1;
+	close;
+
+M_evil:
+	if(countitem(2255)<1 || countitem(2286)<1 || Zeny <20000)
+	goto M_insufficient; 
+	delitem 2255,1;
+	delitem 2286,1;
+	set zeny,zeny-20000;
+	getitem 5068,1;
+	close;
+
+M_exec:
+	if(countitem(7017)<2 || countitem(2510)<1 || countitem(983)<1)
+	goto M_insufficient; 
+	delitem 7017,2;
+	delitem 2510,1;
+	delitem 983,1;
+	getitem 5304,1;
+	close;
+
+//M_fangel:
+//	if(countitem(2254)<10 || countitem(7063)<50 || countitem(7168)<200 || countitem(7038)<200)
+//	goto M_insufficient; 
+//	delitem 2254,10;
+//	delitem 7063,50;
+//	delitem 7168,200;
+//	delitem 7038,200;
+//	getitem 5210,1;
+//	close;
+
+M_fashion:
+	if(countitem(2271)<1 || countitem(975)<1)
+	goto M_insufficient; 
+	delitem 2271,1;
+	delitem 975,1;
+	getitem 5047,1;
+	close;
+
+M_fberet:
+	if(countitem(5172)<1 || countitem(7063)<100 || countitem(982)<1)
+	goto M_insufficient; 
+	delitem 5172,1;
+	delitem 7063,100;
+	delitem 982,1;
+	getitem 5170,1;
+	close;
+
+M_fishh:
+	if(countitem(5065)<2)
+	goto M_insufficient; 
+	delitem 5065,2;
+	getitem 5380,1;
+	close;
+
+M_flowerc:
+	if(countitem(712)<100 || countitem(710)<5 || countitem(629)<5 || countitem(10009)<1)
+	goto M_insufficient; 
+	delitem 712,100;
+	delitem 710,5;
+	delitem 629,5;
+	delitem 10009,1;
+	getitem 5303,1;
+	close;
+
+M_flowerl:
+	if(countitem(5139)<2 || countitem(5061)<1 || countitem(982)<1 || countitem(710)<5)
+	goto M_insufficient; 
+	delitem 5139,2;
+	delitem 982,1;
+	delitem 5061,1;
+	getitem 710,5;
+	close;
+
+M_fruit:
+	if(countitem(5079)<1 || countitem(578)<100)
+	goto M_insufficient; 
+	delitem 5079,1;
+	delitem 578,100;
+	getitem 5056,1;
+	close;
+
+M_gambler:
+	if(countitem(2214)<1 || countitem(2221)<1 || countitem(7567)<25 || countitem(1001)<200)
+	goto M_insufficient; 
+	delitem 2214,1;
+	delitem 2221,1;
+	delitem 7567,25;
+	delitem 1001,200;
+	getitem 5144,1;
+	close;
+
+M_gband:
+	if(countitem(970)<1 || countitem(930)<500)
+	goto M_insufficient; 
+	delitem 970,1;
+	delitem 930,500;
+	getitem 5063,1;
+	close;
+
+M_gribbon:
+	if(countitem(2208)<1 || countitem(979)<1)
+	goto M_insufficient; 
+	delitem 2208,1;
+	delitem 979,1;
+	getitem 5193,1;
+	close;
+
+M_grief:
+	if(countitem(2233)<1 || countitem(969)<1 || countitem(999)<20 || countitem(949)<80 || countitem(938)<800)
+	goto M_insufficient; 
+	delitem 2233,1;
+	delitem 969,1;
+	delitem 999,20;
+	delitem 949,80;
+	delitem 938,800;
+	getitem 5021,1;
+	close;
+
+M_gtiara:
+	if(countitem(2234)<1 || countitem(969)<3 || countitem(2610)<4 || countitem(13106)<2)
+	goto M_insufficient; 
+	delitem 2234,1;
+	delitem 969,3;
+	delitem 2610,4;
+	delitem 13106,2;
+	getitem 5179,1;
+	close;
+
+M_hahoe:
+	if(countitem(706)<1 || countitem(1019)<500 || countitem(7200)<10 || countitem(7015)<20 || countitem(2267)<1 || countitem(952)<100 || countitem(1028)<100)
+	goto M_insufficient; 
+	delitem 706,1;
+	delitem 1019,500;
+	delitem 7200,10;
+	delitem 7015,20;
+	delitem 2267,1;
+	delitem 952,100;
+	delitem 1028,100;
+	getitem 5176,1;
+	close;
+
+M_head:
+	if(countitem(999)<40 || countitem(984)<1 || countitem(970)<1 || countitem(1003)<1)
+	goto M_insufficient; 
+	delitem 999,40;
+	delitem 984,1;
+	delitem 970,1;
+	delitem 1003,1;
+	getitem 5001,1;
+	close;
+	
+M_heart:
+	if(countitem(7013)<1200)
+	goto M_insufficient; 
+	delitem 7013,1200;
+	getitem 5031,1;
+	close;
+
+M_helma:
+	if(countitem(2229)<1 || countitem(2254)<1 || countitem(7036)<5)
+	goto M_insufficient; 
+	delitem 2229,1;
+	delitem 2254,1;
+	delitem 7036,5;
+	getitem 5025,1;
+	close;
+
+M_hflower:
+	if(countitem(2269)<1 || countitem(999)<10 || Zeny <20000)
+	goto M_insufficient; 
+	delitem 2269,1;
+	delitem 999,10;
+	set zeny,zeny-20000;
+	getitem 5061,1;
+	close;
+
+M_hibiscus:
+	if(countitem(5085)<1 || countitem(710)<5 || countitem(7510)<1 || countitem(975)<1)
+	goto M_insufficient; 
+	delitem 5085,1;
+	delitem 710,5;
+	delitem 7510,1;
+	delitem 975,1;
+	getitem 5139,1;
+	close;
+
+M_hotb:
+	if(countitem(7216)<300 || countitem(7097)<300 || countitem(2211)<1 || countitem(982)<1)
+	goto M_insufficient; 
+	delitem 7216,300;
+	delitem 7097,300;
+	delitem 2211,1;
+	delitem 982,1;
+	getitem 5070,1;
+	close;
+
+M_indian:
+	if(countitem(5010)<1 || countitem(5049)<1 || countitem(7101)<10 || Zeny <10000)
+	goto M_insufficient; 
+	delitem 5010,1;
+	delitem 5049,1;
+	delitem 7101,10;
+	set zeny,zeny-10000;
+	getitem 5071,1;
+	close;
+
+M_judge:
+	if(countitem(7445)<7 || countitem(7446)<7 || countitem(7447)<7 || countitem(7448)<7 || countitem(954)<300 || countitem(983)<1 || countitem(733)<5 || countitem(2221)<1)
+	goto M_insufficient; 
+	delitem 7445,7;
+	delitem 7446,7;
+	delitem 7447,7;
+	delitem 7478,7;
+	delitem 945,300;
+	delitem 983,1;
+	delitem 733,5;
+	delitem 2221,1;
+	getitem 5173,1;
+	close;
+
+M_kabuki:
+	if(countitem(5090)<1 || countitem(1020)<300 || countitem(975)<1 || countitem(982)<1)
+	goto M_insufficient; 
+	delitem 5090,1;
+	delitem 1020,300;
+	delitem 975,1;
+	delitem 982,1;
+	getitem 5143,1;
+	close;
+
+M_kafra:
+	if(countitem(2215)<1 || countitem(2210)<1 || countitem(7063)<20)
+	goto M_insufficient; 
+	delitem 2215,1;
+	delitem 2210,1;
+	delitem 7063,20;
+	getitem 5020,1;
+	close;
+
+M_kawaii:
+	if(countitem(5085)<1 || countitem(2244)<1 || countitem(5191)<1 || countitem(7166)<50)
+	goto M_insufficient; 
+	delitem 5085,1;
+	delitem 2244,1;
+	delitem 5191,1;
+	delitem 7166,50;
+	getitem 5140,1;
+	close;
+
+M_kitsune:
+	if(countitem(1022)<999)
+	goto M_insufficient; 
+	delitem 1022,999;
+	getitem 5069,1;
+	close;
+
+M_laurel:
+	if(countitem(5061)<1 || countitem(712)<100 || countitem(7194)<150 || countitem(7298)<100 || countitem(520)<50 || countitem(521)<50)
+	goto M_insufficient; 
+	delitem 5061,1;
+	delitem 712,100;
+	delitem 7194,150;
+	delitem 7298,100;
+	delitem 520,50;
+	delitem 521,50;
+	getitem 5185,1;
+	close;
+	
+M_lion:
+	if(countitem(1048)<100 || countitem(7564)<150 || countitem(517)<30)
+	goto M_insufficient; 
+	delitem 1048,100;
+	delitem 7564,150;
+	delitem 517,30;
+	getitem 5130,1;
+	close;
+
+M_lionm:
+	if(countitem(706)<1 || countitem(1019)<500 || countitem(7200)<10 || countitem(1049)<500 || countitem(1053)<2 || countitem(980)<1)
+	goto M_insufficient; 
+	delitem 706,1;
+	delitem 1019,500;
+	delitem 7200,10;
+	delitem 1049,500;
+	delitem 1053,2;
+	delitem 980,1;
+	getitem 5177,1;
+	close;
+
+M_lsmokie:
+	if(countitem(1026)<1000 || countitem(7065)<100 || countitem(945)<10 || countitem(7030)<1)
+	goto M_insufficient; 
+	delitem 1026,1000;
+	delitem 7065,100;
+	delitem 945,10;
+	delitem 7030,1;
+	getitem 5084,1;
+	close;
+	
+M_mage:
+	if(countitem(2252)<1 || countitem(1036)<400 || countitem(7001)<50 || countitem(4052)<1)
+	goto M_insufficient; 
+	delitem 2252,1;
+	delitem 1036,400;
+	delitem 7001,50;
+	delitem 4052,1;
+	getitem 5027,1;
+	close;
+	
+M_magic:
+	if(countitem(2252)<1 || countitem(1054)<450 || countitem(943)<1200)
+	goto M_insufficient; 
+	delitem 2252,1;
+	delitem 1054,450;
+	delitem 943,1200;
+	getitem 5045,1;
+	close;
+
+M_maiden:
+	if(countitem(5085)<1 || countitem(5091)<1 || countitem(5117)<2 || countitem(978)<1 || countitem(975)<1)
+	goto M_insufficient; 
+	delitem 5085,1;
+	delitem 5091,1;
+	delitem 5117,2;
+	delitem 978,1;
+	delitem 975,1;
+	getitem 5187,1;
+	close;
+
+M_meyes:
+	if(countitem(5123)<1 || countitem(5027)<1 || countitem(7337)<50 || countitem(981)<1)
+	goto M_insufficient;
+	delitem 5123,1;
+	delitem 5027,1;
+	delitem 7337,50;
+	delitem 918,1;
+	getitem 5138,1;
+	close;
+
+M_mimi:
+	if(countitem(7267)<300 || countitem(7171)<300 || countitem(1029)<5)
+	goto M_insufficient; 
+	delitem 7267,300;
+	delitem 7171,300;
+	delitem 1029,5;
+	getitem 5099,1;
+	close;
+
+M_mine:
+	if(countitem(5009)<1 || countitem(5028)<1 || countitem(747)<1 || countitem(999)<25)
+	goto M_insufficient; 
+	delitem 5009,1;
+	delitem 5028,1;
+	delitem 747,1;
+	delitem 999,25;
+	getitem 5031,1;
+	close;
+
+M_mistress:
+	if(countitem(2249)<1 || countitem(714)<1 || countitem(969)<3 || Zeny <40000)
+	goto M_insufficient; 
+	delitem 2249,1;
+	delitem 714,1;
+	delitem 969,3;
+	set zeny,zeny-40000;
+	getitem 5081,1;
+	close;
+
+M_model:
+	if(countitem(2285)<1 || countitem(1550)<1)
+	goto M_insufficient; 
+	delitem 2285,1;
+	delitem 1550,1;
+	getitem 5073,1;
+	close;
+
+M_mystic:
+	if(countitem(731)<10 || countitem(748)<2 || countitem(982)<1 || Zeny < 50000)
+	goto M_insufficient; 
+	delitem 731,10;
+	delitem 748,2;
+	delitem 982,1;
+	set zeny,zeny-50000;
+	getitem 5117,1;
+	close;
+
+M_nest:
+	if(countitem(604)<100 || countitem(916)<100 || countitem(7115)<100)
+	goto M_insufficient; 
+	delitem 604,100;
+	delitem 916,100;
+	delitem 7115,100;
+	getitem 5183,1;
+	close;
+
+M_nhead:
+	if(countitem(5001)<1 || countitem(978)<1 || countitem(991)<200)
+	goto M_insufficient; 
+	delitem 5001,1;
+	delitem 978,1;
+	delitem 991,200;
+	getitem 5151,1;
+	close;
+
+M_opera:
+	if(countitem(998)<20 || countitem(707)<1 || Zeny <5000)
+	goto M_insufficient; 
+	delitem 998,20;
+	delitem 707,1;
+	set zeny,zeny-5000;
+	getitem 2281,1;
+	close;
+
+M_operap:
+	if(countitem(2281)<1 || countitem(1048)<50)
+	goto M_insufficient; 
+	delitem 2281,1;
+	delitem 1048,50;
+	getitem 5043,1;
+	close;
+
+M_orch:
+	if(countitem(968)<100 || countitem(2299)<1 || countitem(1124)<1 || countitem(931)<1000)
+	goto M_insufficient; 
+	delitem 968,100;
+	delitem 2299,1;
+	delitem 1124,1;
+	delitem 931,1000;
+	getitem 5094,1;
+	close;
+
+M_oribbon:
+	if(countitem(2208)<1 || countitem(980)<1)
+	goto M_insufficient; 
+	delitem 2208,1;
+	delitem 980,1;
+	getitem 5196,1;
+	close;
+
+M_otter:
+	if(countitem(5033)<1 || countitem(5064)<1)
+	goto M_insufficient; 
+	delitem 5033,1;
+	delitem 5064,1;
+	getitem 5078,1;
+	close;
+
+M_oxy:
+	if(countitem(701)<5)
+	goto M_insufficient; 
+	delitem 701,5;
+	getitem 5004,1;
+	close;
+
+M_party:
+	if(countitem(2236)<1 || countitem(7151)<100 || countitem(7111)<100)
+	goto M_insufficient; 
+	delitem 2236,1;
+	delitem 7151,100;
+	delitem 7111,100;
+	getitem 5060,1;
+	close;
+
+M_pagdayaw:
+	if(countitem(7441)<20 || countitem(949)<50 || countitem(916)<15 || countitem(7115)<10 || countitem(7440)<20 || countitem(7063)<10 || countitem(7200)<10 || countitem(2214)<1)
+	goto M_insufficient; 
+	delitem 7441,20;
+	delitem 949,50;
+	delitem 916,15;
+	delitem 7115,10;
+	delitem 7440,20;
+	delitem 7063,10;
+	delitem 7200,10;
+	delitem 2214,1;
+	getitem 5299,1;
+	close;
+
+M_parcel:
+	if(countitem(1059)<150 || countitem(907)<100 || countitem(978)<1)
+	goto M_insufficient; 
+	delitem 1059,150;
+	delitem 907,100;
+	delitem 978,1;
+	getitem 5023,1;
+	close;
+
+M_peco:
+	if(countitem(2254)<2 || countitem(7101)<200 || countitem(2210)<2 || countitem(7510)<10)
+	goto M_insufficient; 
+	delitem 2254,2;
+	delitem 7101,200;
+	delitem 2210,2;
+	delitem 7510,10;
+	getitem 5286,1;
+	close;
+
+M_phoenix:
+	if(countitem(2254)<1 || countitem(723)<1 || countitem(7301)<20 || countitem(999)<50 || countitem(978)<1)
+	goto M_insufficient; 
+	delitem 2254,1;
+	delitem 723,1;
+	delitem 7301,20;
+	delitem 999,50;
+	delitem 978,1;
+	getitem 5271,1;
+	close;
+
+M_poporing:
+	if(countitem(5035)<1 || countitem(979)<1 || countitem(938)<100)
+	goto M_insufficient; 
+	delitem 5035,1;
+	delitem 979,1;
+	delitem 938,100;
+	getitem 5352,1;
+	close;
+
+M_pretend:
+	if(countitem(1049)<4)
+	goto M_insufficient; 
+	delitem 1049,4;
+	getitem 2293,1;
+	close;
+
+M_pribbon:
+	if(countitem(2208)<1 || countitem(975)<1 || countitem(982)<1)
+	goto M_insufficient; 
+	delitem 2208,1;
+	delitem 975,1;
+	delitem 982,1;
+	getitem 5194,1;
+	close;
+
+M_pumpkin:
+	if(countitem(5035)<1 || countitem(1062)<100 || countitem(535)<80)
+	goto M_insufficient; 
+	delitem 5035,1;
+	delitem 1062,100;
+	delitem 535,80;
+	getitem 5202,1;
+	close;
+
+M_puppy:
+	if(countitem(5008)<10 || countitem(5118)<1 || countitem(1060)<100 || countitem(2210)<1)
+	goto M_insufficient; 
+	delitem 5008,10;
+	delitem 5118,1;
+	delitem 1060,100;
+	delitem 2210,1;
+	getitem 5182,1;
+	close;
+
+M_rabbit:
+	if(countitem(2214)<1 || countitem(983)<1 || countitem(7063)<30)
+	goto M_insufficient; 
+	delitem 2214,1;
+	delitem 983,1;
+	delitem 7063,30;
+	getitem 5213,1;
+	close;
+
+M_raccoon:
+	if(countitem(1036)<20 || countitem(2213)<1 || countitem(7065)<300 || countitem(7012)<200)
+	goto M_insufficient; 
+	delitem 1036,20;
+	delitem 2213,1;
+	delitem 7065,300;
+	delitem 7012,200;
+	getitem 5033,1;
+	close;
+
+M_rainbow:
+	if(countitem(7030)<50 || countitem(978)<1 || countitem(5015)<1)
+	goto M_insufficient;
+	delitem 7030,50;
+	delitem 978,1;
+	delitem 5015,1;
+	getitem 5039,1;
+	close;
+
+M_rglasses:
+	if(countitem(5047)<1 || countitem(2276)<1)
+	goto M_insufficient;
+	delitem 5047,1;
+	delitem 2276,1;
+	getitem 5288,1;
+	close;
+
+M_ribbon:
+	if(countitem(2208)<1 || countitem(975)<1)
+	goto M_insufficient; 
+	delitem 2208,1;
+	delitem 975,1;
+	getitem 5083,1;
+	close;
+
+
+
+M_ribbonh:
+	if(countitem(5045)<1 || countitem(5083)<1 || countitem(7063)<40 || countitem(5139)<1 || countitem(982)<1 || countitem(975)<1)
+	goto M_insufficient; 
+	delitem 5045,1;
+	delitem 5083,1;
+	delitem 7063,40;
+	delitem 5139,1;
+	delitem 982,1;
+	delitem 975,1;
+	getitem 5211,1;
+	close;
+
+M_rideword:
+	if(countitem(1550)<1 || countitem(1553)<7 || countitem(1556)<7 || countitem(1554)<7 || countitem(1557)<7 || countitem(1555)<7 || countitem(7015)<30)
+	goto M_insufficient; 
+	delitem 1550,1;
+	delitem 1553,7;
+	delitem 1556,7;
+	delitem 1554,7;
+	delitem 1557,7;
+	delitem 1555,7;
+	delitem 7015,30;
+	getitem 5208,1;
+	close;
+
+M_rribbon:
+	if(countitem(2244)<1 || countitem(2209)<1 || countitem(10007)<1)
+	goto M_insufficient; 
+	delitem 2244,1;
+	delitem 2209,1;
+	delitem 10007,1;
+	getitem 5083,1;
+	close;
+
+M_sakkat:
+	if(countitem(1019)<120 || Zeny < 10000)
+	goto M_insufficient; 
+	delitem 1019,120;
+	set zeny,zeny-10000;
+	getitem 2280,1;
+	close;
+
+M_sales:
+	if(countitem(2272)<1 || countitem(7451)<4 || countitem(7433)<3 || countitem(690)<10)
+	goto M_insufficient; 
+	delitem 2272,1;
+	delitem 7451,4;
+	delitem 7433,3;
+	delitem 690,10;
+	getitem 5100,1;
+	close;
+
+M_sambrero:
+	if(countitem(5062)<1 || countitem(952)<50 || countitem(1907)<1)
+	goto M_insufficient; 
+	delitem 5062,1;
+	delitem 952,50;
+	delitem 1907,1;
+	getitem 5067,1;
+	close;
+
+M_sheep:
+	if(countitem(5160)<1 || countitem(7106)<6 || countitem(7107)<80)
+	goto M_insufficient; 
+	delitem 5160,1;
+	delitem 7106,6;
+	delitem 7107,80;
+	getitem 5133,1;
+	close;
+
+M_silver:
+	if(countitem(2234)<1 || countitem(714)<5 || countitem(2611)<25)
+	goto M_insufficient; 
+	delitem 2234,1;
+	delitem 714,5;
+	delitem 2611,25;
+	getitem 5149,1;
+	close;
+
+M_sleaf:
+	if(countitem(945)<600 || countitem(7030)<1)
+	goto M_insufficient; 
+	delitem 945,600;
+	delitem 7030,1;
+	getitem 5064,1;
+	close;
+
+M_smile:
+	if(countitem(705)<10 || countitem(909)<10 || countitem(914)<10)
+	goto M_insufficient; 
+	delitem 705,10;
+	delitem 909,10;
+	delitem 914,10;
+	getitem 2278,1;
+	close;
+
+M_smiling:
+	if(countitem(2278)<1 || countitem(1015)<1 || countitem(999)<5)
+	goto M_insufficient; 
+	delitem 2278,1;
+
+	getitem 5212,1;
+	close;
+
+M_soul:
+	if(countitem(5074)<1 || countitem(2282)<1 || countitem(7064)<10 || countitem(969)<5)
+	goto M_insufficient; 
+	delitem 5074,1;
+	delitem 2282,1;
+	delitem 7064,10;
+	delitem 969,5;
+	getitem 5257,1;
+	close;
+
+M_spore:
+	if(countitem(7068)<300 || countitem(7033)<850 || countitem(1015)<1)
+	goto M_insufficient; 
+	delitem 7068,300;
+	delitem 7033,850;
+	delitem 1015,1;
+	getitem 5029,1;
+	close;
+
+
+	if(countitem(5351)<1 || countitem(10011)<1)
+	goto M_insufficient; 
+	delitem 5351,1;
+	delitem 10011,1;
+	getitem 5103,1;
+	close;
+	
+//M_sungod:
+//	if(countitem(7086)<1 || countitem(969)<10 || countitem(999)<40 || countitem(1003)<50 || countitem(984)<2)
+//	goto M_insufficient; 
+//	delitem 7086,1;
+//	delitem 969,10;
+//	delitem 999,40;
+//	delitem 1003,50;
+//	delitem 984,2;
+//	getitem 5022,1;
+//	close;
+
+M_teddy:
+	if(countitem(5030)<1 || countitem(7213)<100 || countitem(7217)<100 || countitem(7161)<300)
+	goto M_insufficient; 
+	delitem 5030,1;
+	delitem 7213,100;
+	delitem 7217,100;
+	delitem 7161,300;
+	getitem 5059,1;
+	close;
+
+M_toast:
+	if(countitem(519)<50 || countitem(7031)<50 || countitem(548)<50 || countitem(7205)<50)
+	goto M_insufficient; 
+	delitem 519,50;
+	delitem 7031,50;
+	delitem 548,50;
+	delitem 7205,50;
+	getitem 5107,1;
+	close;
+
+M_tower:
+	if(countitem(5153)<1 || countitem(741)<10 || countitem(5132)<1 || countitem(5074)<1)
+	goto M_insufficient; 
+	delitem 5153,1;
+	delitem 741,10;
+	delitem 5132,1;
+	delitem 5074,1;
+	getitem 5255,1;
+	close;
+
+M_tulip:
+	if(countitem(2278)<1 || countitem(975)<1)
+	goto M_insufficient; 
+	delitem 2278,1;
+
+	if(countitem(4219)<1 || countitem(4114)<1 || countitem(4177)<1 || countitem(4259)<1 || countitem(4212)<1 || countitem(4073)<1 || countitem(4112)<1 || countitem(4081)<1 || countitem(4251)<1 || countitem(4166)<1 || countitem(7563)<1000 || countitem(7511)<1000 || Zeny <10000000)
+	goto M_insufficient; 
+	delitem 4219,1;
+	delitem 4114,1;
+	delitem 4177,1;
+	delitem 4259,1;
+	delitem 4212,1;
+	delitem 4073,1;
+	delitem 4112,1;
+	delitem 4081,1;
+	delitem 4251,1;
+	delitem 4166,1;
+	delitem 7511,1000;
+	delitem 7563,1000;
+	getitem 5171,1;
+	close;
+	
+M_valkf:
+	if(countitem(7510)<1 || countitem(2210)<1 || countitem(7063)<50)
+	goto M_insufficient; 
+	delitem 7510,1;
+	delitem 2210,1;
+	delitem 7063,50;
+	getitem 5256,1;
+	close;
+
+
+M_wlily:
+	if(countitem(5302)<1 || countitem(975)<1 || countitem(982)<1 || countitem(5165)<1)
+	goto M_insufficient; 
+	delitem 5302,1;
+	delitem 975,1;
+	delitem 982,1;
+	delitem 5165,1;
+	getitem 5284,1;
+	close;
+
+M_wonder:
+	if(countitem(5037)<1 || countitem(7064)<500)
+	goto M_insufficient; 
+	delitem 5037,1;
+	delitem 7064,500;
+	getitem 5050,1;
+	close;
+
+M_wpetal:
+	if(countitem(2269)<1 || countitem(982)<1)
+	goto M_insufficient; 
+	delitem 2269,1;
+	delitem 982,1;
+	getitem 5206,1;
+	close;
+
+M_wribbon:
+	if(countitem(2208)<1 || countitem(982)<1)
+	goto M_insufficient; 
+	delitem 2208,1;
+	delitem 982,1;
+	getitem 5197,1;
+	close;
+
+M_yband:
+	delitem 2210,1;
+	delitem 5192,1;
+	delitem 2250,1;
+	getitem 5278,1;
+	close;
+
+M_yribbon:
+	if(countitem(2208)<1 || countitem(976)<1)
+	goto M_insufficient; 
+	delitem 2208,1;
+	delitem 976,1;
+	getitem 5192,1;
+	close;
+
+M_zealot:
+	if(countitem(7263)<1 || countitem(660)<1 || countitem(7099)<30 || countitem(7315)<369)
+	goto M_insufficient; 
+	delitem 7263,1;
+	delitem 660,1;
+	delitem 7099,30;
+	delitem 7315,369;
+	getitem 5121,1;
+	close;
+
+//________not enough or not the correct items________
+	
+M_insufficient:
+	next;
+	mes "[Hat Maker]";
+	mes "You don't have the required materiels.";
+	mes "Please come back another time...";
+	menu "Return to Main Menu",H_top,"Leave",H_cancel;
+	close;
+	
+H_cancel:
+	close;
+}
