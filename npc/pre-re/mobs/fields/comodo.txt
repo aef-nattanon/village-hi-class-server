@@ -63,7 +63,7 @@ cmd_fild04,0,0	monster	Alligator	1271,40
 cmd_fild04,0,0	monster	Crab	1073,20
 cmd_fild04,0,0	monster	Raggler	1254,20
 cmd_fild04,0,0	monster	Shellfish	1074,20
-cmd_fild04,221,120,120,40	monster	Sea Otter	1323,20
+cmd_fild04,221,120,120,40	monster	Sea Otter	1323,40
 
 //==================================================
 // cmd_fild05 - Border of Papuchica Forest
