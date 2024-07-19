@@ -64,7 +64,7 @@ prt_fild03,148,107,5,5	monster	Green Plant	1080,5,360000,180000
 // prt_fild04 - Prontera Field
 //==================================================
 prt_fild04,0,0	monster	Rocker	1052,70
-prt_fild04,0,0	monster	Creamy	1018,40
+prt_fild04,0,0	monster	Creamy	1018,60
 prt_fild04,0,0	monster	Pupa	1008,10
 prt_fild04,0,0	monster	Poring	1002,30
 prt_fild04,0,0	monster	Vocal	1088,1,1800000,1200000
