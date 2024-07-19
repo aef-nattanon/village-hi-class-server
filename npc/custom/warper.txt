@@ -37,7 +37,6 @@ menu	"วาร์ปสุดท้าย ^777777["+lastwarp$+"]^000000",-,
 	else
 		warp lastwarp$,lastwarpx,lastwarpy;
 	end;
-
 // ------------------- Functions -------------------
 // * Go("<map>",<x>,<y>);
 //	~ Warps directly to a map.
@@ -130,7 +129,7 @@ menu	"Prontera",T1, "Alberta",T2, "Aldebaran",T3, "Amatsu",T4, "Ayothaya",T5,
     	"Brasilis",T6, "Comodo",T7, "Dewata",T8, "Eclage",T9, "Einbech",T10,
 		"Einbroch",T11, "El Dicastes",T12, "Geffen",T13, "Hugel",T14, "Ice Castle",T15,
 		"Izlude",T16, "Jawaii",T17, "Juno",T18, "Kunlun",T19, "Lasagna",T20,
-		"Lighthalzen",T21, "Luoyang",T22, "Lutie",T23, "Malangdo",T24, "Malaya",T25,
+		"Lighthalzen",T21, "Luoyang",T22, "Xmas",T23, "Malangdo",T24, "Malaya",T25,
 		"Manuk",T26, "Midgarts Expedition Camp",T27, "Mora",T28, "Morocc",T29, "Moscovia",T30,
 		"Nameless Island (Day)",T31, "Nameless Island (Night)",T32, "Niflheim",T33, "Payon",T34, "Rachel",T35,
 		"Rockridge",T36, "Special Security Area, Cor",T37, "Splendide",T38, "Thor Camp",T39, "Umbala",T40,
@@ -205,7 +204,7 @@ menu	"Amatsu Fields",F1, "Ayothaya Fields",F2, "Bifrost Fields", F3,
     	"Frozen Scale Fields",F10, "Geffen Fields",F11, "Grey Wolf Forest",F12,
 		"Hugel Fields",F13, "Juno Fields",F14, "Kiwawa Desert",F15,
 		"Kunlun Fields",F16, "Lasagna Fields",F17, "Lighthalzen Fields",F18,
-		"Luoyang Field",F19, "Lutie Field",F20, "Malaya Fields",F21,
+		"Luoyang Field",F19, "Xmas Field",F20, "Malaya Fields",F21,
 		"Manuk Fields",F22, "Mjolnir Fields",F23, "Moscovia Fields",F24,
 		"Niflheim Fields",F25, "Payon Forests",F26, "Prontera Fields",F27,
 		"Rachel Fields",F28, "Sograt Deserts",F29, "Splendide Fields",F30,
@@ -264,7 +263,7 @@ F18: setarray @c[2],240,179,185,235,240,226;
 F19: setarray @c[2],229,187;
 	 Disp("Luoyang Field",1,1); Pick("lou_fild");
 F20: setarray @c[2],115,145;
-	 Disp("Lutie Field",1,1); Pick("xmas_fild");
+	 Disp("Xmas Field",1,1); Pick("xmas_fild");
 F21: Restrict("RE");
 	 setarray @c[2],40,272,207,180;
 	 Disp("Malaya Field",1,2); Pick("ma_fild");
@@ -639,7 +638,7 @@ OnNaviGenerate:
 	naviregisterwarp("Warper > Kunlun", "gonryun",160,120);
 	naviregisterwarp("Warper > Lighthalzen", "lighthalzen",158,92);
 	naviregisterwarp("Warper > Luoyang", "louyang",217,100);
-	naviregisterwarp("Warper > Lutie", "xmas",147,134);
+	naviregisterwarp("Warper > Xmas", "xmas",147,134);
 	naviregisterwarp("Warper > Manuk", "manuk",282,138);
 	naviregisterwarp("Warper > Midgarts Expedition Camp", "mid_camp",210,288);
 	naviregisterwarp("Warper > Morocc", "morocc",156,93);
@@ -769,7 +768,7 @@ OnNaviGenerate:
 
 	naviregisterwarp("Warper > Luoyang Field 1", "lou_fild01", 229, 187);
 
-	naviregisterwarp("Warper > Lutie Field 1", "xmas_fild01", 115, 145);
+	naviregisterwarp("Warper > Xmas Field 1", "xmas_fild01", 115, 145);
 
 	if (checkre(0)) {
 		naviregisterwarp("Warper > Malaya Field 1", "ma_fild01", 40, 272);
