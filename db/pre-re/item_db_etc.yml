@@ -518,6 +518,7 @@ Body:
     Name: Witherless Rose
     Type: Etc
     Buy: 55000
+    Sell: 5000
     Weight: 10
     Flags:
       BuyingStore: true
