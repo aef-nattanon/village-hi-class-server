@@ -128,7 +128,7 @@ function Restrict {
 menu	"Prontera",T1, "Alberta",T2, "Aldebaran",T3, "Amatsu",T4, "Ayothaya",T5,
     	"Brasilis",T6, "Comodo",T7, "Dewata",T8, "Eclage",T9, "Einbech",T10,
 		"Einbroch",T11, "El Dicastes",T12, "Geffen",T13, "Hugel",T14, "Ice Castle",T15,
-		"Izlude",T16, "Jawaii",T17, "Juno",T18, "Kunlun",T19, "Lasagna",T20,
+		"Izlude",T16, "Jawaii",T17, "Juno",T18, "Gonryun",T19, "Lasagna",T20,
 		"Lighthalzen",T21, "Luoyang",T22, "Xmas",T23, "Malangdo",T24, "Malaya",T25,
 		"Manuk",T26, "Midgarts Expedition Camp",T27, "Mora",T28, "Morocc",T29, "Moscovia",T30,
 		"Nameless Island (Day)",T31, "Nameless Island (Night)",T32, "Niflheim",T33, "Payon",T34, "Rachel",T35,
@@ -203,7 +203,7 @@ menu	"Amatsu Fields",F1, "Ayothaya Fields",F2, "Bifrost Fields", F3,
     	"Eclage Fields",F7, "Einbroch Fields",F8, "El Dicastes Fields",F9,
     	"Frozen Scale Fields",F10, "Geffen Fields",F11, "Grey Wolf Forest",F12,
 		"Hugel Fields",F13, "Juno Fields",F14, "Kiwawa Desert",F15,
-		"Kunlun Fields",F16, "Lasagna Fields",F17, "Lighthalzen Fields",F18,
+		"Gonryun Fields",F16, "Lasagna Fields",F17, "Lighthalzen Fields",F18,
 		"Luoyang Field",F19, "Xmas Field",F20, "Malaya Fields",F21,
 		"Manuk Fields",F22, "Mjolnir Fields",F23, "Moscovia Fields",F24,
 		"Niflheim Fields",F25, "Payon Forests",F26, "Prontera Fields",F27,
@@ -254,7 +254,7 @@ F15: Restrict("RE");
 	 setarray @c[2],38,246,31,207;
 	 Disp("Kiwawa Desert",1,2); Pick("","rockrdg1","rockrdg2");
 F16: setarray @c[2],220,227;
-	 Disp("Kunlun Field",1,1); Pick("gon_fild");
+	 Disp("Gonryun Field",1,1); Pick("gon_fild");
 F17: Restrict("RE");
 	 setarray @c[2],344,371,20,98;
 	 Disp("Lasagna Field",1,2); Pick("lasa_fild");	 
@@ -311,7 +311,7 @@ menu	"Abandoned Lab Amicitia",D1, "Abyss Lakes",D2, "Amatsu Dungeon",D3,
 		"Einbroch Dungeon",D16, "Flame Basin",D17, "Gefenia",D18,
 		"Geffen Dungeon",D19, "Glast Heim",D20, "Hidden Dungeon",D21,
 		"Ice Dungeon",D22, "Illusion Dungeon",D23, "Issgard Dungeon",D24,
-		"Juperos",D25, "Kiel Dungeon",D26, "Kunlun Dungeon",D27,
+		"Juperos",D25, "Kiel Dungeon",D26, "Gonryun Dungeon",D27,
 		"Lasagna Dungeon",D28, "Luoyang Dungeon",D29, "Magma Dungeon",D30,
 		"Malangdo Dungeon",D31, "Moscovia Dungeon",D32, "Nidhogg's Dungeon",D33,
 		"Niflheim Dungeon",D34, "Odin Temple",D35, "Orc Dungeon",D36,
@@ -411,7 +411,7 @@ D25: Restrict("RE",5);
 D26: setarray @c[2],28,226,41,198;
 	 Disp("Kiel Dungeon",1,2); Pick("kh_dun");
 D27: setarray @c[2],153,53,28,113,68,16;
-	 Disp("Kunlun Dungeon",1,3); Pick("gon_dun");
+	 Disp("Gonryun Dungeon",1,3); Pick("gon_dun");
 D28: Restrict("RE");
 	 setarray @c[2],24,143,22,171,190,18;
 	 Disp("Lasagna Dungeon",1,3); Pick("lasa_dun");
@@ -597,7 +597,7 @@ I20: Restrict("RE");
 	Special:
 // --------------------------------------------------
 menu	"Auction Hall",S1, "Battlegrounds",S2, "Casino",S3, "Dimensional Rift",S4,
-		"Eden Group Headquarters",S5, "Kunlun Arena",S6, "Izlude Arena",S7, 
+		"Eden Group Headquarters",S5, "Gonryun Arena",S6, "Izlude Arena",S7, 
 		"Monster Race Arena",S8, "Para Market",S9, "Turbo Track",S10;
 
 S1: Go("auction_01",22,68);
@@ -635,7 +635,7 @@ OnNaviGenerate:
 	naviregisterwarp("Warper > Izlude", "izlude",128,(checkre(3)?146:114));
 	naviregisterwarp("Warper > Jawaii", "jawaii",251,132);
 	naviregisterwarp("Warper > Juno", "yuno",157,51);
-	naviregisterwarp("Warper > Kunlun", "gonryun",160,120);
+	naviregisterwarp("Warper > Gonryun", "gonryun",160,120);
 	naviregisterwarp("Warper > Lighthalzen", "lighthalzen",158,92);
 	naviregisterwarp("Warper > Luoyang", "louyang",217,100);
 	naviregisterwarp("Warper > Xmas", "xmas",147,134);
@@ -739,7 +739,7 @@ OnNaviGenerate:
 		}
 	}
 
-	naviregisterwarp("Warper > Kunlun Field 1", "gon_fild01", 220, 227);
+	naviregisterwarp("Warper > Gonryun Field 1", "gon_fild01", 220, 227);
 
 	naviregisterwarp("Warper > Hugel Field 1", "hu_fild01", 268, 101);
 	if (!.OnlyFirstFld) {
@@ -1060,10 +1060,10 @@ OnNaviGenerate:
 		naviregisterwarp("Warper > Underground Prison 1", "gl_prison", 14, 70);
 		naviregisterwarp("Warper > Underground Prison 2", "gl_prison1", 150, 14);
 	}
-	naviregisterwarp("Warper > Kunlun Dungeon 1", "gon_dun01", 153, 53);
+	naviregisterwarp("Warper > Gonryun Dungeon 1", "gon_dun01", 153, 53);
 	if (!.OnlyFirstDun) {
-		naviregisterwarp("Warper > Kunlun Dungeon 2", "gon_dun02", 28, 113);
-		naviregisterwarp("Warper > Kunlun Dungeon 3", "gon_dun03", 68, 16);
+		naviregisterwarp("Warper > Gonryun Dungeon 2", "gon_dun02", 28, 113);
+		naviregisterwarp("Warper > Gonryun Dungeon 3", "gon_dun03", 68, 16);
 	}
 	naviregisterwarp("Warper > Hidden Dungeon 1", "prt_maze01", 176, 7);
 	if (!.OnlyFirstDun) {
@@ -1305,7 +1305,7 @@ OnNaviGenerate:
 	naviregisterwarp("Warper > Auction Hall", "auction_01", 22, 68);
 	naviregisterwarp("Warper > Battlegrounds", "bat_room", 154, 150);
 	naviregisterwarp("Warper > Casino", "cmd_in02", 179, 129);
-	naviregisterwarp("Warper > Kunlun Arena", "gon_test", 48, 10);
+	naviregisterwarp("Warper > Gonryun Arena", "gon_test", 48, 10);
 	naviregisterwarp("Warper > Izlude Arena", "arena_room", 100, 88);
 	naviregisterwarp("Warper > Monster Race Arena", "p_track01", 62, 41);
 	naviregisterwarp("Warper > Turbo Track", "turbo_room", 99, 114);
