@@ -67,3 +67,4 @@ ice_dun03,45,150,25,20	monster	Iceicle	1789,3,960000,300000
 ice_dun03,61,59,33,33	monster	Iceicle	1789,7,1080000,300000
 ice_dun03,150,55,24,36	monster	Iceicle	1789,6,1080000,300000
 ice_dun03,247,54,24,28	monster	Iceicle	1789,3,840000,300000
+ice_dun03,0,0,0,0	boss_monster	Ktullanux	1779,1,7200000,600000,1
