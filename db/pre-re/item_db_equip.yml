@@ -9271,8 +9271,6 @@ Body:
     WeaponLevel: 3
     EquipLevelMin: 1
     Trade:
-      NoSell: true
-      NoCart: true
       NoStorage: true
       NoGuildStorage: true
       NoMail: true

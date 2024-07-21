@@ -9822,11 +9822,7 @@ Body:
     Type: Etc
     Flags:
       BuyingStore: true
-    Trade:
-      NoDrop: true
-      NoTrade: true
-      NoSell: true
-      NoCart: true
+    Trade: 
       NoStorage: true
       NoGuildStorage: true
       NoMail: true
