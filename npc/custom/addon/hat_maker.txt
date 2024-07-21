@@ -19,6 +19,7 @@ morocc,157,88,5	script	นักสร้างหมวก	90,{
 	goto H_top;
 
 H_top:
+  cutin "kafra_07",2;
 	menu "A-E",H_ae,"F-J",H_fj,"K-O",H_ko,"P-T",H_pt,"U-Z",H_uz,"Cancel",H_cancel;
 
 //_____________Hat List_______________//
@@ -207,6 +208,7 @@ menu
 		
 I_alarm:
 	next;
+  mes "<ITEM>"+getitemname("Alarm Mask")+"<INFO>"+getiteminfo("Alarm Mask", ITEMINFO_ID)+"</INFO></ITEM>";
 	mes "1x Mr. Scream";
 	mes "3000x Clock Hands";
 	menu "สร้างหมวก",M_alarm,"กลับสู่เมนู",H_top;
