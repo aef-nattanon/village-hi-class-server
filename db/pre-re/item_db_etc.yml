@@ -4173,8 +4173,16 @@ Body:
     Flags:
       BuyingStore: true
     Script: |
-      bonus bNoMagicDamage,100;
-      bonus bUseSPrate,100;
+      bonus2 bSubEle,Ele_Earth,80;
+      bonus2 bSubEle,Ele_Water,80;
+      bonus2 bSubEle,Ele_Wind,80;
+      bonus2 bSubEle,Ele_Fire,80;
+      bonus2 bSubEle,Ele_Holy,80;
+      bonus2 bSubEle,Ele_Dark,80;
+      bonus2 bSubEle,Ele_Poison,80;
+      bonus2 bSubClass,Class_Normal,-1000;
+
+
   - Id: 4129
     AegisName: Baphomet__Card
     Name: Bapho Jr. Card
