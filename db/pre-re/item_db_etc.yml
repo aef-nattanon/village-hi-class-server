@@ -527,6 +527,7 @@ Body:
     Name: Frozen Rose
     Type: Etc
     Buy: 35000
+    Sell: 1500
     Weight: 10
     Flags:
       BuyingStore: true

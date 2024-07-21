@@ -2820,6 +2820,7 @@ Body:
     Type: Weapon
     SubType: Dagger
     Buy: 19500
+    Sell: 4750
     Weight: 700
     Attack: 87
     Range: 1
@@ -11625,6 +11626,7 @@ Body:
     Type: Weapon
     SubType: Bow
     Buy: 124000
+    Sell: 1500
     Weight: 3500
     Attack: 145
     Range: 5
@@ -20147,6 +20149,7 @@ Body:
     Name: Undershirt
     Type: Armor
     Buy: 20000
+    Sell: 5000
     Weight: 150
     Defense: 2
     Locations:
@@ -21028,6 +21031,7 @@ Body:
     Name: Gold Ring
     Type: Armor
     Buy: 30000
+    Sell: 1500
     Weight: 100
     Locations:
       Both_Accessory: true
