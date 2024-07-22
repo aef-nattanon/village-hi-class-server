@@ -3524,6 +3524,7 @@ Body:
       Right_Hand: true
     Flags:
       BuyingStore: true
+      DropEffect: BLUE_PILLAR
     Script: |
       bonus2 bAddEff,Eff_Curse,500;
       bonus bBaseAtk,5;
@@ -3898,6 +3899,7 @@ Body:
       Armor: true
     Flags:
       BuyingStore: true
+      DropEffect: BLUE_PILLAR
     Script: |
       bonus2 bSubEle,Ele_Water,5;
       bonus2 bResEff,Eff_Freeze,10000;
@@ -4357,6 +4359,7 @@ Body:
       Right_Hand: true
     Flags:
       BuyingStore: true
+      DropEffect: BLUE_PILLAR
     Script: |
       bonus2 bAddClass,Class_Boss,25;
   - Id: 4141
