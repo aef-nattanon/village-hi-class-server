@@ -3537,6 +3537,7 @@ Body:
       Both_Accessory: true
     Flags:
       BuyingStore: true
+      DropEffect: BLUE_PILLAR
     Script: |
       bonus bNoCastCancel;
       bonus bCastrate,25;
