@@ -2550,6 +2550,7 @@ Body:
       Armor: true
     Flags:
       BuyingStore: true
+      DropEffect: BLUE_PILLAR
     Script: |
       bonus bLuk,2;
       bonus bFlee2,1;
@@ -2563,6 +2564,7 @@ Body:
       Right_Hand: true
     Flags:
       BuyingStore: true
+      DropEffect: BLUE_PILLAR
     Script: |
       bonus bVit,1;
       bonus bMaxHP,100;
@@ -2576,6 +2578,7 @@ Body:
       Armor: true
     Flags:
       BuyingStore: true
+      DropEffect: BLUE_PILLAR
     Script: |
       bonus bMaxHP,700;
   - Id: 4004
@@ -2588,6 +2591,7 @@ Body:
       Right_Hand: true
     Flags:
       BuyingStore: true
+      DropEffect: BLUE_PILLAR
     Script: |
       bonus bDex,1;
       bonus bHit,3;
@@ -2601,6 +2605,7 @@ Body:
       Right_Hand: true
     Flags:
       BuyingStore: true
+      DropEffect: BLUE_PILLAR
     Script: |
       bonus2 bAddEle,Ele_Dark,20;
   - Id: 4006
@@ -2613,6 +2618,7 @@ Body:
       Right_Hand: true
     Flags:
       BuyingStore: true
+      DropEffect: BLUE_PILLAR
     Script: |
       bonus bLuk,1;
       bonus bCritical,1;
@@ -2627,6 +2633,7 @@ Body:
       Right_Hand: true
     Flags:
       BuyingStore: true
+      DropEffect: BLUE_PILLAR
     Script: |
       bonus2 bAddRace,RC_Formless,20;
   - Id: 4008
@@ -2639,6 +2646,7 @@ Body:
       Armor: true
     Flags:
       BuyingStore: true
+      DropEffect: BLUE_PILLAR
     Script: |
       bonus bStr,1;
       bonus bBaseAtk,10;
@@ -2652,6 +2660,7 @@ Body:
       Shoes: true
     Flags:
       BuyingStore: true
+      DropEffect: BLUE_PILLAR
     Script: |
       bonus bAgi,1;
       bonus bFlee,2;
@@ -2667,6 +2676,7 @@ Body:
       Head_Top: true
     Flags:
       BuyingStore: true
+      DropEffect: BLUE_PILLAR
     Script: |
       bonus bMaxSP,80;
   - Id: 4011
@@ -2679,6 +2689,7 @@ Body:
       Armor: true
     Flags:
       BuyingStore: true
+      DropEffect: BLUE_PILLAR
     Script: |
       bonus bVit,1;
       bonus bMaxHP,100;
@@ -2692,6 +2703,7 @@ Body:
       Left_Hand: true
     Flags:
       BuyingStore: true
+      DropEffect: BLUE_PILLAR
     Script: |
       bonus bMaxHP,400;
   - Id: 4013
@@ -2704,6 +2716,7 @@ Body:
       Left_Hand: true
     Flags:
       BuyingStore: true
+      DropEffect: BLUE_PILLAR
     Script: |
       bonus bMaxHPrate,5;
   - Id: 4014
@@ -2716,6 +2729,7 @@ Body:
       Armor: true
     Flags:
       BuyingStore: true
+      DropEffect: BLUE_PILLAR
     Script: |
       bonus bMaxHP,400;
       bonus bMaxSP,50;
@@ -2729,6 +2743,7 @@ Body:
       Garment: true
     Flags:
       BuyingStore: true
+      DropEffect: BLUE_PILLAR
     Script: |
       bonus bFlee,10;
   - Id: 4016
@@ -2741,6 +2756,7 @@ Body:
       Armor: true
     Flags:
       BuyingStore: true
+      DropEffect: BLUE_PILLAR
     Script: |
       bonus bAgi,1;
   - Id: 4017
@@ -2753,6 +2769,7 @@ Body:
       Right_Hand: true
     Flags:
       BuyingStore: true
+      DropEffect: BLUE_PILLAR
     Script: |
       bonus2 bAddEff,Eff_Stun,500;
   - Id: 4018
@@ -2765,6 +2782,7 @@ Body:
       Right_Hand: true
     Flags:
       BuyingStore: true
+      DropEffect: BLUE_PILLAR
     Script: |
       bonus bInt,1;
       bonus bMaxSP,10;
@@ -2778,6 +2796,7 @@ Body:
       Right_Hand: true
     Flags:
       BuyingStore: true
+      DropEffect: BLUE_PILLAR
     Script: |
       bonus bStr,1;
       bonus bBaseAtk,3;
@@ -2791,6 +2810,7 @@ Body:
       Right_Hand: true
     Flags:
       BuyingStore: true
+      DropEffect: BLUE_PILLAR
     Script: |
       bonus2 bAddEff,Eff_Blind,500;
       bonus bBaseAtk,5;
@@ -2804,6 +2824,7 @@ Body:
       Armor: true
     Flags:
       BuyingStore: true
+      DropEffect: BLUE_PILLAR
     Script: |
       bonus bDex,1;
       bonus bBaseAtk,5;
@@ -2817,6 +2838,7 @@ Body:
       Both_Accessory: true
     Flags:
       BuyingStore: true
+      DropEffect: BLUE_PILLAR
     Script: |
       bonus bVit,2;
   - Id: 4023
@@ -2829,6 +2851,7 @@ Body:
       Armor: true
     Flags:
       BuyingStore: true
+      DropEffect: BLUE_PILLAR
     Script: |
       bonus bInt,1;
   - Id: 4024
@@ -2841,6 +2864,7 @@ Body:
       Right_Hand: true
     Flags:
       BuyingStore: true
+      DropEffect: BLUE_PILLAR
     Script: |
       bonus2 bAddEff,Eff_Sleep,500;
       bonus bBaseAtk,5;
@@ -2977,6 +3001,7 @@ Body:
       Right_Hand: true
     Flags:
       BuyingStore: true
+      DropEffect: BLUE_PILLAR
     Script: |
       bonus2 bAddRace,RC_DemiHuman,20;
       bonus2 bAddRace,RC_Player_Human,20;
@@ -3664,6 +3689,7 @@ Body:
       Armor: true
     Flags:
       BuyingStore: true
+      DropEffect: BLUE_PILLAR
     Script: |
       bonus bDefEle,Ele_Water;
       bonus bDef,1;
