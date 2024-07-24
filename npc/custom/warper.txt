@@ -136,9 +136,9 @@ function Restrict {
 // 		"Varmundt's Mansion",T41, "Veins",T42, "Verus Findspot",T43, "Wolf Village",T44;
 menu	"Prontera",T1, "Alberta",T2, "Aldebaran",T3, "Amatsu",T4, "Ayothaya",T5,
     	"Brasilis",T6, "Comodo",T7, "Einbech",T10,
-		"Einbroch",T11, "Geffen",T13, "Hugel",T14,
+		"Einbroch",T11,"El Dicastes",T12, "Geffen",T13, "Hugel",T14,
 		"Izlude",T16, "Jawaii",T17, "Juno",T18, "Gonryun",T19,
-		"Lighthalzen",T21, "Luoyang",T22, "Xmas",T23, "Malaya",T25,
+		"Lighthalzen",T21, "Luoyang",T22, "Xmas",T23,
 		"Manuk",T26, "Midgarts Expedition Camp",T27, "Morocc",T29, "Moscovia",T30,
 		"Nameless Island (Day)",T31, "Nameless Island (Night)",T32, "Niflheim",T33, "Payon",T34, "Rachel",T35,
 		"Splendide",T38, "Thor Camp",T39, "Umbala",T40,
@@ -157,8 +157,7 @@ T9: Restrict("RE");
 	Go("ecl_in01",48,53);
 T10: Go("einbech",63,35);
 T11: Go("einbroch",64,200);
-T12: Restrict("RE");
-	 Go("dicastes01",198,187);
+T12: Go("dicastes01",198,187);
 T13: Go("geffen",119,59);
 T14: Go("hugel",96,145);
 T15: Restrict("RE");
@@ -205,13 +204,25 @@ T44: Restrict("RE");
 	Fields:
 // --------------------------------------------------
 @f = true;
-menu	"Amatsu Fields",F1, "Ayothaya Fields",F2, "Bifrost Fields", F3,
+// menu	"Amatsu Fields",F1, "Ayothaya Fields",F2, "Bifrost Fields", F3,
+//     	"Brasilis Fields",F4, "Comodo Fields",F5, "Dewata Fields",F6,
+//     	"Eclage Fields",F7, "Einbroch Fields",F8, "El Dicastes Fields",F9,
+//     	"Frozen Scale Fields",F10, "Geffen Fields",F11, "Grey Wolf Forest",F12,
+// 		"Hugel Fields",F13, "Juno Fields",F14, "Kiwawa Desert",F15,
+// 		"Kunlun Fields",F16, "Lasagna Fields",F17, "Lighthalzen Fields",F18,
+// 		"Luoyang Field",F19, "Lutie Field",F20, "Malaya Fields",F21,
+// 		"Manuk Fields",F22, "Mjolnir Fields",F23, "Moscovia Fields",F24,
+// 		"Niflheim Fields",F25, "Payon Forests",F26, "Prontera Fields",F27,
+// 		"Rachel Fields",F28, "Sograt Deserts",F29, "Splendide Fields",F30,
+// 		"Umbala Fields",F31, "Veins Fields",F32;
+
+menu	"Amatsu Fields",F1, "Ayothaya Fields",F2,
     	"Brasilis Fields",F4, "Comodo Fields",F5, "Dewata Fields",F6,
-    	"Eclage Fields",F7, "Einbroch Fields",F8, "El Dicastes Fields",F9,
-    	"Frozen Scale Fields",F10, "Geffen Fields",F11, "Grey Wolf Forest",F12,
-		"Hugel Fields",F13, "Juno Fields",F14, "Kiwawa Desert",F15,
-		"Gonryun Fields",F16, "Lasagna Fields",F17, "Lighthalzen Fields",F18,
-		"Luoyang Field",F19, "Xmas Field",F20, "Malaya Fields",F21,
+    	"Einbroch Fields",F8, "El Dicastes Fields",F9,
+    	"Geffen Fields",F11,
+		"Hugel Fields",F13, "Juno Fields",F14,
+		"Gonryun Fields",F16, "Lighthalzen Fields",F18,
+		"Luoyang Field",F19, "Xmas Field",F20,
 		"Manuk Fields",F22, "Mjolnir Fields",F23, "Moscovia Fields",F24,
 		"Niflheim Fields",F25, "Payon Forests",F26, "Prontera Fields",F27,
 		"Rachel Fields",F28, "Sograt Deserts",F29, "Splendide Fields",F30,
@@ -224,14 +235,12 @@ F2: setarray @c[2],173,134,212,150;
 F3: Restrict("RE");
 	setarray @c[2],193,220,220,187;
 	Disp("Bifrost Field",1,2); Pick("bif_fild");
-F4: Restrict("RE");
-	setarray @c[2],74,32;
+F4: setarray @c[2],74,32;
 	Disp("Brasilis Field",1,1); Pick("bra_fild");
 F5: Restrict("Pre-RE",5);
 	setarray @c[2],180,178,231,160,191,172,228,194,224,203,190,223,234,177,194,175,172,172;
 	Disp("Comodo Field",1,9); Pick("cmd_fild");
-F6: Restrict("RE");
-	setarray @c[2],371,212;
+F6: setarray @c[2],371,212;
 	Disp("Dewata Field",1,1); Pick("dew_fild");
 F7: Restrict("RE");
 	setarray @c[2],97,314;
@@ -239,8 +248,7 @@ F7: Restrict("RE");
 F8: Restrict("Pre-RE",2,10);
 	setarray @c[2],142,225,182,141,187,228,185,173,216,173,195,148,272,220,173,214,207,174,196,200;
 	Disp("Einbroch Field",1,10); Pick("ein_fild");
-F9: Restrict("RE");
-	setarray @c[2],143,132,143,217;
+F9: setarray @c[2],143,132,143,217;
 	Disp("El Dicastes Field",1,2); Pick("dic_fild");
 F10: Restrict("RE");
 	 setarray @c[2],378,223,223,18,365,241,140,280;
@@ -330,9 +338,9 @@ F32: Restrict("Pre-RE",5);
 // 		"Varmundt's Dungeon",D52, "Verus Area",D53;
 menu "Abyss Lakes",D2, "Amatsu Dungeon",D3,
 		"Anthell",D4, "Ayothaya Dungeon",D5, "Beach Dungeon",D6,
-		"Bifrost Tower",D7, "Bio Labs",D8, "Brasilis Dungeon",D9,
+		"Bio Labs",D8, "Brasilis Dungeon",D9,
 		"Byalan Dungeon",D10, "Clock Tower",D11, "Coal Mines",D12,
-		"Culvert",D13, "Cursed Abbey",D14,
+		"Culvert",D13, "Cursed Abbey",D14, "Dewata Dungeon",D15,
 		"Einbroch Dungeon",D16, "Gefenia",D18,
 		"Geffen Dungeon",D19, "Glast Heim",D20, "Hidden Dungeon",D21,
 		"Ice Dungeon",D22, "Illusion Dungeon",D23, "Issgard Dungeon",D24,
@@ -342,10 +350,10 @@ menu "Abyss Lakes",D2, "Amatsu Dungeon",D3,
 		"Odin Temple",D35, "Orc Dungeon",D36,
 		"Payon Dungeon",D38,
 		"Pyramids",D40, "Rachel Sanctuary",D41,
-		"Sphinx",D45,
+		"Scaraba Hole",D44, "Sphinx",D45,
 		"Sunken Ship",D46, "Thanatos Tower",D47, "Thor Volcano",D48,
 		"Toy Factory",D49, "Turtle Dungeon",D50, "Umbala Dungeon",D51,
-		"Varmundt's Dungeon",D52, "Verus Area",D53;
+		"Verus Area",D53;
 
 D1: Restrict("RE");
 	setarray @c[2],253,244,145,278;
@@ -367,8 +375,7 @@ D7: Restrict("RE");
 D8: Restrict("RE",4,5);
 	setarray @c[2],150,288,150,18,140,134,244,52,100,202;
 	Disp("Bio Lab 1:Bio Lab 2:Bio Lab 3:Bio Lab 4:Tomb of the Fallen"); Pick("","lhz_dun01","lhz_dun02","lhz_dun03","lhz_dun04","lhz_dun_n");
-D9: Restrict("RE");
-	setarray @c[2],87,47,262,262;
+D9: setarray @c[2],87,47,262,262;
 	Disp("Brasilis Dungeon",1,2); Pick("bra_dun");
 D10: Restrict("RE",6);
 	 setarray @c[0],168,168,253,252,236,204,32,63,26,27,141,187;
@@ -383,8 +390,7 @@ D13: setarray @c[2],131,247,19,19,180,169,100,92;
 	 Disp("Culvert",1,4); Pick("","prt_sewb1","prt_sewb2","prt_sewb3","prt_sewb4");
 D14: setarray @c[2],51,14,150,11,120,10;
 	 Disp("Cursed Abbey",1,3); Pick("abbey");
-D15: Restrict("RE");
-	 setarray @c[2],285,160,299,29;
+D15: setarray @c[2],285,160,299,29;
 	 Disp("Dewata Dungeon",1,2); Pick("dew_dun");
 D16: Restrict("RE",3);
 	 setarray @c[2],22,14,292,290,269,279;
@@ -480,8 +486,7 @@ D42: Restrict("RE");
 D43: Restrict("RE");
 	 setarray @c[2],200,377,185,258,366,207,378,178;
 	 Disp("Rudus Dungeon",1,4); Pick("","sp_rudus","sp_rudus2","sp_rudus3","sp_rudus4");
-D44: Restrict("RE");
-	 setarray @c[2],364,44,101,141,101,141;
+D44: setarray @c[2],364,44,101,141,101,141;
 	 Disp("Scaraba Hole",1,3); Pick("dic_dun");
 D45: setarray @c[2],288,9,149,81,210,54,10,222,100,99;
 	 Disp("Sphinx",1,5); Pick("","in_sphinx1","in_sphinx2","in_sphinx3","in_sphinx4","in_sphinx5");
@@ -573,11 +578,19 @@ G8: Restrict("RE");
 // --------------------------------------------------
 	Instances:
 // --------------------------------------------------
+// menu	"Bakonawa Lake",I1, "Bangungot Hospital 2F",I2, "Buwaya Cave",I3,
+// 		"Devil Tower",I4, "Eclage Interior",I5, "Endless Tower",I6,
+// 		"Faceworms Nest",I7, "Geffen Magic Tournament",I8, "Ghost Palace",I9,
+// 		"Hazy Forest",I10, "Horror Toy Factory",I11, "Malangdo Culvert",I12,
+// 		"Nidhoggur's Nest",I13, "Octopus Cave",I14, "Old Glast Heim",I15,
+// 		"Orc's Memory",I16, "Sarah and Fenrir",I17, "Sara Memory",I18,
+// 		"Sealed Shrine",I19, "Wolfchev's Laboratory",I20;
 menu	"Bakonawa Lake",I1, "Bangungot Hospital 2F",I2, "Buwaya Cave",I3,
 		"Devil Tower",I4, "Eclage Interior",I5, "Endless Tower",I6,
 		"Faceworms Nest",I7, "Geffen Magic Tournament",I8, "Ghost Palace",I9,
 		"Hazy Forest",I10, "Horror Toy Factory",I11, "Malangdo Culvert",I12,
-		"Nidhoggur's Nest",I13, "Octopus Cave",I14, "Old Glast Heim",I15,
+		"Nidhoggur's Nest",I13,
+		"Octopus Cave",I14, "Old Glast Heim",I15,
 		"Orc's Memory",I16, "Sarah and Fenrir",I17, "Sara Memory",I18,
 		"Sealed Shrine",I19, "Wolfchev's Laboratory",I20;
 
@@ -620,7 +633,10 @@ I20: Restrict("RE");
 
 // --------------------------------------------------
 	Special:
-// --------------------------------------------------
+// // --------------------------------------------------
+// menu	"Auction Hall",S1, "Battlegrounds",S2, "Casino",S3, "Dimensional Rift",S4,
+// 		"Eden Group Headquarters",S5, "Gonryun Arena",S6, "Izlude Arena",S7, 
+// 		"Monster Race Arena",S8, "Para Market",S9, "Turbo Track",S10;
 menu	"Auction Hall",S1, "Battlegrounds",S2, "Casino",S3, "Dimensional Rift",S4,
 		"Eden Group Headquarters",S5, "Gonryun Arena",S6, "Izlude Arena",S7, 
 		"Monster Race Arena",S8, "Para Market",S9, "Turbo Track",S10;
