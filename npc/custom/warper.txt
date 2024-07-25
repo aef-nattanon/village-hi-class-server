@@ -24,13 +24,13 @@ function Go; function Disp; function Pick; function Restrict;
 // --------------------------------------------------
 
 menu	"วาร์ปสุดท้าย ^777777["+lastwarp$+"]^000000",-,
-    	" Towns",Towns,
-    	" Fields",Fields,
-    	" Dungeons",Dungeons,
-    	" Guild Castles",Castles,
-    	" Guild Dungeons",Guild_Dungeons,
-    	" Instances",Instances,
-    	" Special Areas",Special;
+    	" เมือง",Towns,
+    	" ฟิลด์",Fields,
+    	" ดันเจี้ยน",Dungeons,
+    	" ปราสาทกิลด์",Castles,
+    	" ดันเจี้ยนกิลด์",Guild_Dungeons,
+    	" พื้นที่กิจกรรม",Instances,
+    	" พื้นที่พิเศษ",Special;
 
 	if (lastwarp$ == "")
 		message strcharinfo(0),"คุณยังไม่ได้วาร์ปไปไหน";
@@ -591,46 +591,32 @@ menu	"Bakonawa Lake",I1, "Bangungot Hospital 2F",I2, "Buwaya Cave",I3,
 		"Hazy Forest",I10, "Horror Toy Factory",I11, "Malangdo Culvert",I12,
 		"Nidhoggur's Nest",I13,
 		"Octopus Cave",I14, "Old Glast Heim",I15,
-		"Orc's Memory",I16, "Sarah and Fenrir",I17, "Sara Memory",I18,
+		"Orc's Memory",I16,  "Orcish Underground Caves", I21, "Sarah and Fenrir",I17, "Sara Memory",I18,
 		"Sealed Shrine",I19, "Wolfchev's Laboratory",I20;
 
-I1: Restrict("RE");
-	Go("ma_scene01",172,175);
-I2: Restrict("RE");
-	Go("ma_dun01",151,8);
-I3: Restrict("RE");
-	Go("ma_fild02",316,317);
-I4: Restrict("RE");
-	Go("dali02",137,115);
-I5: Restrict("RE");
-	Go("ecl_hub01",129,12);
+I1: Go("ma_scene01",172,175);
+I2: Go("ma_dun01",151,8);
+I3: Go("ma_fild02",316,317);
+I4: Go("dali02",137,115);
+I5: Go("ecl_hub01",129,12);
 I6: Go("e_tower",72,112);
-I7: Restrict("RE");
-	Go("dali",85,64);
-I8: Restrict("RE");
-	Go("dali",94,141);
-I9: Restrict("RE");
-	Go("dali02",46,128);
-I10: Restrict("RE");
-	Go("bif_fild01",161,334);
-I11: Restrict("RE");
-	Go("xmas",234,298);
-I12: Restrict("RE");
-	Go("mal_in01",164,21);
+I7: Go("dali",85,64);
+I8: Go("dali",94,141);
+I9: Go("dali02",46,128);
+I10: Go("bif_fild01",161,334);
+I11: Go("xmas",234,298);
+I12: Go("mal_in01",164,21);
 I13: Go("nyd_dun02",95,193);
-I14: Restrict("RE");
-	Go("mal_dun01",152,230);
-I15: Restrict("RE");
-	Go("glast_01",204,268);
+I14: Go("mal_dun01",152,230);
+I15: Go("glast_01",204,268);
 I16: Go("gef_fild10",240,198);
-I17: Restrict("RE");
-	Go("dali02",92,141);
-I18: Restrict("RE");
-	Go("dali",133,108);
+I17: Go("dali02",92,141);
+I18: Go("dali",133,108);
 I19: Go("monk_test",306,143);
-I20: Restrict("RE");
-	Go("lhz_dun04",148,269);
-
+I20: Go("lhz_dun04",148,269);
+I21: menu	"Subterranean Orc Cave F1",SubI1, "Subterranean Orc Cave F2",SubI2;
+	SubI1: Go("1@orcs",180,19);
+	SubI2: Go("2@orcs",180,14);
 // --------------------------------------------------
 	Special:
 // // --------------------------------------------------
