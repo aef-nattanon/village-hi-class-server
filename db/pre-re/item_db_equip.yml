@@ -33961,7 +33961,7 @@ Body:
     Name: Angry Mouth
     Type: Armor
     Locations:
-      Head_Low: true
+      Costume_Head_Low: true
     ArmorLevel: 1
     View: 194
     Trade:
