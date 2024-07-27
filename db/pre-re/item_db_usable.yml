@@ -2844,6 +2844,7 @@ Body:
     Name: Fried Grasshopper Legs
     Type: Healing
     Buy: 2000
+    Sell: 500
     Weight: 60
     Flags:
       BuyingStore: true
@@ -2855,6 +2856,7 @@ Body:
     Name: Seasoned Sticky Webfoot
     Type: Healing
     Buy: 4000
+    Sell: 1000
     Weight: 500
     Flags:
       BuyingStore: true
@@ -2866,6 +2868,7 @@ Body:
     Name: Bomber Steak
     Type: Healing
     Buy: 6000
+    Sell: 1500
     Weight: 500
     Flags:
       BuyingStore: true
@@ -2877,6 +2880,7 @@ Body:
     Name: Herb Marinade Beef
     Type: Healing
     Buy: 8000
+    Sell: 2000
     Weight: 500
     Flags:
       BuyingStore: true
@@ -2888,6 +2892,7 @@ Body:
     Name: Lutie Lady's Pancake
     Type: Healing
     Buy: 10000
+    Sell: 2500
     Weight: 500
     Flags:
       BuyingStore: true
@@ -2899,6 +2904,7 @@ Body:
     Name: Grape Juice Herbal Tea
     Type: Healing
     Buy: 2000
+    Sell: 500
     Weight: 100
     Flags:
       BuyingStore: true
@@ -2910,6 +2916,7 @@ Body:
     Name: Autumn Red Tea
     Type: Healing
     Buy: 4000
+    Sell: 1000
     Weight: 500
     Flags:
       BuyingStore: true
@@ -2921,6 +2928,7 @@ Body:
     Name: Honey Herbal Tea
     Type: Healing
     Buy: 6000
+    Sell: 1500
     Weight: 500
     Flags:
       BuyingStore: true
@@ -2932,6 +2940,7 @@ Body:
     Name: Morocc Fruit Wine
     Type: Healing
     Buy: 8000
+    Sell: 2000
     Weight: 300
     Flags:
       BuyingStore: true
@@ -2943,6 +2952,7 @@ Body:
     Name: Mastela Fruit Wine
     Type: Healing
     Buy: 10000
+    Sell: 2500
     Weight: 400
     Flags:
       BuyingStore: true
@@ -2954,6 +2964,7 @@ Body:
     Name: Steamed Crab Nippers
     Type: Healing
     Buy: 2000
+    Sell: 500
     Weight: 100
     Flags:
       BuyingStore: true
@@ -2965,6 +2976,7 @@ Body:
     Name: Assorted Seafood
     Type: Healing
     Buy: 4000
+    Sell: 1000
     Weight: 200
     Flags:
       BuyingStore: true
@@ -2976,6 +2988,7 @@ Body:
     Name: Clam Soup
     Type: Healing
     Buy: 6000
+    Sell: 1500
     Weight: 300
     Flags:
       BuyingStore: true
@@ -2987,6 +3000,7 @@ Body:
     Name: Seasoned Jellyfish
     Type: Healing
     Buy: 8000
+    Sell: 2000
     Weight: 500
     Flags:
       BuyingStore: true
@@ -2998,6 +3012,7 @@ Body:
     Name: Spicy Fried Bao
     Type: Healing
     Buy: 10000
+    Sell: 2500
     Weight: 800
     Flags:
       BuyingStore: true
@@ -3009,6 +3024,7 @@ Body:
     Name: Frog Egg Squid Ink Soup
     Type: Healing
     Buy: 2000
+    Sell: 500
     Weight: 100
     Flags:
       BuyingStore: true
@@ -3020,6 +3036,7 @@ Body:
     Name: Smooth Noodle
     Type: Healing
     Buy: 4000
+    Sell: 1000
     Weight: 100
     Flags:
       BuyingStore: true
@@ -3031,6 +3048,7 @@ Body:
     Name: Tentacle Cheese Gratin
     Type: Healing
     Buy: 6000
+    Sell: 1500
     Weight: 500
     Flags:
       BuyingStore: true
@@ -3042,6 +3060,7 @@ Body:
     Name: Lutie Cold Noodle
     Type: Healing
     Buy: 8000
+    Sell: 2000
     Weight: 400
     Flags:
       BuyingStore: true
@@ -3053,6 +3072,7 @@ Body:
     Name: Steamed Bat Wing in Pumpkin
     Type: Healing
     Buy: 10000
+    Sell: 2500
     Weight: 500
     Flags:
       BuyingStore: true
@@ -3064,6 +3084,7 @@ Body:
     Name: Honey Grape Juice
     Type: Healing
     Buy: 2000
+    Sell: 500
     Weight: 100
     Flags:
       BuyingStore: true
@@ -3075,6 +3096,7 @@ Body:
     Name: Chocolate Mousse Cake
     Type: Healing
     Buy: 4000
+    Sell: 1000
     Weight: 200
     Flags:
       BuyingStore: true
@@ -3086,6 +3108,7 @@ Body:
     Name: Fruit Mix
     Type: Healing
     Buy: 6000
+    Sell: 1500
     Weight: 200
     Flags:
       BuyingStore: true
@@ -3097,6 +3120,7 @@ Body:
     Name: Cream Sandwich
     Type: Healing
     Buy: 8000
+    Sell: 2000
     Weight: 500
     Flags:
       BuyingStore: true
@@ -3108,6 +3132,7 @@ Body:
     Name: Green Salad
     Type: Healing
     Buy: 10000
+    Sell: 2500
     Weight: 200
     Flags:
       BuyingStore: true
@@ -3119,6 +3144,7 @@ Body:
     Name: Fried Monkey Tails
     Type: Healing
     Buy: 2000
+    Sell: 500
     Weight: 60
     Flags:
       BuyingStore: true
@@ -3130,6 +3156,7 @@ Body:
     Name: Mixed Juice
     Type: Healing
     Buy: 4000
+    Sell: 1000
     Weight: 200
     Flags:
       BuyingStore: true
@@ -3141,6 +3168,7 @@ Body:
     Name: Fried Sweet Potato
     Type: Healing
     Buy: 6000
+    Sell: 1500
     Weight: 500
     Flags:
       BuyingStore: true
@@ -3152,6 +3180,7 @@ Body:
     Name: Steamed Ancient Lips
     Type: Healing
     Buy: 8000
+    Sell: 2000
     Weight: 500
     Flags:
       BuyingStore: true
@@ -3163,6 +3192,7 @@ Body:
     Name: Fried Scorpion Tails
     Type: Healing
     Buy: 10000
+    Sell: 2500
     Weight: 400
     Flags:
       BuyingStore: true
@@ -3174,6 +3204,7 @@ Body:
     Name: Shiny Marinade Beef
     Type: Healing
     Buy: 20000
+    Sell: 5000
     Weight: 800
     Flags:
       BuyingStore: true
@@ -3185,6 +3216,7 @@ Body:
     Name: Whole Roast
     Type: Healing
     Buy: 40000
+    Sell: 10000
     Weight: 1000
     Flags:
       BuyingStore: true
@@ -3196,6 +3228,7 @@ Body:
     Name: Bearfoot Special
     Type: Healing
     Buy: 60000
+    Sell: 15000
     Weight: 500
     Flags:
       BuyingStore: true
@@ -3207,6 +3240,7 @@ Body:
     Name: Tendon Satay
     Type: Healing
     Buy: 80000
+    Sell: 20000
     Weight: 1000
     Flags:
       BuyingStore: true
@@ -3218,6 +3252,7 @@ Body:
     Name: Steamed Tongue
     Type: Healing
     Buy: 100000
+    Sell: 25000
     Weight: 1000
     Flags:
       BuyingStore: true
@@ -21387,7 +21422,7 @@ Body:
     AegisName: Str_Dish05_
     Name: Lutie Lady's Pancake
     Type: Healing
-    Buy: 2
+    Buy: 20000
     Sell: 5000
     Weight: 10
     Script: |
@@ -21397,7 +21432,7 @@ Body:
     AegisName: Int_Dish05_
     Name: Mastela Fruit Wine
     Type: Healing
-    Buy: 2
+    Buy: 20000
     Sell: 5000
     Weight: 10
     Script: |
@@ -21407,7 +21442,7 @@ Body:
     AegisName: Vit_Dish05_
     Name: Spicy Fried Bao
     Type: Healing
-    Buy: 2
+    Buy: 20000
     Sell: 5000
     Weight: 10
     Script: |
@@ -21417,7 +21452,7 @@ Body:
     AegisName: Agi_Dish05_
     Name: Steamed Bat Wing in Pumpkin
     Type: Healing
-    Buy: 2
+    Buy: 20000
     Sell: 5000
     Weight: 10
     Script: |
@@ -21427,7 +21462,7 @@ Body:
     AegisName: Dex_Dish05_
     Name: Green Salad
     Type: Healing
-    Buy: 2
+    Buy: 20000
     Sell: 5000
     Weight: 10
     Script: |
@@ -21437,7 +21472,7 @@ Body:
     AegisName: Luk_Dish05_
     Name: Fried Scorpion Tails
     Type: Healing
-    Buy: 2
+    Buy: 20000
     Sell: 5000
     Weight: 10
     Script: |
