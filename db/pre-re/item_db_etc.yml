@@ -4726,7 +4726,9 @@ Body:
       DropEffect: BLUE_PILLAR
     Script: |
       bonus bHPrecovRate,-100;
-      bonus bHPGainValue,100;
+      bonus bHPGainValue,70;
+      bonus bLongHPGainValue,70;
+      bonus bMagicHPGainValue,70;
   - Id: 4159
     AegisName: Nine_Tail_Card
     Name: Nine Tail Card
@@ -6478,7 +6480,9 @@ Body:
       DropEffect: BLUE_PILLAR
     Script: |
       bonus bSPrecovRate,-100;
-      bonus bSPGainValue,10;
+      bonus bSPGainValue,7;
+      bonus bLongSPGainValue,7; 
+      bonus bMagicSPGainValue,7;
     UnEquipScript: |
       heal 0,-100;
   - Id: 4280
