@@ -4348,6 +4348,30 @@ Body:
       bonus2 bAddEff,Eff_Curse,5000;
       bonus bCritical,-1;
       bonus bUnbreakableWeapon;
+      
+  - Id: 19735
+    AegisName: C_Fin_Helm
+    Name: Costume Fin Helm
+    Type: Armor
+    Buy: 10
+    Locations:
+      Costume_Head_Mid: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 100
+  - Id: 19510
+    AegisName: Nut_On_Head
+    Name: Screw Stuck in Head
+    Type: Armor
+    Locations:
+      Costume_Head_Mid: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 696
+    Trade:
+      NoDrop: true
+    Script: |
+      bonus bUnbreakableHelm;
   - Id: 1275
     AegisName: Katar_Of_Cold_Icicle_
     Name: Katar of Frozen Icicle
