@@ -116,72 +116,72 @@ function	script	F_Kafra	{
 	}
 	next;
 	if (.@welcome == 2)// Guild Kafra Menu override (free Teleport, free Storage, Free Cart)
-		setarray .@K_Menu0$[0], "Use Storage", "Use Guild Storage", "Rent a Pushcart", "Use Teleport Service", "Cancel";
+		setarray .@K_Menu0$[0], "เก็บของ", "เก็บของกิลด์", "เช่ารถเข็น", "ใช้บริการเทเลพอร์ต", "ยกเลิก";
 	else {
 		switch(.@menu_num) {
 			// Save and Storage only
-			case 1:	setarray .@K_Menu0$[0],"Save","Use Storage","Cancel"; break;
+			case 1:	setarray .@K_Menu0$[0],"บันทึก","เก็บของ","ยกเลิก"; break;
 			// Storage only
-			case 2:	setarray .@K_Menu0$[0],"Use Storage","Cancel"; break;
+			case 2:	setarray .@K_Menu0$[0],"เก็บของ","ยกเลิก"; break;
 			// No Teleport (Common)
-			case 3: setarray .@K_Menu0$[0],"Save","Use Storage","Rent a Pushcart","Check Other Information","Cancel"; break;
+			case 3: setarray .@K_Menu0$[0],"บันทึก","เก็บของ","เช่ารถเข็น","ตรวจสอบข้อมูลอื่นๆ","ยกเลิก"; break;
 			// Case 4 is Einbroch no tele message.
 			// No save, or teleport. (Common)
-			case 5:	setarray .@K_Menu0$[0],"Use Storage","Rent a Pushcart","Check Other Information","Cancel"; break;
+			case 5:	setarray .@K_Menu0$[0],"เก็บของ","เช่ารถเข็น","ตรวจสอบข้อมูลอื่นๆ","ยกเลิก"; break;
 			// Storage and Check Other Information only.
-			case 6:	setarray .@K_Menu0$[0],"Use Storage","Check Other Information","Cancel"; break;
+			case 6:	setarray .@K_Menu0$[0],"เก็บของ","ตรวจสอบข้อมูลอื่นๆ","ยกเลิก"; break;
 			// Save, Storage, and Pushcart only (Kafra Warehouse)
-			case 7:	setarray .@K_Menu0$[0],"Save","Use Storage","Rent a Pushcart","Cancel"; break;
+			case 7:	setarray .@K_Menu0$[0],"บันทึก","เก็บของ","เช่ารถเข็น","ยกเลิก"; break;
 			// Save, Storage, Other Check information. (Turbo track)
-			case 8: setarray .@K_Menu0$[0],"Save","Use Storage","Check Other Information","Cancel"; break;
+			case 8: setarray .@K_Menu0$[0],"บันทึก","เก็บของ","ตรวจสอบข้อมูลอื่นๆ","ยกเลิก"; break;
 			// No Save (Rune Knight)
-			case 9: setarray .@K_Menu0$[0],"Use Storage","Rent a Pushcart","Use Teleport Service","Check Other Information","Cancel"; break;
+			case 9: setarray .@K_Menu0$[0],"เก็บของ","เช่ารถเข็น","ใช้บริการเทเลพอร์ต","ตรวจสอบข้อมูลอื่นๆ","ยกเลิก"; break;
 			// Storage, Save, and Pushcart (Dewata, reorder of case 7)
-			case 10: setarray .@K_Menu0$[0],"Use Storage","Save","Rent a Pushcart","Cancel"; break;
+			case 10: setarray .@K_Menu0$[0],"เก็บของ","บันทึก","เช่ารถเข็น","ยกเลิก"; break;
 			// Default message (obsolete)
-			default: setarray .@K_Menu0$[0],"Save","Use Storage","Use Teleport Service","Rent a Pushcart","Check Other Information","Cancel"; break;
+			default: setarray .@K_Menu0$[0],"บันทึก","เก็บของ","ใช้บริการเทเลพอร์ต","เช่ารถเข็น","ตรวจสอบข้อมูลอื่นๆ","ยกเลิก"; break;
 		}
 	}
 	.@menu$ = implode(.@K_Menu0$,":");
 	while (true) {
 		.@j = select(.@menu$) - 1;
-		if (.@K_Menu0$[.@j] == "Save")
+		if (.@K_Menu0$[.@j] == "บันทึก")
 			return;
-		else if (.@K_Menu0$[.@j] == "Use Storage") {
+		else if (.@K_Menu0$[.@j] == "เก็บของ") {
 			if (.@welcome == 2)// Do not charge for Guild Storage
 				callfunc "F_KafStor",2,0,0;
 			else
 				callfunc "F_KafStor",0,getarg(3),.@welcome;
 			next;
 		}
-		else if (.@K_Menu0$[.@j] == "Use Teleport Service") {
+		else if (.@K_Menu0$[.@j] == "ใช้บริการเทเลพอร์ต") {
 			if (.@menu_num != 4)// Display Einbroch "No Teleport Service" notice.
 				callfunc "F_KafTele",.@welcome;
 			else {
 				mes "[Kafra Employee]";
-				mes "Because of the ^FF0000Limited";
-				mes "Transport Agreement^000000, the";
-				mes "Kafra Corporation cannot";
-				mes "provide Teleport Services";
-				mes "in the Schwarzwald Republic.";
+				mes "เพราะ ^FF0000Limited";
+				mes "ข้อตกลงการขนส่ง^000000,";
+				mes "บริษัท Kafra ไม่สามารถ";
+				mes "ให้บริการเทเลพอร์ต";
+				mes "ในสาธารณรัฐชวาร์ซวัลด์";
 				next;
 				mes "[Kafra Employee]";
-				mes "We ask that you please";
-				mes "use the Airship Service";
-				mes "instead. Thank you for your";
-				mes "understanding and cooperation.";
+				mes "เราขอให้คุณกรุณา";
+				mes "ใช้บริการเรือเหาะ";
+				mes "แทน ขอบคุณสำหรับของคุณ";
+				mes "ความเข้าใจและความร่วมมือ";
 			}
 			next;
 		}
-		else if (.@K_Menu0$[.@j] == "Rent a Pushcart") {
+		else if (.@K_Menu0$[.@j] == "เช่ารถเข็น") {
 			if (callfunc("F_KafCart",.@welcome,getarg(4)) == 1)
 				next;
 		}
-		else if (.@K_Menu0$[.@j] == "Check Other Information") {
+		else if (.@K_Menu0$[.@j] == "ตรวจสอบข้อมูลอื่นๆ") {
 			callfunc "F_KafInfo",getarg(2);
 			next;
 		}
-		else if (.@K_Menu0$[.@j] == "Cancel") {
+		else if (.@K_Menu0$[.@j] == "ยกเลิก") {
 			callfunc "F_KafEnd",.@welcome,0;
 			end;
 		}
@@ -203,8 +203,8 @@ function	script	F_KafStor	{
 	if (.@type == 1) {
 		if (guildopenstorage()) {
 			mes "[Kafra Employee]";
-			mes "I'm sorry but another guild member is using the guild storage";
-			mes "right now.  Please wait until that person is finished.";
+			mes "ฉันขอโทษ แต่สมาชิกกิลด์อื่นกำลังใช้ที่เก็บกิลด์";
+			mes "ตอนนี้ โปรดรอจนกว่าบุคคลนั้นจะเสร็จสิ้น";
 			close3;
 		}
 		cutin "", 255;
@@ -216,15 +216,15 @@ function	script	F_KafStor	{
 		// Niflheim Specific Message
 		if (getarg(2) == 1) {
 			mes "^666666S-s-ssoooorry,";
-			mes "y-you're a-a-aaaa";
-			mes "Nooviiice... N-neeeds";
-			mes "B-basic sssskill l-level 6...^000000";
+			mes "คุณ-คุณ-a-aaaa";
+			mes "Nooviiice... N-needs";
+			mes "B-พื้นฐาน sssskill l ระดับ 6...^000000";
 			return;
 		}
-		mes "I'm sorry, but you";
-		mes "need the Novice's";
-		mes "Basic Skill Level 6 to";
-		mes "use the Storage Service.";
+		mes "ฉันขอโทษ แต่คุณ";
+		mes "ต้องการ Novice's";
+		mes "ทักษะพื้นฐานระดับ 6 ถึง";
+		mes "ใช้บริการจัดเก็บข้อมูล";
 		return;
 	}
 	// Accessing Normal Storage (Skipped if accessing Storage from Guild castle)
@@ -240,15 +240,15 @@ function	script	F_KafStor	{
 					percentheal -50,-50;
 					mes "^666666Zeeeeeny...";
 					mes "M-more z-zeny...!";
-					mes "N-neeed 150... zeny...";
-					mes "Ergh! T-taking bl-blood~!^000000";
+					mes "N-ต้อง 150... zeny...";
+					mes "เอ่อ! รับ bl-blood~!^000000";
 					return;
 				}
 				// Standard Message
-				mes "I'm sorry, but you don't";
-				mes "have enough zeny to use";
-				mes "the Storage Service. Our";
-				mes "Storage access fee is " + .@fee + " zeny.";
+				mes "ฉันขอโทษ แต่คุณไม่ทำ";
+				mes "มี zeny เพียงพอสำหรับใช้";
+				mes "บริการจัดเก็บข้อมูลของเรา";
+				mes "ค่าธรรมเนียมการเข้าถึงพื้นที่เก็บข้อมูลคือ " + .@fee + " zeny";
 				return;
 			}
 			Zeny -= .@fee;
@@ -263,15 +263,15 @@ function	script	F_KafStor	{
 			percentheal 0,-10;
 			mes "[Kafra Employee]";
 			for ( .@i = 0; .@i < 5; .@i++ )
-				mes "^666666Thank you.. for... using...^000000";
+			mes "^666666ขอบคุณ.. สำหรับ... การใช้งาน...^000000";
 		}
 		// Normal message
 		else {
 			mes "[Kafra Employee]";
-			mes "Here, let me open";
-			mes "your Storage for you.";
-			mes "Thank you for using";
-			mes "the Kafra Service.";
+			mes "เอาล่ะ ให้ฉันเปิด";
+			mes "ที่เก็บข้อมูลของคุณสำหรับคุณ";
+			mes "ขอบคุณที่ใช้";
+			mes "บริการของคาฟรา";
 		}
 	}
 	callfunc("F_CheckKafCode");	//check your storage password, if set
@@ -281,16 +281,17 @@ function	script	F_KafStor	{
 	end;
 }
 
+
 //===================================================
 // Teleport Function
 //===================================================
 function	script	F_KafTele	{
 	mes "[Kafra Employee]";
-	mes "Please choose";
-	mes "your destination.";
+	mes "กรุณาเลือก";
+	mes "จุดหมายปลายทางของคุณ";
 	next;
 	.@j = select( implode(@wrpC$,":") ) - 1;
-	if (@wrpC$[.@j] == "Cancel")
+	if (@wrpC$[.@j] == "ยกเลิก")
 		return;
 	// Consume "Free Ticket for Kafra Transportation" if available.
 	// Do not consume if in Guild castle
@@ -299,10 +300,10 @@ function	script	F_KafTele	{
 	else {
 		if (Zeny < @wrpP[.@j]) {
 			mes "[Kafra Employee]";
-			mes "I'm sorry, but you don't have";
-			mes "enough zeny for the Teleport";
-			mes "Service. The fee to teleport";
-			mes "to " + @wrpD$[.@j] + " is " + @wrpP[.@j] + " zeny.";
+			mes "ฉันขอโทษ แต่คุณไม่มี";
+			mes "เพียงพอสำหรับการเทเลพอร์ต";
+			mes "Service. ค่าธรรมเนียมในการเทเลพอร์ต";
+			mes "ไป " + @wrpD$[.@j] + " คือ " + @wrpP[.@j] + " zeny.";
 			close3;
 		}
 		Zeny -= @wrpP[.@j];
@@ -338,31 +339,31 @@ function	script	F_KafCart	{
 	// Ensure that the class wanting to rent a pushcart is a merchant
 	if (BaseClass != Job_Merchant) {
 		mes "[Kafra Employee]";
-		mes "I'm sorry, but the";
-		mes "Pushcart rental service";
+		mes "ฉันขอโทษ แต่";
+		mes "บริการให้เช่ารถเข็น";
 		if (checkre(0) == true)
-			mes "is only available to Merchant classes.";
+			mes "ใช้ได้เฉพาะคลาส Merchant เท่านั้น";
 		else {
-			mes "is only available to Merchants,";
-			mes "Blacksmiths, Master Smiths,";
-			mes "Alchemists and Biochemists.";
+			mes "ใช้ได้เฉพาะกับพ่อค้าเท่านั้น";
+			mes "ช่างตีเหล็ก มาสเตอร์สมิธ";
+			mes "นักเล่นแร่แปรธาตุและนักชีวเคมี";
 		}
 		return 1;
 	}
 	// Make sure the invoking character does not have a cart already
 	else if (checkcart() == true) {
 		mes "[Kafra Employee]";
-		mes "You already have";
-		mes "a Pushcart equipped.";
-		mes "Unfortunately, we can't";
-		mes "rent more than one to";
-		mes "each customer at a time.";
+		mes "คุณมีอยู่แล้ว";
+		mes "รถเข็นพร้อมอุปกรณ์";
+		mes "น่าเสียดาย เราทำไม่ได้";
+		mes "เช่ามากกว่าหนึ่งเพื่อ";
+		mes "ลูกค้าแต่ละรายในแต่ละครั้ง";
 		return 1;
 	}
 	// Check if the player has the Pushcart skill
 	else if (getskilllv("MC_PUSHCART") == 0) {
 		mes "[Kafra Employee]";
-		mes "You can only rent a cart after learning the \"Push Cart\" skill.";
+		mes "คุณสามารถเช่ารถเข็นได้หลังจากเรียนรู้ทักษะ \"Push Cart\" ก่อน";
 		return 1;
 	}
 	// Consume "Free Ticket for the Cart Service" if available.
@@ -372,18 +373,18 @@ function	script	F_KafCart	{
 	else {
 		.@rental_fee = getarg(1);
 		mes "[Kafra Employee]";
-		mes "The Pushcart rental";
-		mes "fee is " + .@rental_fee + " zeny. Would";
-		mes "you like to rent a Pushcart?";
+		mes "รถเข็นเด็กให้เช่า";
+		mes "fee is " + .@rental_fee + " zeny. Will";
+		mes "คุณชอบที่จะเช่ารถเข็นไหม?";
 		next;
 		if (select("Rent a Pushcart.:Cancel") == 2)
 			return 0;
 		if (Zeny < .@rental_fee) {
 			mes "[Kafra Employee]";
-			mes "I'm sorry, but you";
-			mes "don't have enough";
-			mes "zeny to pay the Pushcart";
-			mes "rental fee of " + .@rental_fee + " zeny.";
+			mes "ฉันขอโทษ แต่คุณ";
+			mes "มีไม่เพียงพอ";
+			mes "zeny จ่ายรถเข็น";
+			mes "ค่าเช่าของ " + .@rental_fee + " zeny";
 			return 1;
 		}
 		Zeny -= .@rental_fee;

@@ -31,7 +31,44 @@
 Header:
   Type: ITEM_CASH_DB
   Version: 1
-
-Footer:
-  Imports:
-    - Path: db/import/item_cash.yml
+Body:
+  - Tab: New
+    Items:
+      - Item: Crown_Of_Deceit
+        Price: 11
+  - Tab: Hot
+    Items:
+      - Item: Mask_Of_Fox
+        Price: 22
+      - Item: Cat_Hairband
+        Price: 33
+  - Tab: Limited
+    Items:
+      - Item: Knife_Goblin_Box
+        Price: 44
+      - Item: Cat_Hairband
+        Price: 55
+      - Item: Krishna
+        Price: 66
+  - Tab: Rental
+    Items:
+      - Item: Knife_Goblin_Box
+        Price: 77
+      - Item: Krishna
+        Price: 66
+  - Tab: Permanent
+    Items:
+      - Item: Knife_Goblin_Box
+        Price: 88
+  - Tab: Scrolls
+    Items:
+      - Item: Knife_Goblin_Box
+        Price: 99
+  - Tab: Consumables
+    Items:
+      - Item: Knife_Goblin_Box
+        Price: 100
+  - Tab: Other
+    Items:
+      - Item: Knife_Goblin_Box
+        Price: 111
