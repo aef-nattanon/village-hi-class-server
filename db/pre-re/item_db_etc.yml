@@ -21622,3 +21622,144 @@ Body:
     Locations:
       Ammo: true
     EquipLevelMin: 99
+  - Id: 4505
+    AegisName: Scaraba_Card
+    Name: Scaraba Card
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Both_Accessory: true
+    Flags:
+      BuyingStore: true
+      DropEffect: BLUE_PILLAR
+    Script: |
+      bonus bMatk,20;
+      bonus bMaxSPrate,-1;
+  - Id: 4506
+    AegisName: Dolomedes_Card
+    Name: Dolomedes Card
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Head_Low: true
+      Head_Mid: true
+      Head_Top: true
+    Flags:
+      BuyingStore: true
+      DropEffect: BLUE_PILLAR
+    Script: |
+      bonus bDex,2;
+      if (BaseClass == Job_Archer) {
+         bonus bDex,getrefine()/3;
+      }
+  - Id: 4507
+    AegisName: Q_Scaraba_Card
+    Name: Queen Scaraba Card
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Right_Hand: true
+    Flags:
+      BuyingStore: true
+      DropEffect: BLUE_PILLAR
+    Script: |
+      bonus2 bAddRace2,RC2_SCARABA,30;
+      bonus2 bAddMonsterDropItem,12806,50;
+  - Id: 4508
+    AegisName: Gold_Scaraba_Card
+    Name: Gold Scaraba Card
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Both_Accessory: true
+    Flags:
+      BuyingStore: true
+      DropEffect: BLUE_PILLAR
+    Script: |
+      bonus bBaseAtk,20;
+      bonus bMaxHPrate,-1;
+  - Id: 4509
+    AegisName: Gold_Q_Scaraba_Card
+    Name: Gold Queen Scaraba Card
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Head_Low: true
+      Head_Mid: true
+      Head_Top: true
+    Flags:
+      BuyingStore: true
+      DropEffect: BLUE_PILLAR
+    Script: |
+      bonus bInt,3;
+      bonus2 bSubRace,RC_Insect,10;
+      if (getrefine()>=9) {
+         bonus2 bSubRace,RC_Insect,5;
+      }
+  - Id: 311075
+    AegisName: Illusion_Box_Garden
+    Name: Demonlord Calamity
+    Type: Card
+    SubType: Enchant
+    Script: |
+      bonus2 bHPRegenRate,1000,10000;
+      bonus2 bSPRegenRate,100,10000;
+  - Id: 300335
+    AegisName: SLD_Q_Scaraba_Card_J
+    Name: Sealed Queen Scaraba Card
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Right_Hand: true
+    Flags:
+      BuyingStore: true
+      DropEffect: BLUE_PILLAR
+    Script: |
+      bonus2 bAddRace2,RC2_SCARABA,10;
+  - Id: 300337
+    AegisName: SLD_G_Q_Scaraba_Card_J
+    Name: Sealed Gold Queen Scaraba Card
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Head_Low: true
+      Head_Mid: true
+      Head_Top: true
+    Flags:
+      BuyingStore: true
+      DropEffect: BLUE_PILLAR
+    Script: |
+      bonus bInt,1;
+      bonus2 bSubRace,RC_Insect,3;
+      if (getrefine()>=9)
+         bonus2 bSubRace,RC_Insect,2;
+  - Id: 2153
+    AegisName: Imperial_Guard
+    Name: Imperial Guard
+    Type: Armor
+    Buy: 20
+    Weight: 2500
+    Defense: 120
+    Slots: 1
+    Jobs:
+      Crusader: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Left_Hand: true
+    ArmorLevel: 1
+    EquipLevelMin: 102
+    Refineable: true
+    View: 4
+    Script: |
+      .@r = getrefine();
+      bonus bMdef,5;
+      bonus2 bSkillAtk,"LG_SHIELDPRESS",(.@r>=6?20+((.@r-5)*2):20);

@@ -1150,3 +1150,98 @@ Body:
       bonus bHit,10;
       bonus2 bAddSize,Size_Large,30;
       autobonus "{ bonus bAspdRate,100; }",1,7000,BF_WEAPON,"{ specialeffect2 EF_POTION_BERSERK; }";
+  - Combos:
+      - Combo:
+          - Doram_High_Suit
+          - Doram_High_Cape
+          - Doram_High_Shoes
+    Script: |
+      bonus bMaxHP,3000;
+      bonus bNoCastCancel;
+      bonus bFixedCastrate,-20-(getequiprefinerycnt(EQI_ARMOR)+getequiprefinerycnt(EQI_GARMENT)+getequiprefinerycnt(EQI_SHOES));
+  - Combos:
+      - Combo:
+          - Doram_High_Suit
+          - Doram_High_Cape
+          - Doram_High_Shoes
+          - Charm_G_Necklace
+          - MiddleLeafCharm
+    Script: |
+      bonus bMaxHPrate,15;
+      bonus bMaxSPrate,15;
+      bonus2 bSkillAtk,"SU_CN_METEOR",150;
+  - Combos:
+      - Combo:
+          - Doram_High_Suit
+          - Doram_High_Cape
+          - Doram_High_Shoes
+          - Fresh_G_Necklace
+          - MiddleRabbitCharm
+    Script: |
+      bonus bMaxHPrate,25;
+      bonus bMaxSPrate,6;
+      bonus2 bSkillAtk,"SU_LUNATICCARROTBEAT",150;
+  - Combos:
+      - Combo:
+          - Doram_High_Suit
+          - Doram_High_Cape
+          - Doram_High_Shoes
+          - Pretty_G_Necklace
+          - MiddleSaurelCharm
+  - Combos:
+      - Combo:
+          - Q_Scaraba_Card    # 4507
+          - Illusion_Box_Garden    # 311075
+    Script: |
+      bonus2 bAddRace,RC_All,20;
+  - Combos:
+      - Combo:
+          - Gold_Q_Scaraba_Card    # 4509
+          - Illusion_Box_Garden    # 31107
+  - Combos:
+      - Combo:
+          - SLD_Q_Scaraba_Card_J    # 300335
+          - Illusion_Box_Garden    # 311075
+    Script: |
+      bonus2 bAddRace,RC_All,15;
+  - Combos:
+      - Combo:
+          - SLD_G_Q_Scaraba_Card_J    # 300337
+          - Illusion_Box_Garden   
+
+  - Combos:
+      - Combo:
+          - Imperial_Spear
+          - Imperial_Guard
+    Script: |
+      bonus2 bSkillAtk,"LG_RAYOFGENESIS",10;
+      bonus2 bSkillAtk,"CR_GRANDCROSS",10;
+  - Combos:
+      - Combo:
+          - Imperial_Spear
+          - Imperial_Guard
+          - Imperial_Feather
+    Script: |
+      bonus2 bSkillAtk,"LG_BANISHINGPOINT",20;
+      bonus2 bSkillAtk,"LG_CANNONSPEAR",20;
+      bonus2 bSkillAtk,"LG_SHIELDPRESS",20;
+  - Combos:
+      - Combo:
+          - Imperial_Spear
+          - Imperial_Guard
+          - Imperial_Feather
+          - Imperial_Ring
+    Script: |
+      bonus2 bSkillUseSP,"LG_BANISHINGPOINT",15;
+      bonus2 bSkillUseSP,"LG_CANNONSPEAR",10;
+      bonus2 bSkillUseSP,"CR_GRANDCROSS",30;
+      bonus2 bSkillUseSP,"LG_SHIELDPRESS",5;
+  - Combos:
+      - Combo:
+          - Imperial_Spear
+          - Imperial_Ring
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R)/2*7;
+      bonus2 bSkillAtk,"LG_CANNONSPEAR",.@r;
+      bonus2 bSkillAtk,"LG_BANISHINGPOINT",.@r;
+      

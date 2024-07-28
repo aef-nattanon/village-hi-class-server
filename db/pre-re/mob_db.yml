@@ -41236,3 +41236,811 @@ Body:
     AttackDelay: 1872
     AttackMotion: 672
     DamageMotion: 480
+# ------------------------------------------------------------------
+  - Id: 2083
+    AegisName: HORN_SCARABA
+    Name: One-Horned Scaraba
+    JapaneseName: Scaraba
+    Level: 130
+    Hp: 51100
+    BaseExp: 2610
+    JobExp: 2646
+    Attack: 886
+    Attack2: 91
+    Defense: 127
+    MagicDefense: 20
+    Str: 44
+    Agi: 59
+    Vit: 55
+    Int: 21
+    Dex: 99
+    Luk: 33
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Insect
+    RaceGroups:
+      Scaraba: true
+    Element: Earth
+    ElementLevel: 1
+    WalkSpeed: 200
+    AttackDelay: 384
+    AttackMotion: 672
+    DamageMotion: 360
+    Ai: 03
+    Modes:
+      Detector: true
+    Drops:
+      - Item: Singlehorn_Helm
+        Rate: 3250
+      - Item: Imperial_Spear
+        Rate: 5
+      - Item: Runstone_Ancient
+        Rate: 5
+      - Item: Elder_Branch
+        Rate: 50
+      - Item: Yellow_Live
+        Rate: 50
+      - Item: Doram_High_Suit
+        Rate: 20
+      - Item: Scaraba_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 2084
+    AegisName: HORN_SCARABA2
+    Name: Two-Horned Scaraba
+    JapaneseName: Scaraba
+    Level: 134
+    Hp: 58900
+    BaseExp: 2890
+    JobExp: 3000
+    Attack: 1935
+    Attack2: 105
+    Defense: 127
+    MagicDefense: 38
+    Str: 44
+    Agi: 68
+    Vit: 72
+    Int: 45
+    Dex: 126
+    Luk: 51
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Insect
+    RaceGroups:
+      Scaraba: true
+    Element: Earth
+    ElementLevel: 1
+    WalkSpeed: 150
+    AttackDelay: 336
+    AttackMotion: 360
+    DamageMotion: 360
+    Ai: 03
+    Modes:
+      Detector: true
+    Drops:
+      - Item: Twinhorn_Helm
+        Rate: 3250
+      - Item: Black_Wing
+        Rate: 5
+      - Item: Runstone_Ancient
+        Rate: 5
+      - Item: Elder_Branch
+        Rate: 50
+      - Item: Yellow_Live
+        Rate: 50
+      - Item: Doram_High_Shoes
+        Rate: 20
+      - Item: Scaraba_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 2085
+    AegisName: ANTLER_SCARABA
+    Name: Antler Scaraba
+    Level: 136
+    Hp: 62600
+    BaseExp: 3165
+    JobExp: 3467
+    Attack: 1418
+    Attack2: 410
+    Defense: 127
+    MagicDefense: 102
+    Str: 23
+    Agi: 99
+    Vit: 59
+    Int: 129
+    Dex: 137
+    Luk: 45
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Insect
+    RaceGroups:
+      Scaraba: true
+    Element: Earth
+    ElementLevel: 2
+    WalkSpeed: 200
+    AttackDelay: 504
+    AttackMotion: 624
+    DamageMotion: 360
+    Ai: 04
+    Modes:
+      Detector: true
+    Drops:
+      - Item: Antler_Helm
+        Rate: 3250
+      - Item: Green_Whistle
+        Rate: 5
+      - Item: Runstone_Ancient
+        Rate: 5
+      - Item: Elder_Branch
+        Rate: 50
+      - Item: Yellow_Live
+        Rate: 50
+      - Item: Magical_Foxtail
+        Rate: 1
+      - Item: Ex_Model_Foxtail
+        Rate: 1
+      - Item: Scaraba_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 2086
+    AegisName: RAKE_SCARABA
+    Name: Rake Scaraba
+    Level: 139
+    Hp: 67700
+    BaseExp: 3495
+    JobExp: 3955
+    Attack: 1645
+    Attack2: 112
+    Defense: 127
+    MagicDefense: 70
+    Str: 90
+    Agi: 66
+    Vit: 145
+    Int: 52
+    Dex: 168
+    Luk: 77
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Insect
+    RaceGroups:
+      Scaraba: true
+    Element: Earth
+    ElementLevel: 2
+    WalkSpeed: 150
+    AttackDelay: 588
+    AttackMotion: 768
+    DamageMotion: 480
+    Ai: 04
+    Modes:
+      Detector: true
+    Drops:
+      - Item: Rakehorn_Helm
+        Rate: 3250
+      - Item: Red_Ether_Bag
+        Rate: 5
+      - Item: Runstone_Ancient
+        Rate: 5
+      - Item: Bone_Plate
+        Rate: 50
+      - Item: Yellow_Live
+        Rate: 50
+      - Item: Doram_High_Cape
+        Rate: 20
+      - Item: Apple
+        Rate: 20
+      - Item: Scaraba_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 2087
+    AegisName: QUEEN_SCARABA
+    Name: Scaraba Queen
+    JapaneseName: Queen Scaraba
+    Level: 140
+    Hp: 2441600
+    BaseExp: 266643
+    JobExp: 116710
+    MvpExp: 133321
+    Attack: 2834
+    Attack2: 1240
+    Defense: 127
+    MagicDefense: 110
+    Str: 100
+    Agi: 88
+    Vit: 82
+    Int: 149
+    Dex: 317
+    Luk: 144
+    AttackRange: 3
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Insect
+    RaceGroups:
+      Scaraba: true
+    Element: Earth
+    ElementLevel: 3
+    WalkSpeed: 120
+    AttackDelay: 864
+    AttackMotion: 1000
+    DamageMotion: 360
+    DamageTaken: 10
+    Ai: 21
+    Class: Boss
+    Modes:
+      Mvp: true
+    MvpDrops:
+      - Item: Old_Card_Album
+        Rate: 5500
+      - Item: Old_Card_Album
+        Rate: 5000
+      - Item: Old_Card_Album
+        Rate: 2000
+    Drops:
+      - Item: Queen_Wing_Piece
+        Rate: 3500
+      - Item: Alca_Bringer
+        Rate: 500
+      - Item: Meteo_Plate_Armor
+        Rate: 500
+      - Item: Chrome_Twohand_Sword
+        Rate: 200
+      - Item: Mystic_Bow
+        Rate: 250
+      - Item: Q_Scaraba_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 2088
+    AegisName: HORN_SCARABA_EGG
+    Name: Scaraba Egg
+    Level: 125
+    Hp: 63000
+    BaseExp: 2600
+    JobExp: 1980
+    Attack: 1
+    Attack2: 1
+    Defense: 127
+    MagicDefense: 55
+    Vit: 130
+    Int: 34
+    Luk: 80
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Insect
+    RaceGroups:
+      Scaraba: true
+    Element: Neutral
+    ElementLevel: 1
+    WalkSpeed: 1000
+    AttackDelay: 96
+    AttackMotion: 1
+    DamageMotion: 480
+    Modes:
+      Detector: true
+    Drops:
+      - Item: Piece_Of_Egg_Shell
+        Rate: 2500
+      - Item: Honey
+        Rate: 50
+      - Item: Elunium
+        Rate: 5
+  - Id: 2089
+    AegisName: HORN_SCARABA2_EGG
+    Name: Scaraba Egg
+    Level: 126
+    Hp: 66000
+    BaseExp: 2600
+    JobExp: 1980
+    Attack: 1
+    Attack2: 1
+    Defense: 127
+    MagicDefense: 62
+    Vit: 130
+    Int: 48
+    Luk: 80
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Insect
+    RaceGroups:
+      Scaraba: true
+    Element: Neutral
+    ElementLevel: 1
+    WalkSpeed: 1000
+    AttackDelay: 96
+    AttackMotion: 1
+    DamageMotion: 480
+    Modes:
+      Detector: true
+    Drops:
+      - Item: Piece_Of_Egg_Shell
+        Rate: 2500
+      - Item: Honey
+        Rate: 50
+      - Item: Elunium
+        Rate: 5
+  - Id: 2090
+    AegisName: ANTLER_SCARABA_EGG
+    Name: Antler Scaraba Egg
+    Level: 127
+    Hp: 69000
+    BaseExp: 2600
+    JobExp: 1980
+    Attack: 1
+    Attack2: 1
+    Defense: 127
+    MagicDefense: 127
+    Vit: 130
+    Int: 82
+    Luk: 80
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Insect
+    RaceGroups:
+      Scaraba: true
+    Element: Neutral
+    ElementLevel: 1
+    WalkSpeed: 1000
+    AttackDelay: 96
+    AttackMotion: 1
+    DamageMotion: 480
+    Modes:
+      Detector: true
+    Drops:
+      - Item: Piece_Of_Egg_Shell
+        Rate: 2500
+      - Item: Honey
+        Rate: 50
+      - Item: Elunium
+        Rate: 5
+  - Id: 2091
+    AegisName: RAKE_SCARABA_EGG
+    Name: Rake Scaraba Egg
+    Level: 128
+    Hp: 72000
+    BaseExp: 2600
+    JobExp: 1980
+    Attack: 1
+    Attack2: 1
+    Defense: 127
+    MagicDefense: 44
+    Vit: 130
+    Int: 39
+    Luk: 80
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Insect
+    RaceGroups:
+      Scaraba: true
+    Element: Neutral
+    ElementLevel: 1
+    WalkSpeed: 1000
+    AttackDelay: 96
+    AttackMotion: 1
+    DamageMotion: 480
+    Modes:
+      Detector: true
+    Drops:
+      - Item: Piece_Of_Egg_Shell
+        Rate: 2500
+      - Item: Honey
+        Rate: 50
+      - Item: Elunium
+        Rate: 5
+      - Item: Imperial_Guard
+        Rate: 250
+  - Id: 2161
+    AegisName: I_HORN_SCARABA
+    Name: Gold One-Horn Scaraba
+    Level: 130
+    Hp: 204400
+    BaseExp: 8940
+    JobExp: 8824
+    Attack: 1270
+    Attack2: 590
+    Defense: 127
+    MagicDefense: 10
+    Str: 84
+    Agi: 109
+    Vit: 115
+    Int: 31
+    Dex: 111
+    Luk: 53
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Insect
+    RaceGroups:
+      Scaraba: true
+    Element: Earth
+    ElementLevel: 1
+    WalkSpeed: 200
+    AttackDelay: 384
+    AttackMotion: 672
+    DamageMotion: 360
+    Ai: 20
+    Class: Boss
+    Drops:
+      - Item: Singlehorn_Helm
+        Rate: 3250
+      - Item: Imperial_Spear
+        Rate: 5
+      - Item: Runstone_Ancient
+        Rate: 50
+      - Item: Elder_Branch
+        Rate: 50
+      - Item: Yellow_Live
+        Rate: 50
+      - Item: Old_Violet_Box
+        Rate: 5
+      - Item: Wrapped_Mask
+        Rate: 5
+      - Item: Gold_Scaraba_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 2162
+    AegisName: I_HORN_SCARABA2
+    Name: Gold Two-Horn Scaraba
+    Level: 134
+    Hp: 235600
+    BaseExp: 10060
+    JobExp: 10007
+    Attack: 690
+    Attack2: 3090
+    Defense: 127
+    MagicDefense: 15
+    Str: 44
+    Agi: 28
+    Vit: 72
+    Int: 125
+    Dex: 184
+    Luk: 51
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Insect
+    RaceGroups:
+      Scaraba: true
+    Element: Earth
+    ElementLevel: 1
+    WalkSpeed: 150
+    AttackDelay: 336
+    AttackMotion: 360
+    DamageMotion: 360
+    Ai: 20
+    Class: Boss
+    Drops:
+      - Item: Twinhorn_Helm
+        Rate: 3250
+      - Item: Black_Wing
+        Rate: 5
+      - Item: Runstone_Ancient
+        Rate: 50
+      - Item: Elder_Branch
+        Rate: 50
+      - Item: Yellow_Live
+        Rate: 50
+      - Item: Old_Violet_Box
+        Rate: 5
+      - Item: Wrapped_Mask
+        Rate: 5
+      - Item: Gold_Scaraba_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 2163
+    AegisName: I_ANTLER_SCARABA
+    Name: Gold Antler Scaraba
+    Level: 136
+    Hp: 250400
+    BaseExp: 10160
+    JobExp: 11561
+    Attack: 412
+    Attack2: 3211
+    Defense: 127
+    MagicDefense: 20
+    Str: 23
+    Agi: 59
+    Vit: 59
+    Int: 209
+    Dex: 191
+    Luk: 45
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Insect
+    RaceGroups:
+      Scaraba: true
+    Element: Earth
+    ElementLevel: 2
+    WalkSpeed: 200
+    AttackDelay: 504
+    AttackMotion: 624
+    DamageMotion: 360
+    Ai: 20
+    Class: Boss
+    Drops:
+      - Item: Antler_Helm
+        Rate: 3250
+      - Item: Green_Whistle
+        Rate: 5
+      - Item: Runstone_Ancient
+        Rate: 50
+      - Item: Elder_Branch
+        Rate: 50
+      - Item: Yellow_Live
+        Rate: 5
+      - Item: Old_Violet_Box
+        Rate: 5
+      - Item: Wrapped_Mask
+        Rate: 5
+      - Item: Gold_Scaraba_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 2164
+    AegisName: I_RAKE_SCARABA
+    Name: Gold Rake Scaraba
+    Level: 139
+    Hp: 270800
+    BaseExp: 11480
+    JobExp: 13189
+    Attack: 1830
+    Attack2: 630
+    Defense: 127
+    MagicDefense: 25
+    Str: 94
+    Agi: 136
+    Vit: 145
+    Int: 42
+    Dex: 152
+    Luk: 97
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Insect
+    RaceGroups:
+      Scaraba: true
+    Element: Earth
+    ElementLevel: 2
+    WalkSpeed: 140
+    AttackDelay: 588
+    AttackMotion: 768
+    DamageMotion: 480
+    Ai: 20
+    Class: Boss
+    Drops:
+      - Item: Rakehorn_Helm
+        Rate: 3250
+      - Item: Red_Ether_Bag
+        Rate: 5
+      - Item: Runstone_Ancient
+        Rate: 50
+      - Item: Bone_Plate
+        Rate: 50
+      - Item: Yellow_Live
+        Rate: 50
+      - Item: Old_Violet_Box
+        Rate: 5
+      - Item: Wrapped_Mask
+        Rate: 5
+      - Item: Gold_Scaraba_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 2165
+    AegisName: I_QUEEN_SCARABA
+    Name: Gold Queen Scaraba
+    Level: 140
+    Hp: 6441600
+    BaseExp: 605110
+    JobExp: 336710
+    MvpExp: 302555
+    Attack: 4889
+    Attack2: 6440
+    Defense: 127
+    MagicDefense: 127
+    Str: 100
+    Agi: 88
+    Vit: 82
+    Int: 149
+    Dex: 211
+    Luk: 144
+    AttackRange: 3
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Insect
+    RaceGroups:
+      Scaraba: true
+    Element: Earth
+    ElementLevel: 3
+    WalkSpeed: 120
+    AttackDelay: 864
+    AttackMotion: 1000
+    DamageMotion: 360
+    DamageTaken: 10
+    Ai: 21
+    Class: Boss
+    Modes:
+      Mvp: true
+    MvpDrops:
+      - Item: Old_Card_Album
+        Rate: 5500
+      - Item: Old_Card_Album
+        Rate: 5000
+      - Item: Old_Card_Album
+        Rate: 2000
+    Drops:
+      - Item: Queen_Wing_Piece
+        Rate: 2500
+      - Item: Alca_Bringer
+        Rate: 350
+      - Item: Meteo_Plate_Armor
+        Rate: 350
+      - Item: Chrome_Twohand_Sword
+        Rate: 200
+      - Item: Mystic_Bow
+        Rate: 250
+      - Item: Splendid_Box2
+        Rate: 500
+      - Item: Splendid_Box
+        Rate: 500
+      - Item: Gold_Q_Scaraba_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 2166
+    AegisName: I_HORN_SCARABA_EGG
+#   Name: Gold One-Horn Scaraba Egg
+    Name: Gold One-Horn Scaraba E
+    Level: 125
+    Hp: 126000
+    BaseExp: 6000
+    JobExp: 5940
+    Attack: 1
+    Attack2: 1
+    Defense: 127
+    MagicDefense: 55
+    Vit: 130
+    Int: 34
+    Luk: 80
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Insect
+    RaceGroups:
+      Scaraba: true
+    Element: Earth
+    ElementLevel: 1
+    WalkSpeed: 1000
+    AttackDelay: 96
+    AttackMotion: 1
+    DamageMotion: 480
+    Drops:
+      - Item: Piece_Of_Egg_Shell
+        Rate: 2500
+      - Item: Honey
+        Rate: 50
+      - Item: Elunium
+        Rate: 50
+      - Item: Old_Violet_Box
+        Rate: 5
+  - Id: 2167
+    AegisName: I_HORN_SCARABA2_EGG
+#   Name: Gold Two-Horn Scaraba Egg
+    Name: Gold Two-Horn Scaraba Eg
+    Level: 126
+    Hp: 132000
+    BaseExp: 6000
+    JobExp: 5940
+    Attack: 1
+    Attack2: 1
+    Defense: 127
+    MagicDefense: 62
+    Vit: 130
+    Int: 48
+    Luk: 80
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Insect
+    RaceGroups:
+      Scaraba: true
+    Element: Earth
+    ElementLevel: 1
+    WalkSpeed: 1000
+    AttackDelay: 96
+    AttackMotion: 1
+    DamageMotion: 480
+    Drops:
+      - Item: Piece_Of_Egg_Shell
+        Rate: 2500
+      - Item: Honey
+        Rate: 50
+      - Item: Elunium
+        Rate: 50
+      - Item: Old_Violet_Box
+        Rate: 5
+  - Id: 2168
+    AegisName: I_ANTLER_SCARABA_EGG
+    Name: Gold Antler Scaraba Egg
+    Level: 127
+    Hp: 138000
+    BaseExp: 6000
+    JobExp: 5940
+    Attack: 1
+    Attack2: 1
+    Defense: 127
+    MagicDefense: 127
+    Vit: 130
+    Int: 82
+    Luk: 80
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Insect
+    RaceGroups:
+      Scaraba: true
+    Element: Earth
+    ElementLevel: 1
+    WalkSpeed: 1000
+    AttackDelay: 96
+    AttackMotion: 1
+    DamageMotion: 480
+    Drops:
+      - Item: Piece_Of_Egg_Shell
+        Rate: 2500
+      - Item: Honey
+        Rate: 50
+      - Item: Elunium
+        Rate: 50
+      - Item: Old_Violet_Box
+        Rate: 5
+  - Id: 2169
+    AegisName: I_RAKE_SCARABA_EGG
+    Name: Gold Rake Scaraba Egg
+    Level: 128
+    Hp: 144000
+    BaseExp: 6000
+    JobExp: 5940
+    Attack: 1
+    Attack2: 1
+    Defense: 127
+    MagicDefense: 44
+    Vit: 130
+    Int: 39
+    Luk: 80
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Insect
+    RaceGroups:
+      Scaraba: true
+    Element: Earth
+    ElementLevel: 1
+    WalkSpeed: 1000
+    AttackDelay: 96
+    AttackMotion: 1
+    DamageMotion: 480
+    Drops:
+      - Item: Piece_Of_Egg_Shell
+        Rate: 2500
+      - Item: Honey
+        Rate: 50
+      - Item: Elunium
+        Rate: 50
+      - Item: Imperial_Guard
+        Rate: 250
+      - Item: Old_Violet_Box
+        Rate: 5

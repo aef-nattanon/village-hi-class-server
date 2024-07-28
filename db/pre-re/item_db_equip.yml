@@ -41108,3 +41108,626 @@ Body:
     ArmorLevel: 1
     EquipLevelMin: 1
     View: 654
+  - Id: 1191
+    AegisName: Alca_Bringer
+    Name: Alca Bringer
+    Type: Weapon
+    SubType: 2hSword
+    Buy: 20
+    Weight: 3400
+    Attack: 280
+    Range: 2
+    Jobs:
+      Crusader: true
+      Knight: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Both_Hand: true
+    WeaponLevel: 3
+    EquipLevelMin: 100
+    Refineable: true
+    Script: |
+      bonus bAspd,(getrefine()/2);
+  - Id: 1196
+    AegisName: Chrome_Twohand_Sword
+    Name: Chrome Two-Handed Sword
+    Type: Weapon
+    SubType: 2hSword
+    Buy: 20
+    Weight: 400
+    Attack: 280
+    Range: 1
+    Jobs:
+      Crusader: true
+      Knight: true
+      Swordman: true
+    Classes:
+      All_Upper: true
+    Locations:
+      Both_Hand: true
+    WeaponLevel: 3
+    EquipLevelMin: 110
+    Refineable: true
+    Script: |
+      bonus bUnbreakableWeapon;
+      bonus bAgi,3;
+      bonus bMaxHPrate,-10;
+  - Id: 18103
+    AegisName: Mystic_Bow
+    Name: Mystic Bow
+    Type: Weapon
+    SubType: Bow
+    Weight: 1700
+    Attack: 75
+    MagicAttack: 100
+    Range: 5
+    Jobs:
+      BardDancer: true
+      Hunter: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Both_Hand: true
+    WeaponLevel: 3
+    EquipLevelMin: 105
+    Refineable: true
+    Script: |
+      bonus bInt,4;
+      bonus2 bSkillUseSP,"WM_SEVERE_RAINSTORM",10;
+  - Id: 1433
+    AegisName: Imperial_Spear
+    Name: Imperial Spear
+    Type: Weapon
+    SubType: 1hSpear
+    Buy: 20
+    Weight: 1800
+    Attack: 180
+    MagicAttack: 40
+    Range: 3
+    Slots: 1
+    Jobs:
+      Crusader: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 3
+    EquipLevelMin: 102
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus2 bSkillAtk,"LG_CANNONSPEAR",20+(.@r/2*3);
+      bonus2 bSkillAtk,"LG_BANISHINGPOINT",20+(.@r/2*3);
+  - Id: 13061
+    AegisName: Black_Wing
+    Name: Black Wing
+    Type: Weapon
+    SubType: Dagger
+    Buy: 20
+    Weight: 600
+    Attack: 142
+    Range: 1
+    Slots: 1
+    Jobs:
+      Rogue: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 3
+    EquipLevelMin: 102
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus2 bSkillAtk,"SC_FATALMENACE",30;
+      if (.@r>=6) {
+         bonus2 bSkillAtk,"SC_FATALMENACE",(.@r-5)*2;
+         bonus bMatkRate,((.@r-5)*3);
+      }
+  - Id: 22084
+    AegisName: Doram_High_Shoes
+    Name: Luxury Doram Shoes
+    Type: Armor
+    Buy: 20
+    Weight: 600
+    Defense: 30
+    Slots: 1
+    Jobs:
+      Summoner: true
+      Spirit_Handler: true
+    Locations:
+      Shoes: true
+    ArmorLevel: 1
+    EquipLevelMin: 140
+    Refineable: true
+    Script: |
+      bonus bMaxHP,300;
+      bonus bMaxSP,100;
+      .@r = getrefine()/3;
+      bonus bHPrecovRate,20*.@r;
+      bonus bSPrecovRate,20*.@r;
+  - Id: 1930
+    AegisName: Green_Whistle
+    Name: Green Whistle
+    Type: Weapon
+    SubType: Musical
+    Buy: 20
+    Weight: 800
+    Attack: 170
+    MagicAttack: 50
+    Range: 1
+    Slots: 1
+    Jobs:
+      BardDancer: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Gender: Male
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 3
+    EquipLevelMin: 102
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      if (.@r>5) {
+         bonus2 bSkillUseSP,"MI_RUSH_WINDMILL",(.@r-5)*4;
+         bonus2 bSkillUseSP,"WM_LULLABY_DEEPSLEEP",(.@r-5)*4;
+      }
+      bonus2 bSkillVariableCast,"MI_RUSH_WINDMILL",-2000;
+      bonus2 bSkillVariableCast,"WM_LULLABY_DEEPSLEEP",-2000;
+  - Id: 1692
+    AegisName: Magical_Foxtail
+    Name: Magical Foxtail Staff
+    Type: Weapon
+    SubType: Staff
+    Buy: 100000
+    Weight: 600
+    Attack: 120
+    MagicAttack: 260
+    Range: 1
+    Slots: 2
+    Jobs:
+      Summoner: true
+      Spirit_Handler: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 3
+    EquipLevelMin: 140
+    Refineable: true
+    Script: |
+      bonus bMaxSP,100;
+      .@r = getrefine();
+      bonus bMatkRate,2*(.@r/2);
+      bonus bMaxSPrate,.@r/2;
+      if (.@r>=7) {
+         .@r = min(.@r,10)-7;
+         bonus bBaseAtk,(24*.@r)+48;
+         bonus bMatk,(52*.@r)+104;
+      }
+      bonus bUnbreakableWeapon;
+  - Id: 1696
+    AegisName: Ex_Model_Foxtail
+    Name: Exquisite Foxtail Model
+    Type: Weapon
+    SubType: Staff
+    Buy: 100000
+    Weight: 300
+    Attack: 240
+    Range: 1
+    Slots: 2
+    Jobs:
+      Summoner: true
+      Spirit_Handler: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 3
+    EquipLevelMin: 140
+    Refineable: true
+    Script: |
+      bonus bLongAtkRate,8;
+      bonus bMaxHPrate,5;
+      .@r = getrefine();
+      bonus bDex,(.@r/2)*3;
+      bonus bMaxSP,(.@r/2)*15;
+      if (.@r>=7) {
+         .@r = min(.@r,10)-7;
+         bonus bBaseAtk,(48*.@r)+96;
+      }
+  - Id: 16010
+    AegisName: Red_Ether_Bag
+    Name: Red Ether Bag
+    Type: Weapon
+    SubType: Mace
+    Buy: 20
+    Weight: 1000
+    Attack: 15
+    MagicAttack: 100
+    Range: 1
+    Slots: 1
+    Jobs:
+      Alchemist: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 3
+    EquipLevelMin: 102
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      if (.@r>=6) {
+         bonus2 bSkillAtk,"GN_CRAZYWEED",20+((.@r-5)*2);
+         bonus2 bSkillAtk,"GN_DEMONIC_FIRE",20+((.@r-5)*2);
+      }
+      else {
+         bonus2 bSkillAtk,"GN_CRAZYWEED",20;
+         bonus2 bSkillAtk,"GN_DEMONIC_FIRE",20;
+      }
+  - Id: 20789
+    AegisName: Doram_High_Cape
+    Name: Luxury Doram Manteau
+    Type: Armor
+    Buy: 20
+    Weight: 400
+    Defense: 25
+    Slots: 1
+    Jobs:
+      Summoner: true
+      Spirit_Handler: true
+    Locations:
+      Garment: true
+    ArmorLevel: 1
+    EquipLevelMin: 140
+    Refineable: true
+    Script: |
+      bonus bFlee,7;
+      bonus2 bSubEle,Ele_Neutral,3;
+      .@r = getrefine()/3;
+      bonus bFlee2,.@r;
+      bonus bLuk,.@r;
+  - Id: 15129
+    AegisName: Doram_High_Suit
+    Name: Luxury Doram Suit
+    Type: Armor
+    Buy: 20
+    Weight: 800
+    Defense: 100
+    Slots: 1
+    Jobs:
+      Summoner: true
+      Spirit_Handler: true
+    Locations:
+      Armor: true
+    ArmorLevel: 1
+    EquipLevelMin: 140
+    Refineable: true
+    Script: |
+      bonus bMaxHPrate,10;
+      bonus bMaxSPrate,10;
+      .@r = getrefine()/2;
+      bonus bDex,.@r;
+      bonus bInt,.@r;
+  - Id: 28382
+    AegisName: Charm_G_Necklace
+    Name: Charm Grass Necklace
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Slots: 1
+    Jobs:
+      Summoner: true
+      Spirit_Handler: true
+    Locations:
+      Both_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 100
+    Script: |
+      bonus bMdef,5;
+      bonus2 bVariableCastrate,"SU_CN_METEOR",-1000;
+  - Id: 28380
+    AegisName: Fresh_G_Necklace
+    Name: Fresh Grass Necklace
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Slots: 1
+    Jobs:
+      Summoner: true
+      Spirit_Handler: true
+    Locations:
+      Both_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 100
+    Script: |
+      bonus bFlee2,5;
+      bonus2 bSkillCooldown,"SU_SCAROFTAROU",-5000;
+  - Id: 28381
+    AegisName: Pretty_G_Necklace
+    Name: Cute Grass Necklace
+    Type: Armor
+    Buy: 20
+    Weight: 10
+    Slots: 1
+    Jobs:
+      Summoner: true
+      Spirit_Handler: true
+    Locations:
+      Both_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 100
+    Script: |
+      bonus bHealPower,5;
+      bonus2 bSkillCooldown,"SU_TUNAPARTY",-7000;
+  - Id: 28417
+    AegisName: MiddleLeafCharm
+    Name: Intermediate Leaf Talisman
+    Type: Armor
+    Weight: 100
+    Defense: 1
+    Slots: 1
+    Jobs:
+      Summoner: true
+      Spirit_Handler: true
+    Locations:
+      Both_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 140
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoCart: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      bonus bInt,2;
+  - Id: 28420
+    AegisName: MiddleRabbitCharm
+    Name: Intermediate Rabbit Talisman
+    Type: Armor
+    Weight: 100
+    Defense: 1
+    Slots: 1
+    Jobs:
+      Summoner: true
+      Spirit_Handler: true
+    Locations:
+      Both_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 140
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoCart: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      bonus bDex,2;
+  - Id: 28414
+    AegisName: MiddleSaurelCharm
+    Name: Intermediate Mackerel Talisman
+    Type: Armor
+    Weight: 100
+    Defense: 1
+    Slots: 1
+    Jobs:
+      Summoner: true
+      Spirit_Handler: true
+    Locations:
+      Both_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 140
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoCart: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      bonus bVit,2;
+  - Id: 18823
+    AegisName: Imperial_Feather
+    Name: Imperial Feather
+    Type: Armor
+    Buy: 10
+    Weight: 500
+    Locations:
+      Head_Mid: true
+    ArmorLevel: 1
+    EquipLevelMin: 70
+    View: 935
+    Script: |
+      bonus bAspdRate,1;
+      bonus2 bSubEle,Ele_Wind,5;
+      if (readparam(bAgi)>107) {
+         bonus bAspd,1;
+         bonus bAspdRate,1;
+      }
+  - Id: 28372
+    AegisName: Imperial_Ring
+    Name: Imperial Ring
+    Type: Armor
+    Weight: 500
+    Defense: 3
+    Slots: 1
+    Locations:
+      Both_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 50
+    Script: |
+      bonus bStr,1;
+      bonus bInt,1;
+      bonus bMaxHPrate,3;
+      bonus bMaxSPrate,3;
+  - Id: 1287
+    AegisName: Durga
+    Name: Durga
+    Type: Weapon
+    SubType: Katar
+    Buy: 20
+    Weight: 1200
+    Attack: 190
+    Range: 1
+    Slots: 1
+    Jobs:
+      Assassin: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Both_Hand: true
+    WeaponLevel: 3
+    EquipLevelMin: 100
+    Refineable: true
+  - Id: 1649
+    AegisName: Rafini_Staff
+    Name: Laphine Staff
+    Type: Weapon
+    SubType: Staff
+    Buy: 20
+    Weight: 500
+    Attack: 30
+    MagicAttack: 180
+    Range: 1
+    Jobs:
+      Monk: true
+      Priest: true
+      Sage: true
+      Wizard: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 3
+    EquipLevelMin: 100
+    Refineable: true
+    Script: |
+      bonus bFixedCastRate,-getrefine();
+  - Id: 1746
+    AegisName: Elven_Bow
+    Name: Elven Bow
+    Type: Weapon
+    SubType: Bow
+    Buy: 20
+    Weight: 1500
+    Attack: 160
+    Range: 5
+    Slots: 1
+    Jobs:
+      BardDancer: true
+      Hunter: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Both_Hand: true
+    WeaponLevel: 3
+    EquipLevelMin: 100
+    Refineable: true
+    Script: |
+      bonus bDex,2;
+  - Id: 1984
+    AegisName: Stem_Whip
+    Name: Stem Whip
+    Type: Weapon
+    SubType: Whip
+    Buy: 20
+    Weight: 800
+    Attack: 170
+    MagicAttack: 50
+    Range: 1
+    Slots: 1
+    Jobs:
+      BardDancer: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Gender: Female
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 3
+    EquipLevelMin: 102
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      if (.@r>5) {
+         bonus2 bSkillUseSP,"WA_SWING_DANCE",(.@r-5)*4;
+         bonus2 bSkillUseSP,"WM_LULLABY_DEEPSLEEP",(.@r-5)*4;
+      }
+      bonus2 bSkillVariableCast,"WA_SWING_DANCE",-2000;
+      bonus2 bSkillVariableCast,"WM_LULLABY_DEEPSLEEP",-2000;
+  - Id: 2148
+    AegisName: Rotha_Shield
+    Name: Rosa Shield
+    Type: Armor
+    Buy: 56000
+    Weight: 1300
+    Defense: 127
+    Slots: 1
+    Jobs:
+      Crusader: true
+      Knight: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Left_Hand: true
+    ArmorLevel: 1
+    EquipLevelMin: 100
+    Refineable: true
+    View: 3
+  - Id: 15014
+    AegisName: Ebone_Armor
+    Name: Ebon Armor
+    Type: Armor
+    Buy: 40000
+    Weight: 4500
+    Defense: 93
+    Slots: 1
+    Jobs:
+      Crusader: true
+      Knight: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Armor: true
+    ArmorLevel: 1
+    EquipLevelMin: 100
+    Refineable: true
+  - Id: 16003
+    AegisName: Carga_Mace
+    Name: Carga Mace
+    Type: Weapon
+    SubType: Mace
+    Buy: 20
+    Weight: 1500
+    Attack: 175
+    Range: 1
+    Slots: 2
+    Jobs:
+      Alchemist: true
+      Blacksmith: true
+      Crusader: true
+      Knight: true
+      Monk: true
+      Priest: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 3
+    EquipLevelMin: 100
+    Refineable: true
+

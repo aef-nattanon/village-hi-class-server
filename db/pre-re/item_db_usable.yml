@@ -22142,3 +22142,15 @@ Body:
       Third_Upper: true
       Third_Baby: true
     EquipLevelMin: 1
+  - Id: 12608
+    AegisName: Splendid_Box2
+    Name: Splendid Box2
+    Type: Usable
+    Buy: 20
+    Weight: 100
+    Flags:
+      BuyingStore: true
+      Container: true
+    Script: |
+      getgroupitem(IG_Splendid_Box2);
+      
